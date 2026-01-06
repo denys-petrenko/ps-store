@@ -1,0 +1,21 @@
+.header-btn-contact {
+    all: unset;
+    box-sizing: border-box;
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid rgba(53, 140, 247, 0.5);
+    border-radius: 8px;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+
+    .contact-phone{
+        width: 16px;
+        height: 16px;
+    }
+}
