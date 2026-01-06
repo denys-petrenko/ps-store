@@ -1,0 +1,59 @@
+import HeaderBtn from "./HeaderBtn";
+import logo from "../../../assets/ps-store-logo.png";
+import cityCall from "../../../assets/header/city-call.svg";
+import lifecell from "../../../assets/header/life-call.svg";
+import kyivstar from "../../../assets/header/kyivstar-call.svg";
+import vodafone from "../../../assets/header/vodafone-call.svg";
+import styles from "./HeaderTop.module.scss";
+
+const HeaderTop = () => {
+    return (
+        <div className={styles["header-top"]}>
+            <div className={styles.container}>
+                <div className={styles.logo}>
+                    <a href="">
+                        <img src={logo} title="Ваш магазин" alt="Ваш магазин" />
+                    </a>
+                </div>
+                <div className={styles.phones}>
+                    <ul className={styles["phones-list"]}>
+                        <li>
+                            <a href="tel:+380443337007" className={styles["phone-link"]}>
+                                <img src={cityCall} alt="Phone City" className={styles.icon} />
+                                (044) 333 70 07
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+380672902060" className={styles["phone-link"]}>
+                                <img src={lifecell} alt="Phone Lifecell" className={styles.icon} />
+                                (073) 001 30 50
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+380672902060" className={styles["phone-link"]}>
+                                <img src={kyivstar} alt="Phone Kyivstar" className={styles.icon} />
+                                (067) 290 20 60
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+380990013050" className={styles["phone-link"]}>
+                                <img src={vodafone} alt="Phone Vodafone" className={styles.icon} />
+                                (099) 001 30 50
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div className={styles.contacts}>
+                    <div className={styles["btn-group"]}>
+                        <HeaderBtn />
+                    </div>
+                    <div className={styles["dropdown-menu"]}>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default HeaderTop;
