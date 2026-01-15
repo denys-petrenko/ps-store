@@ -9,7 +9,7 @@
 
     .container {
         display: flex;
-        width: 100%;
+        width: 90%;
         height: 100%;
         position: relative;
 
@@ -64,5 +64,11 @@
             }
         }
 
+        .contacts {
+            display: flex;
+            width: 27%;
+            height: 100%;
+            position: relative;
+        }
     }
 }

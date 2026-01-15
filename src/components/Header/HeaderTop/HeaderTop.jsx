@@ -44,12 +44,7 @@ const HeaderTop = () => {
                     </ul>
                 </div>
                 <div className={styles.contacts}>
-                    <div className={styles["btn-group"]}>
-                        <HeaderBtn />
-                    </div>
-                    <div className={styles["dropdown-menu"]}>
-
-                    </div>
+                    <HeaderBtn />
                 </div>
             </div>
         </div>
