@@ -4,34 +4,56 @@ import profile from "../../../assets/header/profile.svg";
 import favorites from "../../../assets/header/favorites.svg";
 import cart from "../../../assets/header/cart.svg";
 import styles from "./HeaderBottom.module.scss";
+import { useEffect, useRef, useState } from "react";
 
 const HeaderBottom = () => {
+    const [showContent, setShowContent] = useState(false);
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+        const handleContentBtn = (e) => {
+            if (menuRef.current && !menuRef.current.contains(e.target)) {
+                setShowContent(false);
+            }
+        }
+
+        document.addEventListener("click", handleContentBtn);
+        return () => document.removeEventListener("click", handleContentBtn);
+    }, [])
+
     return (
         <div className={styles["header-bottom"]}>
-            <nav className={styles["dropdown-menu"]}>
-                <button className={styles["btn-dropdown-catalog"]}>
-                    <img src={catalogBtn} alt="" />
+            <nav ref={menuRef} className={styles["dropdown-menu"]}>
+                <button className={styles["dropdown-btn"]} onClick={() => setShowContent(prev => !prev)}>
+                    <img src={catalogBtn} alt="Catalog button" />
                     Catalog
                 </button>
+                <ul className={`${styles["content-menu"]} ${showContent ? styles.active : ""}`}>
+                    <li><a href="#" className={styles["content-item"]}>Apple</a></li>
+                    <li><a href="#" className={styles["content-item"]}>Гаджети та аксесуари</a></li>
+                    <li><a href="#" className={styles["content-item"]}>Електронні книги</a></li>
+                    <li><a href="#" className={styles["content-item"]}>Конструктори LEGO</a></li>
+                    <li><a href="#" className={styles["content-item"]}>Мобільний зв'язок</a></li>
+                    <li><a href="#" className={styles["content-item"]}>Годинник</a></li>
+                    <li><a href="#" className={styles["content-item"]}>Спорт та туризм</a></li>
+                </ul>
             </nav>
-
             <div className={styles["header-searcher"]}>
                 <input type="text" name="search" placeholder="Search" className={styles["search-input"]} />
                 <button className={styles["header-searcher-btn"]}>
                     <img src={searchBtn} alt="" className={styles["search-logo"]} />
                 </button>
             </div>
-
             <div className={styles["header-actions"]}>
                 <div className={styles["header-icons"]}>
                     <a href="" className={styles["header-icon"]}>
-                        <img src={profile} alt="" />
+                        <img src={profile} alt="Profile" />
                     </a>
                     <a href="" className={styles["header-icon"]}>
-                        <img src={favorites} alt="" />
+                        <img src={favorites} alt="Favorites" />
                     </a>
                     <a href="" className={styles["header-icon"]}>
-                        <img src={cart} alt="" />
+                        <img src={cart} alt="Cart" />
                     </a>
                 </div>
                 <div className={styles["language-switcher"]}>

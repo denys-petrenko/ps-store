@@ -22,7 +22,6 @@
 
     .dropdown-menu {
         display: flex;
-        opacity: 0;
         flex-direction: column;
         justify-content: center;
         box-sizing: border-box;
@@ -39,6 +38,7 @@
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+        z-index: 100;
     }
 
     li {

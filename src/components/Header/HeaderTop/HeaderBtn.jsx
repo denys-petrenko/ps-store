@@ -28,19 +28,19 @@ const HeaderBtn = () => {
             <ul className={`${styles["dropdown-menu"]} ${showMenu ? styles.active : ""}`}>
                 <li>
                     <a href="tel:0800500600" className={styles["contact-link"]}>
-                        <img src={phone} alt="" />
+                        <img src={phone} alt="Phone" />
                         0 800 500 600
                     </a>
                 </li>
                 <li>
                     <a href="#" className={styles["contact-link"]}>
-                        <img src={skype} alt="" />
+                        <img src={skype} alt="Skype" />
                         up2date.com.ua
                     </a>
                 </li>
                 <li>
                     <a href="#" className={styles["contact-link"]}>
-                        <img src={mail} alt="" />
+                        <img src={mail} alt="Mail" />
                         office@up2date.com.ua
                     </a>
                 </li>

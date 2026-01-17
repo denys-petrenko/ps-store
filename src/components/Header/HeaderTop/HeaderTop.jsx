@@ -23,7 +23,7 @@ const HeaderTop = () => {
                                 (044) 333 70 07
                             </a>
                         </li>
-                        <li>
+                     <li>
                             <a href="tel:+380672902060" className={styles["phone-link"]}>
                                 <img src={lifecell} alt="Phone Lifecell" className={styles.icon} />
                                 (073) 001 30 50
