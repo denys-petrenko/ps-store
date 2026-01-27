@@ -26,7 +26,7 @@ const HeaderBottom = () => {
             <nav ref={menuRef} className={styles["dropdown-menu"]}>
                 <button className={styles["dropdown-btn"]} onClick={() => setShowContent(prev => !prev)}>
                     <img src={catalogBtn} alt="Catalog button" />
-                    Catalog
+                    Каталог товарів
                 </button>
                 <ul className={`${styles["content-menu"]} ${showContent ? styles.active : ""}`}>
                     <li><a href="#" className={styles["content-item"]}>Apple</a></li>
