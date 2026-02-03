@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header";
 import Slider from "./components/Slider/Slider";
+import Advantage from "./components/Advantage/Advantage";
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Header />
       <Slider />
+      <Advantage />
     </>
   )
 }
