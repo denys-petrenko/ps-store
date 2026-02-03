@@ -17,25 +17,22 @@ const Slider = () => {
 
     return (
         <div className={styles.slider}>
-            <div className={styles["embla__viewport"]} ref={emblaRef}>
-                <div className={styles["embla__container"]}>
-                    <div className={styles["embla__slide"]}>
+            <div className={styles["slider-viewport"]} ref={emblaRef}>
+                <div className={styles["slider-container"]}>
+                    <div className={styles["slider-slide"]}>
                         <img src={slide} alt="slide" />
                     </div>
-                    <div className={styles["embla__slide"]}>
+                    <div className={styles["slider-slide"]}>
                         <img src={slide} alt="slide" />
                     </div>
-                    <div className={styles["embla__slide"]}>
+                    <div className={styles["slider-slide"]}>
                         <img src={slide} alt="slide" />
                     </div>
                 </div>
             </div>
-
-            <button className={styles["embla__prev"]} onClick={goToPrev}>
-                Scroll to prev
+            <button className={styles["slider-prev"]} aria-label="Previous slide" onClick={goToPrev}>
             </button>
-            <button className={styles["embla__next"]} onClick={goToNext}>
-                Scroll to next
+            <button className={styles["slider-next"]} aria-label="Next slide" onClick={goToNext}>
             </button>
         </div>
     )
