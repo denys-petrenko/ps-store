@@ -1,5 +1,34 @@
-.advantage{
-    display: flex;
+.advantage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     width: 100%;
     height: 250px;
+    margin-top: 40px;
+    text-align: center;
+
+    .advantage-card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        background-color: #F6F9FF;
+        border-radius: 4px;
+        gap: 10px;
+        padding-top: 30px;
+
+        .logo {
+            position: absolute;
+            top: -10px;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #212229;
+        }
+
+        .description{
+            color: #787D88;
+        }
+    }
 }
