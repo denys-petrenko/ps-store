@@ -1,0 +1,50 @@
+.best-offers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 800px;
+    margin-top: 40px;
+
+    .title {
+        font-size: 32px;
+        font-weight: 500;
+        color: #212229;
+    }
+
+    .catalog-nav {
+        margin-top: 16px;
+
+        .catalog-nav-list {
+            display: flex;
+            justify-content: space-around;
+
+            .catalog-nav-item {
+                height: 26px;
+                gap: 5px;
+                cursor: pointer;
+
+                .catalog-nav-btn {
+                    all: unset;
+                    color: #787D88;
+                }
+            }
+        }
+    }
+
+    .catalog-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 24px;
+
+        .catalog-card {
+            display: flex;
+            flex-direction: column;
+            height: 270px;
+            border: 1px solid rgba(119, 122, 129, 0.2);
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: auto;
+        }
+    }
+}
