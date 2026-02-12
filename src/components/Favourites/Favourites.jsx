@@ -7,9 +7,9 @@ import psp from "../../assets/favourites/ps-portable.png";
 const Favourites = () => {
     return (
         <section className={styles.favourites}>
-            <h1 className={styles.title}>
+            <h2 className={styles.title}>
                 Популярні категорії нашого магазину
-            </h1>
+            </h2>
             <div className={styles.category}>
                 <img className={styles["category-cover"]} src={ps} alt="Play Station 5" />
                 <div className={styles.shade}>

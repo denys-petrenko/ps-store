@@ -2,12 +2,13 @@ import styles from "./BestOffers.module.scss";
 import popular from "../../assets/best-offers/popular.svg";
 import news from "../../assets/best-offers/new.svg";
 import discount from "../../assets/best-offers/discount.svg";
+import dualshock from "../../assets/best-offers/cards/dualshock4.svg";
 
 
 const BestOffers = () => {
     return (
         <section className={styles["best-offers"]}>
-            <h1 className={styles.title}>Краща пропозиція</h1>
+            <h2 className={styles.title}>Краща пропозиція</h2>
             <nav className={styles["catalog-nav"]}>
                 <ul className={styles["catalog-nav-list"]}>
                     <li className={styles["catalog-nav-item"]}>
@@ -26,9 +27,20 @@ const BestOffers = () => {
             </nav>
             <div className={styles["catalog-cards"]}>
                 <div className={styles["catalog-card"]}>
-
+                    <div className={styles["catalog-card-media"]}>
+                        <img className={styles["catalog-card-image"]} src={dualshock} alt="" />
+                    </div>
+                    <div className={styles["catalog-card-content"]}>
+                        <div className={styles["catalog-card-rating"]}>
+                            <span className={styles["catalog-card-stars"]}>★★★★☆</span>
+                            <span className={styles["catalog-card-reviews"]}>12 відгуків</span>
+                        </div>
+                        <h3 className={styles["catalog-card-title"]}>Sony DualShock 4 Version2</h3>
+                        <div className={styles["catalog-card-color"]}>green camouflage</div>
+                        <div className={styles["catalog-card-price"]}>1599 грн</div>
+                    </div>
                 </div>
- 
+
             </div >
         </section>
     )
