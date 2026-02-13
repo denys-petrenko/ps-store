@@ -44,12 +44,23 @@
             border: 1px solid rgba(119, 122, 129, 0.2);
             border-radius: 4px;
             margin-bottom: 20px;
-            overflow: auto;
+            overflow: hidden;
 
             .catalog-card-media {
                 display: flex;
+                position: relative;
                 width: 100%;
                 height: 60%;
+
+                .catalog-card-favourite {
+                    all: unset;
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    top: 5%;
+                    right: 5%;
+                    z-index: 2;
+                }
 
                 .catalog-card-image {
                     width: 100%;
@@ -86,6 +97,10 @@
                 }
 
                 .catalog-card-title {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
                     color: #212229;
                     font-size: 14px;
                     font-weight: 400;
