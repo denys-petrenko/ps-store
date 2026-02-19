@@ -5,6 +5,7 @@ import Favourites from "./components/Favourites/Favourites";
 import BestOffers from "./components/BestOffers/BestOffers";
 import LastArticles from "./components/LastArticles/LastArticles";
 import SubscriptionForm from "./components/SubscriptionForm/SubscriptionForm";
+import Benefits from "./components/Benefits/Benefits";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <BestOffers />
       <LastArticles />
       <SubscriptionForm />
+      <Benefits />
     </>
   )
 }
