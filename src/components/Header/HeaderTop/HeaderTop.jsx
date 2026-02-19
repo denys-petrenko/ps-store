@@ -17,25 +17,25 @@ const HeaderTop = () => {
                 </div>
                 <div className={styles.phones}>
                     <ul className={styles["phones-list"]}>
-                        <li>
+                        <li className={styles["phones-list-item"]}>
                             <a href="tel:+380443337007" className={styles["phone-link"]}>
                                 <img src={cityCall} alt="Phone City" className={styles.icon} />
                                 (044) 333 70 07
                             </a>
                         </li>
-                     <li>
+                     <li className={styles["phones-list-item"]}>
                             <a href="tel:+380672902060" className={styles["phone-link"]}>
                                 <img src={lifecell} alt="Phone Lifecell" className={styles.icon} />
                                 (073) 001 30 50
                             </a>
                         </li>
-                        <li>
+                        <li className={styles["phones-list-item"]}>
                             <a href="tel:+380672902060" className={styles["phone-link"]}>
                                 <img src={kyivstar} alt="Phone Kyivstar" className={styles.icon} />
                                 (067) 290 20 60
                             </a>
                         </li>
-                        <li>
+                        <li className={styles["phones-list-item"]}>
                             <a href="tel:+380990013050" className={styles["phone-link"]}>
                                 <img src={vodafone} alt="Phone Vodafone" className={styles.icon} />
                                 (099) 001 30 50

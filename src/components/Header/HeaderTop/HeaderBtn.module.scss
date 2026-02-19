@@ -41,7 +41,7 @@
         z-index: 100;
     }
 
-    li {
+    .dropdown-menu-item {
         display: flex;
         justify-content: left;
         align-items: center;
@@ -58,7 +58,7 @@
             color: #358CF7;
             font-size: calc(100% - 1px);
 
-            img {
+            .contact-link-img {
                 width: 20px;
                 height: 20px;
             }

@@ -29,13 +29,13 @@ const HeaderBottom = () => {
                     Каталог товарів
                 </button>
                 <ul className={`${styles["content-menu"]} ${showContent ? styles.active : ""}`}>
-                    <li><a href="#" className={styles["content-item"]}>Apple</a></li>
-                    <li><a href="#" className={styles["content-item"]}>Гаджети та аксесуари</a></li>
-                    <li><a href="#" className={styles["content-item"]}>Електронні книги</a></li>
-                    <li><a href="#" className={styles["content-item"]}>Конструктори LEGO</a></li>
-                    <li><a href="#" className={styles["content-item"]}>Мобільний зв'язок</a></li>
-                    <li><a href="#" className={styles["content-item"]}>Годинник</a></li>
-                    <li><a href="#" className={styles["content-item"]}>Спорт та туризм</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Apple</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Гаджети та аксесуари</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Електронні книги</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Конструктори LEGO</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Мобільний зв'язок</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Годинник</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Спорт та туризм</a></li>
                 </ul>
             </nav>
             <div className={styles["header-searcher"]}>

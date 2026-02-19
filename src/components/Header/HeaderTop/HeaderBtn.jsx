@@ -26,21 +26,21 @@ const HeaderBtn = () => {
                 <img src={phone} alt="" className={styles["contact-phone"]} />
             </button>
             <ul className={`${styles["dropdown-menu"]} ${showMenu ? styles.active : ""}`}>
-                <li>
+                <li className={styles["dropdown-menu-item"]}>
                     <a href="tel:0800500600" className={styles["contact-link"]}>
-                        <img src={phone} alt="Phone" />
+                        <img className={styles["contact-link-img"]} src={phone} alt="Phone" />
                         0 800 500 600
                     </a>
                 </li>
-                <li>
+                <li className={styles["dropdown-menu-item"]}>
                     <a href="#" className={styles["contact-link"]}>
-                        <img src={skype} alt="Skype" />
+                        <img className={styles["contact-link-img"]} src={skype} alt="Skype" />
                         up2date.com.ua
                     </a>
                 </li>
-                <li>
+                <li className={styles["dropdown-menu-item"]}>
                     <a href="#" className={styles["contact-link"]}>
-                        <img src={mail} alt="Mail" />
+                        <img className={styles["contact-link-img"]} src={mail} alt="Mail" />
                         office@up2date.com.ua
                     </a>
                 </li>
