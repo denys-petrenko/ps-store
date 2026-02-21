@@ -6,6 +6,7 @@ import BestOffers from "./components/BestOffers/BestOffers";
 import LastArticles from "./components/LastArticles/LastArticles";
 import SubscriptionForm from "./components/SubscriptionForm/SubscriptionForm";
 import Benefits from "./components/Benefits/Benefits";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <LastArticles />
       <SubscriptionForm />
       <Benefits />
+      <Footer />
     </>
   )
 }

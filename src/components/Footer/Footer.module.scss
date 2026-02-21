@@ -1,0 +1,158 @@
+.footer {
+    display: grid;
+    grid-template-areas:
+        "footer-logo footer-socials"
+        "footer-nav footer-nav"
+        "footer-contacts footer-contacts";
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background-color: #19212D;
+    margin-top: 40px;
+    padding: 24px 16px 0 16px;
+
+    .footer-logo {
+        grid-area: footer-logo;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        width: 100%;
+        height: 55px;
+
+        .footer-logo-container {
+            display: flex;
+            place-items: center;
+            width: 80%;
+            height: 80%;
+
+            .footer-logo-img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .footer-socials {
+        grid-area: footer-socials;
+        display: flex;
+        width: 100%;
+        height: 55px;
+
+        .footer-socials-list {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 16px;
+
+            .footer-socials-item {
+                display: flex;
+                width: 28px;
+                height: 28px;
+
+                .footer-socials-link {
+                    display: flex;
+                    width: 100%;
+                    width: 100%;
+                    list-style: none;
+
+                    .footer-socials-img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-nav {
+        grid-area: footer-nav;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 16px;
+        width: 100%;
+        margin-top: 24px;
+
+        .footer-nav-section {
+            display: flex;
+            flex-direction: column;
+
+            .footer-nav-section-title {
+                font-size: 16px;
+                color: #FFFFFF;
+                font-weight: 500;
+            }
+
+            .footer-nav-list {
+                list-style: none;
+                margin-top: 12px;
+
+
+                .footer-nav-item {
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: #FFFFFFD9;
+                    margin-bottom: 8px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .footer-contacts{
+        grid-area: footer-contacts;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 16px;
+        width: 100%;
+        margin: 24px 0 24px 0;
+
+        .footer-contacts-section {
+            display: flex;
+            flex-direction: column;
+
+            .footer-contacts-section-title {
+                font-size: 16px;
+                color: #FFFFFF;
+                font-weight: 500;
+            }
+
+            .footer-contacts-list {
+                list-style: none;
+                margin-top: 12px;
+
+                .footer-contacts-item {
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: #FFFFFFD9;
+                    margin-bottom: 8px;
+                    cursor: pointer;
+                }
+            }
+
+            .footer-schedule {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 12px;
+    
+                .footer-schedule-row {
+                    display: flex;
+                    flex-direction: column;
+    
+                    .footer-schedule-date {
+                        font-size: 14px;
+                        font-weight: 300;
+                        color: #FFFFFFD9;
+                    }
+    
+                    .footer-schedule-time {
+                        font-size: 13px;
+                        font-weight: 200;
+                        color: #FFFFFFD9;
+                    }
+                }
+            }
+        }
+    }
+}
