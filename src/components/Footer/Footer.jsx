@@ -84,19 +84,12 @@ const Footer = () => {
                 </div>
                 <div className={styles["footer-contacts-section"]}>
                     <h2 className={styles["footer-contacts-section-title"]}>Графік роботи</h2>
-                    {/* <ul className={styles["footer-contacts-list"]}>
-                        <li className={styles["footer-contacts-item"]}>Будні дні:</li>
-                        <li className={styles["footer-contacts-item"]}>з 9 до 21 години</li>
-                        <li className={styles["footer-contacts-item"]}>Субота-неділя:</li>
-                        <li className={styles["footer-contacts-item"]}>з 10 до 20 годин</li>
-                    </ul> */}
-                    <dl class={styles["footer-schedule"]}>
-                        <div class={styles["footer-schedule-row"]}>
+                    <dl className={styles["footer-schedule"]}>
+                        <div className={styles["footer-schedule-row"]}>
                             <dt className={styles["footer-schedule-date"]}>Будні дні:</dt>
                             <dd className={styles["footer-schedule-time"]}>з 9 до 21 години</dd>
                         </div>
-
-                        <div class={styles["footer-schedule-row"]}>
+                        <div className={styles["footer-schedule-row"]}>
                             <dt className={styles["footer-schedule-date"]}>Субота-неділя:</dt>
                             <dd className={styles["footer-schedule-time"]}>з 10 до 20 годин</dd>
                         </div>
