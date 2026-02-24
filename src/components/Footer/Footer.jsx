@@ -35,7 +35,6 @@ const Footer = () => {
                             <img src={google} alt="Google" className={styles["footer-socials-img"]} />
                         </a>
                     </li>
-
                 </ul>
             </div>
             <div className={styles["footer-nav"]}>
