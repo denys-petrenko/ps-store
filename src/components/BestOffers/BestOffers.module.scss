@@ -17,11 +17,19 @@
         .catalog-nav-list {
             display: flex;
             justify-content: space-around;
+            list-style: none;
 
             .catalog-nav-item {
+                display: flex;
+                align-items: center;
                 height: 26px;
                 gap: 5px;
                 cursor: pointer;
+
+                .catalog-nav-item-img{
+                    width: 16px;
+                    height: 16px;
+                }
 
                 .catalog-nav-btn {
                     all: unset;

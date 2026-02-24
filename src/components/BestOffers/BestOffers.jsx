@@ -13,15 +13,15 @@ const BestOffers = () => {
             <nav className={styles["catalog-nav"]}>
                 <ul className={styles["catalog-nav-list"]}>
                     <li className={styles["catalog-nav-item"]}>
-                        <img src={popular} alt="Popular products" />
+                        <img src={popular} alt="Popular products" className={styles["catalog-nav-item-img"]} />
                         <button className={styles["catalog-nav-btn"]}>Популярні</button>
                     </li>
                     <li className={styles["catalog-nav-item"]}>
-                        <img src={news} alt="New products" />
+                        <img src={news} alt="New products" className={styles["catalog-nav-item-img"]} />
                         <button className={styles["catalog-nav-btn"]}>Новинки</button>
                     </li>
                     <li className={styles["catalog-nav-item"]}>
-                        <img src={discount} alt="Discount" />
+                        <img src={discount} alt="Discount" className={styles["catalog-nav-item-img"]} />
                         <button className={styles["catalog-nav-btn"]}>Знижки</button>
                     </li>
                 </ul>
