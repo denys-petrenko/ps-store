@@ -1,9 +1,6 @@
 import Header from "./components/Header/Header";
 import Slider from "./components/Slider/Slider";
-import Advantage from "./components/Advantage/Advantage";
-import Favourites from "./components/Favourites/Favourites";
-import BestOffers from "./components/BestOffers/BestOffers";
-import LastArticles from "./components/LastArticles/LastArticles";
+import Main from "./components/Main/Main";
 import SubscriptionForm from "./components/SubscriptionForm/SubscriptionForm";
 import Benefits from "./components/Benefits/Benefits";
 import Footer from "./components/Footer/Footer";
@@ -14,10 +11,7 @@ function App() {
     <>
       <Header />
       <Slider />
-      <Advantage />
-      <Favourites />
-      <BestOffers />
-      <LastArticles />
+      <Main />
       <SubscriptionForm />
       <Benefits />
       <Footer />

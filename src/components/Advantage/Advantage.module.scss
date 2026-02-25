@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    width: 100%;
+    width: 90%;
     height: 250px;
     margin-top: 40px;
     text-align: center;
@@ -25,10 +25,13 @@
         .title {
             font-size: 16px;
             color: #212229;
+            padding: 0 5px;
         }
 
         .description{
             color: #787D88;
+            font-size: 14px;
+            padding: 0 5px;
         }
     }
 }
