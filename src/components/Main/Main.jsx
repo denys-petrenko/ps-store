@@ -1,8 +1,8 @@
 import styles from "./Main.module.scss";
-import Advantage from "../Advantage/Advantage";
-import Favourites from "../Favourites/Favourites";
-import BestOffers from "../BestOffers/BestOffers";
-import LastArticles from "../LastArticles/LastArticles";
+import Advantage from "./Advantage/Advantage";
+import Favourites from "./Favourites/Favourites";
+import BestOffers from "./BestOffers/BestOffers";
+import LastArticles from "./LastArticles/LastArticles";
 
 const Main = () => {
     return (

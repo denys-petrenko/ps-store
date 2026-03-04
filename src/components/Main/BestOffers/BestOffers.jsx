@@ -1,9 +1,9 @@
 import styles from "./BestOffers.module.scss";
-import popular from "../../assets/best-offers/popular.svg";
-import news from "../../assets/best-offers/new.svg";
-import discount from "../../assets/best-offers/discount.svg";
-import dualshock from "../../assets/best-offers/cards/dualshock4.svg";
-import favIcon from "../../assets/best-offers/cards/fav-icon.svg";
+import popular from "../../../assets/best-offers/popular.svg";
+import news from "../../../assets/best-offers/new.svg";
+import discount from "../../../assets/best-offers/discount.svg";
+import dualshock from "../../../assets/best-offers/cards/dualshock4.svg";
+import favIcon from "../../../assets/best-offers/cards/fav-icon.svg";
 
 
 const BestOffers = () => {

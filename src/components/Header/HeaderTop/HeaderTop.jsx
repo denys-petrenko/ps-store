@@ -11,9 +11,17 @@ const HeaderTop = () => {
         <div className={styles["header-top"]}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <a href="">
-                        <img src={logo} title="Ваш магазин" alt="Ваш магазин" />
+                    <a className={styles["logo-link"]} href="">
+                        <img className={styles["logo-link-img"]} src={logo} title="Ваш магазин" alt="Ваш магазин" />
                     </a>
+                </div>
+                <div className={styles.menu}>
+                    <ul className={styles["menu-list"]}>
+                        <li className={styles["menu-list-item"]}>Контакти</li>
+                        <li className={styles["menu-list-item"]}>Огляди ігор</li>
+                        <li className={styles["menu-list-item"]}>Доставка та оплата</li>
+                        <li className={styles["menu-list-item"]}>Про нас</li>
+                    </ul>
                 </div>
                 <div className={styles.phones}>
                     <ul className={styles["phones-list"]}>
@@ -23,7 +31,7 @@ const HeaderTop = () => {
                                 (044) 333 70 07
                             </a>
                         </li>
-                     <li className={styles["phones-list-item"]}>
+                        <li className={styles["phones-list-item"]}>
                             <a href="tel:+380672902060" className={styles["phone-link"]}>
                                 <img src={lifecell} alt="Phone Lifecell" className={styles.icon} />
                                 (073) 001 30 50

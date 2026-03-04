@@ -3,42 +3,48 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 150px;
     background-color: #F6F9FF;
     padding: 20px 0 10px;
 
     .container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
         width: 90%;
         height: 100%;
         position: relative;
 
         .logo {
             display: flex;
-            width: 33%;
             justify-content: center;
             align-items: center;
 
-            a {
+            .logo-link {
                 display: flex;
                 justify-content: center;
                 width: 100%;
 
-                img {
-                    width: 100px;
-                    height: 50px;
+                .logo-link-img {
+                    width: 100%;
+                    height: 100%;
                 }
             }
+        }
+
+        .menu {
+            display: none;
         }
 
         .phones {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40%;
+            width: 100%;
 
             .phones-list {
-                
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
                 .phones-list-item {
                     display: flex;
                     justify-content: center;
@@ -54,6 +60,7 @@
                         cursor: pointer;
                         color: #358CF7;
                         font-size: calc(100% - 3px);
+                        font-weight: 500;
 
                         .icon {
                             width: 20px;
@@ -67,9 +74,38 @@
 
         .contacts {
             display: flex;
-            width: 27%;
             height: 100%;
             position: relative;
+        }
+    }
+}
+
+
+
+
+@media (min-width: 768px) {
+    .header-top {
+        .container {
+            grid-template-columns: 1fr 2fr 1fr 0.5fr;
+
+            .menu {
+                display: flex;
+                align-items: center;
+
+                .menu-list {
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    flex-direction: column;
+                    color: #212229;
+                    gap: 5px;
+
+                    .menu-list-item {
+                        list-style: none;
+                        font-size: 16px;
+                    }
+                }
+            }
         }
     }
 }

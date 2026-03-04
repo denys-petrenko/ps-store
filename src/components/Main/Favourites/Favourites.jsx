@@ -1,8 +1,8 @@
 import styles from "./Favourites.module.scss";
-import ps from "../../assets/favourites/play-station.png";
-import xbox from "../../assets/favourites/xbox-x.png";
-import nintendo from "../../assets/favourites/nintendo-switch.png";
-import psp from "../../assets/favourites/ps-portable.png";
+import ps from "../../../assets/favourites/play-station.png";
+import xbox from "../../../assets/favourites/xbox-x.png";
+import nintendo from "../../../assets/favourites/nintendo-switch.png";
+import psp from "../../../assets/favourites/ps-portable.png";
 
 const Favourites = () => {
     return (

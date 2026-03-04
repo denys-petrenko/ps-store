@@ -1,5 +1,5 @@
 import styles from "./LastArticles.module.scss";
-import nintendo from "../../assets/last-articles/nintendo-swt.png";
+import nintendo from "../../../assets/last-articles/nintendo-swt.png";
 
 const LastArticles = () => {
     return (
