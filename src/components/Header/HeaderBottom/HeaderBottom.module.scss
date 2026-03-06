@@ -203,6 +203,12 @@
             width: auto;
             flex: 1;
             gap: 5px;
+
+            .language-switcher{
+                gap: 5px;
+                margin-left: 5px;
+                padding-left: 5px;
+            }
         }
     }
 }
