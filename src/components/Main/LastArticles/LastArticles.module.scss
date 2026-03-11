@@ -1,6 +1,5 @@
 .last-articles {
     width: 90%;
-    height: 960px;
 
     .last-articles-title {
         font-size: 32px;
@@ -87,6 +86,17 @@
                     }
                 }
             }
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+    .last-articles{
+        padding-bottom: 50px;
+        
+        .articles-cards{
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }
