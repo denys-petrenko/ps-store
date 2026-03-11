@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 1100px;
     gap: 24px;
     margin-top: 40px;
 
@@ -12,43 +11,106 @@
         line-height: 32px;
     }
 
-    .category {
+    .categories {
         display: flex;
-        position: relative;
-        width: 100%;
-        height: 235px;
-        border-radius: 5px;
-        overflow: hidden;
+        flex-direction: column;
+        gap: 24px;
 
-        .category-cover {
+        .category {
+            display: flex;
+            position: relative;
             width: 100%;
-            height: 100%;
-        }
+            height: 245px;
+            border-radius: 5px;
+            overflow: hidden;
 
-        .shade {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(31, 32, 37, 0.8);
-            transition: opacity 0.5s;
-
-            .category-button {
-                all: unset;
+            .category-title{
                 position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateY(-50%) translateX(-50%);
-                /* opacity: 0; */
-                visibility: visible;
-                transition: transform 0.3s, opacity 0.3s;
-                font-size: 16px;
-                font-weight: 700;
-                padding: 12px 48px;
-                z-index: 1;
-                color: #ffffff;
-                background-color: #358CF7;
-                border-color: #358CF7;
-                border-radius: 4px;
+                color: #FDFDFD;
+                left: 5%;
+                top: 10%;
+                font-size: calc(11px + 1vw);
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+            .category-media {
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+
+            .category-cover {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .shade {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(31, 32, 37, 0.8);
+                transition: opacity 0.5s;
+                display: none; // turn on
+
+                .category-button {
+                    all: unset;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateY(-50%) translateX(-50%);
+                    /* opacity: 0; */
+                    visibility: visible;
+                    transition: transform 0.3s, opacity 0.3s;
+                    font-size: 16px;
+                    font-weight: 700;
+                    padding: 12px 48px;
+                    z-index: 1;
+                    color: #ffffff;
+                    background-color: #358CF7;
+                    border-color: #358CF7;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+@media (min-width: 768px) {
+    .favourites {
+
+        .categories {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+                "ps-5 xbox-x xbox-x"
+                "ps-5 nintendo ps-vr";
+
+
+            .category {
+                display: grid;
+                height: 100%;
+            }
+
+            .category:nth-child(1) {
+                grid-area: ps-5;
+            }
+
+            .category:nth-child(2) {
+                grid-area: xbox-x;
+            }
+
+            .category:nth-child(3) {
+                grid-area: nintendo;
+            }
+
+            .category:nth-child(4) {
+                grid-area: ps-vr;
             }
         }
     }
