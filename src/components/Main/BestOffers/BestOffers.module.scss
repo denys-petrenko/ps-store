@@ -26,7 +26,7 @@
                 gap: 5px;
                 cursor: pointer;
 
-                .catalog-nav-item-img{
+                .catalog-nav-item-img {
                     width: 16px;
                     height: 16px;
                 }
@@ -126,6 +126,17 @@
                     font-weight: 700;
                 }
             }
+        }
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .best-offers {
+
+        .catalog-cards {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }
