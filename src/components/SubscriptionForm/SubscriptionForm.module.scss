@@ -64,3 +64,40 @@
         }
     }
 }
+
+
+@media (min-width: 768px) {
+    .subscription {
+        height: 350px;
+        justify-content: center;
+
+        .subscription-title {
+            font-size: 32px;
+        }
+
+        .subscription-subtitle {
+            font-size: 18px;
+        }
+
+        .subscription-form {
+            max-width: 650px;
+            flex-direction: row;
+            gap: 0;
+            position: relative;
+            border: 10px solid #ffffff;
+            border-radius: 12px;
+
+            .subscription-form-email {
+                border-radius: 0;
+                border: none;
+            }
+
+            .subscription-form-btn {
+                position: absolute;
+                right: 0;
+                width: 130px;
+            }
+        }
+    }
+
+}
