@@ -9,6 +9,7 @@
     background-color: #19212D;
     margin-top: 40px;
     padding: 24px 16px 50px 16px;
+    position: relative;
 
     .footer-logo {
         grid-area: footer-logo;
@@ -96,7 +97,7 @@
         }
     }
 
-    .footer-contacts{
+    .footer-contacts {
         grid-area: footer-contacts;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -120,6 +121,7 @@
 
                 .footer-contacts-item {
                     font-size: 14px;
+                    font-size: calc(6px + 1vw);
                     font-weight: 300;
                     color: #FFFFFFD9;
                     margin-bottom: 8px;
@@ -132,21 +134,94 @@
                 flex-direction: column;
                 gap: 10px;
                 margin-top: 12px;
-    
+
                 .footer-schedule-row {
                     display: flex;
                     flex-direction: column;
-    
+
                     .footer-schedule-date {
                         font-size: 14px;
                         font-weight: 300;
                         color: #FFFFFFD9;
                     }
-    
+
                     .footer-schedule-time {
                         font-size: 13px;
                         font-weight: 200;
                         color: #FFFFFFD9;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+    .footer {
+        padding: 60px;
+        grid-template-areas:
+            "footer-logo footer-nav"
+            "footer-contacts footer-nav "
+            "footer-socials footer-socials";
+        grid-template-columns: 1fr 2fr;
+        font-size: calc(5px + 1vw);
+
+        .footer-logo {}
+
+        .footer-socials {
+            position: absolute;
+            width: 30%;
+            bottom: 0;
+            right: 0;
+        }
+
+        .footer-nav {
+            grid-template-columns: repeat(4, 1fr);
+
+            .footer-nav-section {
+
+                .footer-nav-section-title {
+                    font-size: calc(7px + 1vw);
+                }
+
+                .footer-nav-list {
+
+                    .footer-nav-item {
+                        font-size: calc(6px + 1vw);
+                    }
+                }
+            }
+        }
+
+        .footer-contacts {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: none;
+
+            .footer-contacts-section {
+
+                .footer-contacts-section-title {
+                    font-size: calc(7px + 1vw);
+                }
+
+                .footer-contacts-list {
+
+                    .footer-contacts-item {
+                        font-size: calc(6px + 1vw);
+                    }
+                }
+
+                .footer-schedule {
+
+                    .footer-schedule-row {
+
+                        .footer-schedule-date {
+                            font-size: calc(6px + 1vw);
+                        }
+
+                        .footer-schedule-time {
+                            font-size: calc(6px + 1vw);
+                        }
                     }
                 }
             }
