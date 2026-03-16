@@ -70,3 +70,18 @@
         visibility: visible;
         pointer-events: auto;
     }
+
+
+    @media (min-width: 768px) {
+
+        .header-btn-contact {
+            width: 52px;
+            height: 52px;
+            border: 2px solid rgba(53, 140, 247, 0.5);
+
+            .contact-phone {
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
