@@ -11,7 +11,7 @@
         width: 90%;
         position: relative;
 
-        .dropdown-btn {
+        .dropdown-btn, .dropdown-btn-active {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,15 +20,26 @@
             height: 50px;
             color: #ffffff;
             background-color: #358CF7;
-            border-color: #358CF7;
             padding: 12px 20px;
             font-weight: 500;
             font-size: 14px;
             border: 1px solid #EAEAEA;
             line-height: 1.3333333;
             border-radius: 6px;
-            margin-bottom: 0;
             cursor: pointer;
+
+            .dropdown-btn-img {
+                transition: 0.3s;
+            }
+
+            .dropdown-btn-img-active {
+                transform: rotateZ(-45deg);
+                transition: 0.3s;
+            }
+        }
+
+        .dropdown-btn-active{
+            background-color: #0771c8;
         }
 
         .content-menu {
@@ -120,6 +131,7 @@
             border-radius: 6px;
             position: absolute;
             right: 0;
+            cursor: pointer;
 
             .search-logo {
                 width: 18px;
@@ -204,11 +216,40 @@
             flex: 1;
             gap: 5px;
 
-            .language-switcher{
+            .language-switcher {
                 gap: 5px;
                 margin-left: 5px;
                 padding-left: 5px;
             }
         }
     }
+}
+
+@media (hover:hover) {
+
+    .header-bottom {
+        .dropdown-menu {
+            .dropdown-btn:hover {
+                background-color: #0771c8;
+                transition: 0.3s;
+            }
+
+            .content-menu {
+                .content-menu-item {
+                    .content-menu-item-link:hover {
+                        color: #0771c8;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+
+        .header-searcher {
+            .header-searcher-btn:hover {
+                background-color: #0771c8;
+                transition: 0.3s;
+            }
+        }
+    }
+
 }

@@ -20,6 +20,16 @@
         }
     }
 
+
+
+    .header-btn-contact-arrow {
+        display: none;
+    }
+
+    .header-btn-contact-arrow-rotated{
+        display: none;
+    }
+
     .dropdown-menu {
         display: flex;
         flex-direction: column;
@@ -39,6 +49,7 @@
         visibility: hidden;
         pointer-events: none;
         z-index: 100;
+        border-radius: 6px;
     }
 
     .dropdown-menu-item {
@@ -82,6 +93,77 @@
             .contact-phone {
                 width: 26px;
                 height: 26px;
+            }
+        }
+
+        .dropdown-menu {
+            top: 57px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        .header-btn {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .header-btn-contact {
+                border: none;
+                border-radius: 0;
+                width: auto;
+                height: auto;
+                padding: 0;
+                position: static;
+                font-size: calc(100% - 3px);
+                margin: 0;
+
+                .contact-phone {
+                    width: auto;
+                    height: auto;
+                    margin: 0 5px 4px 0;
+                }
+            }
+
+            .header-btn-contact::after {
+                content: "0 800 500 600";
+                width: 100px;
+                height: 20px;
+            }
+
+            .header-btn-contact-arrow,
+            .header-btn-contact-arrow-rotated {
+                all: unset;
+                display: flex;
+                width: 15px;
+                height: 15px;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                margin-bottom: 3px;
+
+                .btn-contact-arrow-img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .header-btn-contact-arrow-rotated {
+                transform: rotateZ(-180deg);
+            }
+
+            .dropdown-menu {
+                top: 27px;
+            }
+        }
+    }
+
+
+    @media (hover:hover) {
+
+        .header-btn {
+            .header-btn-contact:hover {
+                color: #358CF7;
+                transition: 0.3s;
             }
         }
     }

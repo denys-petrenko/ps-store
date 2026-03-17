@@ -24,8 +24,12 @@ const HeaderBottom = () => {
     return (
         <div className={styles["header-bottom"]}>
             <nav ref={menuRef} className={styles["dropdown-menu"]}>
-                <button className={styles["dropdown-btn"]} onClick={() => setShowContent(prev => !prev)}>
-                    <img src={catalogBtn} alt="Catalog button" />
+                <button className={
+                    showContent
+                        ? styles["dropdown-btn-active"]
+                        : styles["dropdown-btn"]}
+                    onClick={() => setShowContent(prev => !prev)}>
+                    <img className={showContent ? styles["dropdown-btn-img-active"] : styles["dropdown-btn-img"]} src={catalogBtn} alt="Catalog button" />
                     Каталог товарів
                 </button>
                 <ul className={`${styles["content-menu"]} ${showContent ? styles.active : ""}`}>

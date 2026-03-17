@@ -124,3 +124,74 @@
         }
     }
 }
+
+@media (min-width: 1024px) {
+
+    .header-top {
+        height: 100px;
+
+        .container {
+            grid-template-columns: 0.5fr 2.5fr 1.5fr 0.7fr;
+
+            .logo {
+                width: 100%;
+            }
+
+            .menu {
+
+                .menu-list {
+                    flex-direction: row;
+                    justify-content: space-evenly;
+
+                    .menu-list-item {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .phones {
+
+                .phones-list {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    height: 100%;
+                }
+            }
+
+            .contacts {
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+@media(hover:hover) {
+
+    .header-top {
+
+        .container {
+
+            .menu {
+                .menu-list{
+                    .menu-list-item:hover{
+                        color: #358CF7;
+                        transition: 0.3s;
+                    }
+                }
+            }
+
+            .phones {
+                .phones-list {
+                    .phones-list-item {
+                        .phone-link:hover {
+                            color: #358CF7;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

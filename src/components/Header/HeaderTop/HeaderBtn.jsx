@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import phone from "../../../assets/header/city-call.svg";
 import skype from "../../../assets/header/skype.svg";
 import mail from "../../../assets/header/mail.svg";
+import btnArrow from "../../../assets/header/header-btn-arrow.svg";
 import styles from "./HeaderBtn.module.scss";
 
 const HeaderBtn = () => {
@@ -21,9 +22,16 @@ const HeaderBtn = () => {
 
 
     return (
-        <div ref={ref}>
+        <div className={styles["header-btn"]} ref={ref}>
             <button className={styles["header-btn-contact"]} onClick={() => setShowMenu(prev => !prev)}>
                 <img src={phone} alt="" className={styles["contact-phone"]} />
+            </button>
+            <button className={
+                showMenu
+                    ? styles["header-btn-contact-arrow-rotated"]
+                    : styles["header-btn-contact-arrow"]}
+                onClick={() => setShowMenu(prev => !prev)}>
+                <img className={styles["btn-contact-arrow-img"]} src={btnArrow} alt="" />
             </button>
             <ul className={`${styles["dropdown-menu"]} ${showMenu ? styles.active : ""}`}>
                 <li className={styles["dropdown-menu-item"]}>
