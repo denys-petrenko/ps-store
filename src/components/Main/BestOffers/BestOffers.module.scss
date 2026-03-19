@@ -110,7 +110,6 @@
                     color: #212229;
                     font-size: 14px;
                     font-weight: 400;
-                    // line-height: 14px;
                 }
 
                 .catalog-card-color {
@@ -136,6 +135,39 @@
 
         .catalog-cards {
             grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    
+    .best-offers {
+        margin-top: 100px;
+
+        .catalog-nav {
+
+            .catalog-nav-list {
+                width: 40%;
+            }
+        }
+
+        .catalog-cards {
+            grid-template-columns: repeat(4, 1fr);
+
+            .catalog-card {
+                cursor: pointer;
+
+                .catalog-card-content {
+                    padding: 12px;
+                }
+
+                &:hover {
+                    transition: .3s;
+                    border: 0;
+                    box-shadow: 0px 8px 21px -12px rgba(120, 125, 136, 0.35);
+                }
+            }
+
         }
     }
 }

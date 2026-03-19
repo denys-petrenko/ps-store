@@ -88,7 +88,7 @@
 
                 .footer-nav-item {
                     font-size: 14px;
-                    font-weight: 300;
+                    font-weight: 100;
                     color: #FFFFFFD9;
                     margin-bottom: 8px;
                     cursor: pointer;
@@ -122,10 +122,9 @@
                 .footer-contacts-item {
                     font-size: 14px;
                     font-size: calc(6px + 1vw);
-                    font-weight: 300;
+                    font-weight: 100;
                     color: #FFFFFFD9;
                     margin-bottom: 8px;
-                    cursor: pointer;
                 }
             }
 
@@ -141,13 +140,13 @@
 
                     .footer-schedule-date {
                         font-size: 14px;
-                        font-weight: 300;
+                        font-weight: 100;
                         color: #FFFFFFD9;
                     }
 
                     .footer-schedule-time {
                         font-size: 13px;
-                        font-weight: 200;
+                        font-weight: 100;
                         color: #FFFFFFD9;
                     }
                 }
@@ -165,9 +164,6 @@
             "footer-contacts footer-nav "
             "footer-socials footer-socials";
         grid-template-columns: 1fr 2fr;
-        font-size: calc(5px + 1vw);
-
-        .footer-logo {}
 
         .footer-socials {
             position: absolute;
@@ -182,13 +178,13 @@
             .footer-nav-section {
 
                 .footer-nav-section-title {
-                    font-size: calc(7px + 1vw);
+                    font-size: calc(6px + 1vw);
                 }
 
                 .footer-nav-list {
 
                     .footer-nav-item {
-                        font-size: calc(6px + 1vw);
+                        font-size: calc(3px + 1vw);
                     }
                 }
             }
@@ -201,27 +197,40 @@
             .footer-contacts-section {
 
                 .footer-contacts-section-title {
-                    font-size: calc(7px + 1vw);
+                    font-size: calc(6px + 1vw);
                 }
 
                 .footer-contacts-list {
-
                     .footer-contacts-item {
-                        font-size: calc(6px + 1vw);
+                        font-size: calc(3px + 1vw);
                     }
                 }
 
                 .footer-schedule {
-
                     .footer-schedule-row {
 
                         .footer-schedule-date {
-                            font-size: calc(6px + 1vw);
+                            font-size: calc(3px + 1vw);
                         }
 
                         .footer-schedule-time {
-                            font-size: calc(6px + 1vw);
+                            font-size: calc(3px + 1vw);
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (hover:hover) {
+
+    .footer {
+        .footer-nav {
+            .footer-nav-section {
+                .footer-nav-list {
+                    .footer-nav-item:hover {
+                        color: #FFFFFF;
                     }
                 }
             }

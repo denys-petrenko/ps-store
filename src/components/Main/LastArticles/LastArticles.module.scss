@@ -92,11 +92,17 @@
 
 
 @media (min-width: 768px) {
-    .last-articles{
+    .last-articles {
         padding-bottom: 50px;
-        
-        .articles-cards{
+
+        .articles-cards {
             grid-template-columns: repeat(3, 1fr);
         }
+    }
+}
+
+@media (min-width: 1024px) {
+    .last-articles{
+        margin-top: 100px;
     }
 }

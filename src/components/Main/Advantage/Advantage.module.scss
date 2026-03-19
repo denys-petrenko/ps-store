@@ -42,3 +42,23 @@
         height: 120px;
     }
 }
+
+@media (min-width: 1024px) {
+
+    .advantage {
+        margin-top: 100px;
+
+        .advantage-card {
+
+            .logo {
+                top: -21px;
+                width: 48px;
+                height: 43px;
+            }
+
+            .title {
+                font-size: calc(7px + 1vw);
+            }
+        }
+    }
+}

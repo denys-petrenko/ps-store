@@ -29,7 +29,6 @@ const Favourites = () => {
                         <source media="(max-width: 760px)" srcSet={xbox} />
                         <img className={styles["category-cover"]} src={xboxDesktop} alt="Xbox X" />
                     </picture>
-
                     <div className={styles.shade}>
                         <button className={styles["category-button"]}>Перейти</button>
                     </div>

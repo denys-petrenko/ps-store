@@ -68,8 +68,6 @@
                         background-repeat: no-repeat;
                     }
                 }
-
-
             }
         }
     }
@@ -95,10 +93,24 @@
                 width: 100%;
                 margin-top: 0;
 
-                .benefits-card-title{
+                .benefits-card-title {
                     line-height: normal;
                 }
             }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .benefits {
+        
+        .benefits-card {
+            flex-direction: row;
+        }
+
+        .benefits-card:nth-child(1) {
+            flex-direction: row-reverse;
         }
     }
 }
