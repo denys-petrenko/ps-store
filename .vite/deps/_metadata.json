@@ -1,0 +1,40 @@
+{
+  "hash": "1cf8d8f2",
+  "configHash": "af8f11d0",
+  "lockfileHash": "49595c16",
+  "browserHash": "040906cc",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "cd9bf4e9",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "73c24d1d",
+      "needsInterop": true
+    },
+    "embla-carousel-react": {
+      "src": "../../node_modules/embla-carousel-react/esm/embla-carousel-react.esm.js",
+      "file": "embla-carousel-react.js",
+      "fileHash": "3fb223be",
+      "needsInterop": false
+    },
+    "embla-carousel-autoplay": {
+      "src": "../../node_modules/embla-carousel-autoplay/esm/embla-carousel-autoplay.esm.js",
+      "file": "embla-carousel-autoplay.js",
+      "fileHash": "c4bca440",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-HWMK2RSU": {
+      "file": "chunk-HWMK2RSU.js"
+    },
+    "chunk-5WRI5ZAA": {
+      "file": "chunk-5WRI5ZAA.js"
+    }
+  }
+}
