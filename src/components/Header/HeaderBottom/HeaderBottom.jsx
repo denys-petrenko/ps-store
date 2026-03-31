@@ -6,9 +6,16 @@ import cart from "../../../assets/header/cart.svg";
 import styles from "./HeaderBottom.module.scss";
 import { useEffect, useRef, useState } from "react";
 
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import { LOCALS } from "../../../i18n/constants";
+
 const HeaderBottom = () => {
     const [showContent, setShowContent] = useState(false);
+    const [isActive, setIsActive] = useState(false);
     const menuRef = useRef(null);
+
+    const { t } = useTranslation();
 
     useEffect(() => {
         const handleContentBtn = (e) => {
@@ -30,20 +37,21 @@ const HeaderBottom = () => {
                         : styles["dropdown-btn"]}
                     onClick={() => setShowContent(prev => !prev)}>
                     <img className={showContent ? styles["dropdown-btn-img-active"] : styles["dropdown-btn-img"]} src={catalogBtn} alt="Catalog button" />
-                    Каталог товарів
+                    {t("header.dropdown.button")}
                 </button>
                 <ul className={`${styles["content-menu"]} ${showContent ? styles.active : ""}`}>
-                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Apple</a></li>
-                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Гаджети та аксесуари</a></li>
-                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Електронні книги</a></li>
-                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Конструктори LEGO</a></li>
-                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Мобільний зв'язок</a></li>
-                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Годинник</a></li>
-                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>Спорт та туризм</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>{t("header.dropdown.menu.apple")}</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>{t("header.dropdown.menu.consoles")}</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>{t("header.dropdown.menu.gadgets")}</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>{t("header.dropdown.menu.e_books")}</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>{t("header.dropdown.menu.lego")}</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>{t("header.dropdown.menu.mobile")}</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>{t("header.dropdown.menu.watches")}</a></li>
+                    <li className={styles["content-menu-item"]}><a href="#" className={styles["content-menu-item-link"]}>{t("header.dropdown.menu.sports_outdoors")}</a></li>
                 </ul>
             </nav>
             <div className={styles["header-searcher"]}>
-                <input type="text" name="search" placeholder="Search" className={styles["search-input"]} />
+                <input type="text" name="search" placeholder={t("header.placeholder")} className={styles["search-input"]} />
                 <button className={styles["header-searcher-btn"]}>
                     <img src={searchBtn} alt="" className={styles["search-logo"]} />
                 </button>
@@ -61,10 +69,18 @@ const HeaderBottom = () => {
                     </a>
                 </div>
                 <div className={styles["language-switcher"]}>
-                    <button className={styles["language-select"]}>
+                    <button
+                        disabled={i18next.language === LOCALS.UK}
+                        className={`${styles["language-select"]} ${isActive ? styles[".active"] : ""}`}
+                        onClick={() => i18next.changeLanguage(LOCALS.UK)}
+                    >
                         UA
                     </button>
-                    <button className={styles["language-select"]}>
+                    <button
+                        disabled={i18next.language === LOCALS.EN}
+                        className={styles["language-select"]}
+                        onClick={() => i18next.changeLanguage(LOCALS.EN)}
+                    >
                         EN
                     </button>
                 </div>

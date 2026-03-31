@@ -6,7 +6,13 @@ import kyivstar from "../../../assets/header/kyivstar-call.svg";
 import vodafone from "../../../assets/header/vodafone-call.svg";
 import styles from "./HeaderTop.module.scss";
 
+import { useTranslation } from "react-i18next";
+
+
 const HeaderTop = () => {
+    const { t } = useTranslation();
+    // const { t } = useTranslation("header");
+
     return (
         <div className={styles["header-top"]}>
             <div className={styles.container}>
@@ -17,10 +23,10 @@ const HeaderTop = () => {
                 </div>
                 <div className={styles.menu}>
                     <ul className={styles["menu-list"]}>
-                        <li className={styles["menu-list-item"]}>Контакти</li>
-                        <li className={styles["menu-list-item"]}>Огляди ігор</li>
-                        <li className={styles["menu-list-item"]}>Доставка та оплата</li>
-                        <li className={styles["menu-list-item"]}>Про нас</li>
+                        <li className={styles["menu-list-item"]}>{t("header.menu.contacts")}</li>
+                        <li className={styles["menu-list-item"]}>{t("header.menu.reviews")}</li>
+                        <li className={styles["menu-list-item"]}>{t("header.menu.delivery")}</li>
+                        <li className={styles["menu-list-item"]}>{t("header.menu.about_us")}</li>
                     </ul>
                 </div>
                 <div className={styles.phones}>

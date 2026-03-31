@@ -1,0 +1,24 @@
+{
+    "header": {
+        "menu": {
+            "contacts": "Контакти",
+            "reviews": "Огляди ігор",
+            "delivery": "Доставка та оплата",
+            "about_us": "Про нас"
+        },
+        "placeholder": "Пошук",
+        "dropdown": {
+            "button": "Каталог товарів",
+            "menu": {
+                "apple": "Apple",
+                "consoles": "Ігрові приставки",
+                "gadgets": "Гаджети та аксесуари",
+                "e_books": "Електронні книги",
+                "lego": "Конструктори LEGO",
+                "mobile": "Мобільний зв'язок",
+                "watches": "Годинники",
+                "sports_outdoors": "Спорт та туризм"
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "header": {
+        "menu": {
+            "contacts": "Contacts",
+            "reviews": "Game Reviews",
+            "delivery": "Delivery & Payment",
+            "about_us": "About Us"
+        },
+        "placeholder": "Search",
+        "dropdown": {
+            "button": "Product Catalog",
+            "menu": {
+                "apple": "Apple",
+                "consoles": "Game Consoles",
+                "gadgets": "Gadgets & Accessories",
+                "e_books": "E-Books",
+                "lego": "LEGO",
+                "mobile": "Mobile",
+                "watches": "Watches",
+                "sports_outdoors": "Sports & Outdoors"
+            }
+        }
+    }
+}
