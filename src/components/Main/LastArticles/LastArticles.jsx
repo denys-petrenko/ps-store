@@ -1,10 +1,13 @@
 import styles from "./LastArticles.module.scss";
 import nintendo from "../../../assets/last-articles/nintendo-swt.png";
+import { useTranslation } from "react-i18next";
 
 const LastArticles = () => {
+    const {t} = useTranslation();
+
     return (
         <section className={styles["last-articles"]}>
-            <h2 className={styles["last-articles-title"]}>Останні статті</h2>
+            <h2 className={styles["last-articles-title"]}>{t("main.last_articles.title")}</h2>
             <div className={styles["articles-cards"]}>
                 <div className={styles["article-card"]}>
                     <div className={styles["article-card-media"]}>

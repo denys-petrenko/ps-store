@@ -40,7 +40,7 @@
                 "description": "Великий вибір варіантів оплати"
             }
         },
-        "favourites":{
+        "favourites": {
             "title": "Популярні категорії нашого магазину"
         },
         "best_offers": {
@@ -50,6 +50,9 @@
                 "new_arrivals": "Новинки",
                 "discounts": "Знижки"
             }
+        },
+        "last_articles": {
+            "title": "Останні статті"
         }
     }
 }

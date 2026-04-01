@@ -50,6 +50,9 @@
                 "new_arrivals": "New arrivals",
                 "discounts": "Discounts"
             }
+        },
+        "last_articles": {
+            "title": "Last Articles"
         }
     }
 }
