@@ -4,25 +4,27 @@ import news from "../../../assets/best-offers/new.svg";
 import discount from "../../../assets/best-offers/discount.svg";
 import dualshock from "../../../assets/best-offers/cards/dualshock4.svg";
 import favIcon from "../../../assets/best-offers/cards/fav-icon.svg";
-
+import { useTranslation } from "react-i18next";
 
 const BestOffers = () => {
+    const { t } = useTranslation();
+
     return (
         <section className={styles["best-offers"]}>
-            <h2 className={styles.title}>Краща пропозиція</h2>
+            <h2 className={styles.title}>{t("main.best_offers.title")}</h2>
             <nav className={styles["catalog-nav"]}>
                 <ul className={styles["catalog-nav-list"]}>
                     <li className={styles["catalog-nav-item"]}>
                         <img src={popular} alt="Popular products" className={styles["catalog-nav-item-img"]} />
-                        <button className={styles["catalog-nav-btn"]}>Популярні</button>
+                        <button className={styles["catalog-nav-btn"]}>{t("main.best_offers.nav.trending")}</button>
                     </li>
                     <li className={styles["catalog-nav-item"]}>
                         <img src={news} alt="New products" className={styles["catalog-nav-item-img"]} />
-                        <button className={styles["catalog-nav-btn"]}>Новинки</button>
+                        <button className={styles["catalog-nav-btn"]}>{t("main.best_offers.nav.new_arrivals")}</button>
                     </li>
                     <li className={styles["catalog-nav-item"]}>
                         <img src={discount} alt="Discount" className={styles["catalog-nav-item-img"]} />
-                        <button className={styles["catalog-nav-btn"]}>Знижки</button>
+                        <button className={styles["catalog-nav-btn"]}>{t("main.best_offers.nav.discounts")}</button>
                     </li>
                 </ul>
             </nav>

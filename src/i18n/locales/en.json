@@ -40,8 +40,16 @@
                 "description": "Multiple ways to pay"
             }
         },
-        "favourites":{
+        "favourites": {
             "title": "Popular categories in our store"
+        },
+        "best_offers": {
+            "title": "Best offer",
+            "nav": {
+                "trending": "Trending",
+                "new_arrivals": "New arrivals",
+                "discounts": "Discounts"
+            }
         }
     }
 }
