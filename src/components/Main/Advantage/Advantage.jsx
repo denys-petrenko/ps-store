@@ -3,10 +3,7 @@ import car from "../../../assets/advantage/car-delivery.svg";
 import guarantee from "../../../assets/advantage/guarantee.svg";
 import loan from "../../../assets/advantage/loan.svg";
 import payment from "../../../assets/advantage/payment.svg";
-
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
-import { LOCALS } from "../../../i18n/constants";
 
 const Advantage = () => {
     const {t} = useTranslation();

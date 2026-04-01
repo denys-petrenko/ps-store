@@ -39,6 +39,9 @@
                 "title": "Payment",
                 "description": "Multiple ways to pay"
             }
+        },
+        "favourites":{
+            "title": "Popular categories in our store"
         }
     }
 }

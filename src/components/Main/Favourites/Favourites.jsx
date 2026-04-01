@@ -5,12 +5,15 @@ import xbox from "../../../assets/favourites/xbox-x.png";
 import xboxDesktop from "../../../assets/favourites/xbox-x-desktop.png";
 import nintendo from "../../../assets/favourites/nintendo-switch.png";
 import psp from "../../../assets/favourites/ps-portable.png";
+import { useTranslation } from "react-i18next";
 
 const Favourites = () => {
+    const { t } = useTranslation();
+
     return (
         <section className={styles.favourites}>
             <h2 className={styles.title}>
-                Популярні категорії нашого магазину
+                {t("main.favourites.title")}
             </h2>
             <div className={styles.categories}>
                 <div className={styles.category}>
