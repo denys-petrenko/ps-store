@@ -62,5 +62,32 @@
             "placeholder": "Enter your email address",
             "button": "Subscribe"
         }
+    },
+    "benefits": {
+        "top": {
+            "title": "A new level in electronics and digital technology!",
+            "description_top": "Welcome to Up2Date – the online store every gamer in Ukraine knows! For many years, we’ve been selling products connected to the gaming industry, from consoles of all models to accessories and audio equipment. Our gamer-focused store offers a huge selection of gadgets and products from leading global brands. Here, you’ll always find exactly what you’re looking for, whether for yourself or as a gift. We provide competitive prices and 100% authentic products.",
+            "description_bottom": "Our gaming console store has been around for many years and has earned a strong reputation among Ukrainian gamers. We receive direct supplies from leading manufacturers and constantly update our catalogs. Today, you’ll find not only gaming-related products but also complementary devices and a variety of gadgets from popular brands. Nevertheless, we remain a dedicated gaming tech store and are among the first to bring the latest products to Ukraine."
+        },
+        "bottom": {
+            "title": "All types of gaming products at Up2Date",
+            "description_top": "In our electronics online store, you’ll find everything you need. We constantly update our catalogs and bring in the hottest new arrivals. We also haven’t forgotten about fans of classics and even retro – that’s why our catalogs include retro games, board games, retro consoles, and more. At Up2Date, you can shop the following product categories:",
+            "description_list": [
+                "Gaming consoles;",
+                "Portable gaming consoles;",
+                "Console controllers;",
+                "Bundles (console + games);",
+                "Video games (discs, cartridges & digital codes);",
+                "VR gaming devices (PlayStation VR);",
+                "Various accessories (cases, cables, screen protectors, memory cards, etc.);",
+                "Board games;",
+                "Collector’s editions, figures, and more."
+            ],
+            "description_bottom": [
+                "We supply only original products from leading manufacturers such as Sony, Nintendo, Microsoft, Hori, and others. Every product comes with a warranty card.",
+                "You can also purchase subscriptions to gaming services on the Up2Date website, including Steam, EA Pass, PlayStation Plus, Xbox Game Pass, and more. Vouchers for these subscriptions can be used personally or purchased as a gift for a gamer friend — it’s a present no one will refuse!",
+                "In addition to gaming-related products, we also offer other types of tech, such as electric transport, graphic tablets, crypto wallets, quadcopters, 3D pens, and various accessories. All of this can be purchased on Up2Date in just a few clicks."
+            ]
+        }
     }
 }
