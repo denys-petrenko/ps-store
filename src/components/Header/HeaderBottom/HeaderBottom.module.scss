@@ -177,6 +177,7 @@
                 color: #358CF7;
                 text-transform: uppercase;
                 border-bottom: 2px solid transparent;
+                transition: 0.2s;
             }
 
             .language-select:hover {
@@ -188,14 +189,6 @@
                 cursor: auto;
                 border-bottom: 2px solid transparent;
             }
-
-            .language-select.active {
-                border: 2px solid red;
-                color: green;
-            }
-
-
-
         }
 
         .language-switcher::before {

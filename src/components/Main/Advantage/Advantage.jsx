@@ -4,44 +4,49 @@ import guarantee from "../../../assets/advantage/guarantee.svg";
 import loan from "../../../assets/advantage/loan.svg";
 import payment from "../../../assets/advantage/payment.svg";
 
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import { LOCALS } from "../../../i18n/constants";
 
 const Advantage = () => {
+    const {t} = useTranslation();
+
     return (
         <section className={styles.advantage}>
             <div className={styles["advantage-card"]}>
                 <img src={car} alt="Delivery" className={styles.logo} />
                 <h1 className={styles.title}>
-                    Доставка по всій Україні
+                    {t("main.advantage.delivery.title")}
                 </h1>
                 <p className={styles.description}>
-                    Понад 120 міст
+                    {t("main.advantage.delivery.description")}
                 </p>
             </div>
             <div className={styles["advantage-card"]}>
                 <img src={guarantee} alt="Guarantee" className={styles.logo} />
                 <h1 className={styles.title}>
-                    Гарантія
+                    {t("main.advantage.guarantee.title")}
                 </h1>
                 <p className={styles.description}>
-                    Гарантія 18 місяців
+                    {t("main.advantage.guarantee.description")}
                 </p>
             </div>
             <div className={styles["advantage-card"]}>
                 <img src={loan} alt="Loan" className={styles.logo} />
                 <h1 className={styles.title}>
-                    Розстрочка
+                    {t("main.advantage.installment.title")}
                 </h1>
                 <p className={styles.description}>
-                    Розстрочка до 18 місяців
+                    {t("main.advantage.installment.description")}
                 </p>
             </div>
             <div className={styles["advantage-card"]}>
                 <img src={payment} alt="Payment" className={styles.logo} />
                 <h1 className={styles.title}>
-                    Оплата
+                    {t("main.advantage.payment.title")}
                 </h1>
                 <p className={styles.description}>
-                    Великий вибір варіантів оплати
+                    {t("main.advantage.payment.description")}
                 </p>
             </div>
         </section>

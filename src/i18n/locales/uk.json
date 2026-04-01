@@ -20,5 +20,25 @@
                 "sports_outdoors": "Спорт та туризм"
             }
         }
+    },
+    "main": {
+        "advantage": {
+            "delivery": {
+                "title": "Доставка по всій Україні",
+                "description": "Понад 120 міст"
+            },
+            "guarantee": {
+                "title": "Гарантія",
+                "description": "Гарантія 18 місяців"
+            },
+            "installment": {
+                "title": "Розстрочка",
+                "description": "Розстрочка до 18 місяців"
+            },
+            "payment": {
+                "title": "Оплата",
+                "description": "Великий вибір варіантів оплати"
+            }
+        }
     }
 }

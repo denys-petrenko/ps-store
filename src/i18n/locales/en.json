@@ -20,5 +20,25 @@
                 "sports_outdoors": "Sports & Outdoors"
             }
         }
+    },
+    "main": {
+        "advantage": {
+            "delivery": {
+                "title": "Shipping throughout Ukraine",
+                "description": "Over 120 cities"
+            },
+            "guarantee": {
+                "title": "Guarantee",
+                "description": "18-month warranty"
+            },
+            "installment": {
+                "title": "Installment plan",
+                "description": "Installments up to 18 months"
+            },
+            "payment": {
+                "title": "Payment",
+                "description": "Multiple ways to pay"
+            }
+        }
     }
 }
