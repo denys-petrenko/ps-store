@@ -54,5 +54,13 @@
         "last_articles": {
             "title": "Last Articles"
         }
+    },
+    "subscription": {
+        "title": "Subscribe",
+        "subtitle": "Keep up with the newest products",
+        "form": {
+            "placeholder": "Enter your email address",
+            "button": "Subscribe"
+        }
     }
 }
