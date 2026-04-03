@@ -4,8 +4,16 @@ import facebook from "../../assets/footer/facebook.svg";
 import youtube from "../../assets/footer/youtube.svg";
 import twitter from "../../assets/footer/twitter.svg";
 import google from "../../assets/footer/google.svg";
+import { useTranslation } from "react-i18next";
+
+const objectWithoutTitle = (obj) => {
+    return Object.entries(obj).filter(([key]) => key !== "title");
+}
 
 const Footer = () => {
+    const { t } = useTranslation();
+    const { nav, contacts } = t("footer", { returnObjects: true });
+
     return (
         <footer className={styles.footer}>
             <div className={styles["footer-logo"]}>
@@ -26,72 +34,57 @@ const Footer = () => {
                         </a>
                     </li>
                     <li className={styles["footer-socials-item"]}>
-                        <a href="" className={styles["footer-socials-link"]}>
+                        <a href="#" className={styles["footer-socials-link"]}>
                             <img src={twitter} alt="Twitter" className={styles["footer-socials-img"]} />
                         </a>
                     </li>
                     <li className={styles["footer-socials-item"]}>
-                        <a href="" className={styles["footer-socials-link"]}>
+                        <a href="#" className={styles["footer-socials-link"]}>
                             <img src={google} alt="Google" className={styles["footer-socials-img"]} />
                         </a>
                     </li>
                 </ul>
             </div>
             <div className={styles["footer-nav"]}>
-                <div className={styles["footer-nav-section"]}>
-                    <h2 className={styles["footer-nav-section-title"]}>Інформація</h2>
-                    <ul className={styles["footer-nav-list"]}>
-                        <li className={styles["footer-nav-item"]}>Доставка та оплата</li>
-                        <li className={styles["footer-nav-item"]}>Про нас</li>
-                    </ul>
-                </div>
-                <div className={styles["footer-nav-section"]}>
-                    <h2 className={styles["footer-nav-section-title"]}>Служба підтримки</h2>
-                    <ul className={styles["footer-nav-list"]}>
-                        <li className={styles["footer-nav-item"]}>Контакти</li>
-                        <li className={styles["footer-nav-item"]}>Повернення товару</li>
-                        <li className={styles["footer-nav-item"]}>Карта сайту</li>
-                    </ul>
-                </div>
-                <div className={styles["footer-nav-section"]}>
-                    <h2 className={styles["footer-nav-section-title"]}>Додатково</h2>
-                    <ul className={styles["footer-nav-list"]}>
-                        <li className={styles["footer-nav-item"]}>Виробники</li>
-                        <li className={styles["footer-nav-item"]}>Подарункові сертифікати</li>
-                        <li className={styles["footer-nav-item"]}>Партнерська програма</li>
-                        <li className={styles["footer-nav-item"]}>Акції</li>
-                    </ul>
-                </div>
-                <div className={styles["footer-nav-section"]}>
-                    <h2 className={styles["footer-nav-section-title"]}>Особистий кабінет</h2>
-                    <ul className={styles["footer-nav-list"]}>
-                        <li className={styles["footer-nav-item"]}>Особистий кабінет</li>
-                        <li className={styles["footer-nav-item"]}>Історія замовлень</li>
-                        <li className={styles["footer-nav-item"]}>Закладки</li>
-                        <li className={styles["footer-nav-item"]}>Розсилка</li>
-                    </ul>
-                </div>
+                {Object.entries(nav)
+                    .map(([key, value]) => (
+                        <div key={key} className={styles["footer-nav-section"]}>
+                            <h3 className={styles["footer-nav-section-title"]}>{value.title}</h3>
+                            <ul className={styles["footer-nav-list"]}>
+                                {
+                                    value.links
+                                        .map((link) => (
+                                            <li key={link} className={styles["footer-nav-item"]}>{link}</li>
+                                        ))
+                                }
+                            </ul>
+                        </div>
+                    ))}
             </div>
             <div className={styles["footer-contacts"]}>
                 <div className={styles["footer-contacts-section"]}>
-                    <h2 className={styles["footer-contacts-section-title"]}>Адреса:</h2>
+                    <h3 className={styles["footer-contacts-section-title"]}>{contacts.addresses.title}</h3>
                     <ul className={styles["footer-contacts-list"]}>
-                        <li className={styles["footer-contacts-item"]}>м.Київ</li>
-                        <li className={styles["footer-contacts-item"]}>вул. П. Сагайдачного, 25</li>
-                        <li className={styles["footer-contacts-item"]}>вул. Здолбунівська, 13</li>
+                        {
+                            objectWithoutTitle(contacts.addresses)
+                                .map(([key, value]) => (
+                                    <li key={key} className={styles["footer-contacts-item"]}>{value}</li>
+                                ))
+                        }
                     </ul>
                 </div>
                 <div className={styles["footer-contacts-section"]}>
-                    <h2 className={styles["footer-contacts-section-title"]}>Графік роботи</h2>
+                    <h3 className={styles["footer-contacts-section-title"]}>{contacts.opening_hours.title}</h3>
                     <dl className={styles["footer-schedule"]}>
-                        <div className={styles["footer-schedule-row"]}>
-                            <dt className={styles["footer-schedule-date"]}>Будні дні:</dt>
-                            <dd className={styles["footer-schedule-time"]}>з 9 до 21 години</dd>
-                        </div>
-                        <div className={styles["footer-schedule-row"]}>
-                            <dt className={styles["footer-schedule-date"]}>Субота-неділя:</dt>
-                            <dd className={styles["footer-schedule-time"]}>з 10 до 20 годин</dd>
-                        </div>
+                        {
+                            objectWithoutTitle(contacts.opening_hours)
+                                .map(([key, value]) => (
+                                    <div key={key} className={styles["footer-schedule-row"]}>
+                                        <dt className={styles["footer-schedule-date"]}>{value.title}</dt>
+                                        <dd className={styles["footer-schedule-time"]}>{value.hours}</dd>
+                                    </div>
+                                ))
+                        }
                     </dl>
                 </div>
             </div>

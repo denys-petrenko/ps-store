@@ -89,5 +89,61 @@
                 "In addition to gaming-related products, we also offer other types of tech, such as electric transport, graphic tablets, crypto wallets, quadcopters, 3D pens, and various accessories. All of this can be purchased on Up2Date in just a few clicks."
             ]
         }
+    },
+    "footer": {
+        "nav": [
+            {
+                "title": "Information",
+                "links": [
+                    "Shipping & Payment",
+                    "About Us"
+                ]
+            },
+            {
+                "title": "Support",
+                "links": [
+                    "Contacts",
+                    "Returns",
+                    "Sitemap"
+                ]
+            },
+            {
+                "title": "Additional",
+                "links": [
+                    "Brands",
+                    "Gift Cards",
+                    "Affiliate Program",
+                    "Promotions"
+                ]
+            },
+            {
+                "title": "Account",
+                "links": [
+                    "Account",
+                    "Order History",
+                    "Wishlist",
+                    "Newsletter"
+                ]
+            }
+        ],
+        "contacts": {
+            "addresses": {
+                "title": "Addresses:",
+                "city": "Kyiv",
+                "street_main": "13 Zdolbunivska St.",
+                "street_secondary": "25 P. Sahaidachnoho St."
+            },
+            "opening_hours": {
+                "title": "Opening hours",
+                "wekdays": {
+                    "title": "Wekdays:",
+                    "hours": "9:00 AM to 9:00 PM"
+                },
+                "weekend": {
+                    "title": "Weekend:",
+                    "hours": "10:00 AM to 8:00 PM"
+                }
+            }
+        }
     }
 }

@@ -34,9 +34,9 @@ const Benefits = () => {
                         {t("benefits.bottom.description_top")}
                     </p>
                     <ul className={styles["benefits-card-list"]}>
-                        {list.map((el, i) => <li key={i} className={styles["benefits-card-item"]}>{t(el)}</li>)}
+                        {list.map((el, i) => <li key={i} className={styles["benefits-card-item"]}>{el}</li>)}
                     </ul>
-                    {descriptionsArray.map((el, i) => <p key={i} className={styles["benefits-card-description"]}>{t(el)}</p>)}
+                    {descriptionsArray.map((el, i) => <p key={i} className={styles["benefits-card-description"]}>{el}</p>)}
                 </div>
             </div>
         </section>
