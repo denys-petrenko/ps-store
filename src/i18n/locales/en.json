@@ -1,24 +1,24 @@
 {
     "header": {
-        "menu": {
-            "contacts": "Contacts",
-            "reviews": "Game Reviews",
-            "delivery": "Delivery & Payment",
-            "about_us": "About Us"
-        },
+        "menu": [
+            "Contacts",
+            "Game Reviews",
+            "Delivery & Payment",
+            "About Us"
+        ],
         "placeholder": "Search",
         "dropdown": {
             "button": "Product Catalog",
-            "menu": {
-                "apple": "Apple",
-                "consoles": "Game Consoles",
-                "gadgets": "Gadgets & Accessories",
-                "e_books": "E-Books",
-                "lego": "LEGO",
-                "mobile": "Mobile",
-                "watches": "Watches",
-                "sports_outdoors": "Sports & Outdoors"
-            }
+            "menu": [
+                "Apple",
+                "Game Consoles",
+                "Gadgets & Accessories",
+                "E-Books",
+                "LEGO",
+                "Mobile",
+                "Watches",
+                "Sports & Outdoors"
+            ]
         }
     },
     "main": {
@@ -93,6 +93,7 @@
     "footer": {
         "nav": [
             {
+                "id": "information",
                 "title": "Information",
                 "links": [
                     "Shipping & Payment",
@@ -100,6 +101,7 @@
                 ]
             },
             {
+                "id": "support",
                 "title": "Support",
                 "links": [
                     "Contacts",
@@ -108,6 +110,7 @@
                 ]
             },
             {
+                "id": "additional",
                 "title": "Additional",
                 "links": [
                     "Brands",
@@ -117,6 +120,7 @@
                 ]
             },
             {
+                "id": "account",
                 "title": "Account",
                 "links": [
                     "Account",
@@ -129,20 +133,24 @@
         "contacts": {
             "addresses": {
                 "title": "Addresses:",
-                "city": "Kyiv",
-                "street_main": "13 Zdolbunivska St.",
-                "street_secondary": "25 P. Sahaidachnoho St."
+                "links": [
+                    "Kyiv",
+                    "13 Zdolbunivska St.",
+                    "25 P. Sahaidachnoho St."
+                ]
             },
             "opening_hours": {
                 "title": "Opening hours",
-                "wekdays": {
-                    "title": "Wekdays:",
-                    "hours": "9:00 AM to 9:00 PM"
-                },
-                "weekend": {
-                    "title": "Weekend:",
-                    "hours": "10:00 AM to 8:00 PM"
-                }
+                "links": [
+                    {
+                        "title": "Wekdays:",
+                        "hours": "9:00 AM to 9:00 PM"
+                    },
+                    {
+                        "title": "Weekend:",
+                        "hours": "10:00 AM to 8:00 PM"
+                    }
+                ]
             }
         }
     }

@@ -6,9 +6,6 @@ import twitter from "../../assets/footer/twitter.svg";
 import google from "../../assets/footer/google.svg";
 import { useTranslation } from "react-i18next";
 
-const objectWithoutTitle = (obj) => {
-    return Object.entries(obj).filter(([key]) => key !== "title");
-}
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -46,29 +43,30 @@ const Footer = () => {
                 </ul>
             </div>
             <div className={styles["footer-nav"]}>
-                {Object.entries(nav)
-                    .map(([key, value]) => (
-                        <div key={key} className={styles["footer-nav-section"]}>
-                            <h3 className={styles["footer-nav-section-title"]}>{value.title}</h3>
-                            <ul className={styles["footer-nav-list"]}>
-                                {
-                                    value.links
-                                        .map((link) => (
-                                            <li key={link} className={styles["footer-nav-item"]}>{link}</li>
-                                        ))
-                                }
-                            </ul>
-                        </div>
-                    ))}
+                {
+                    nav
+                        .map((value) => (
+                            <div key={value.title} className={styles["footer-nav-section"]}>
+                                <h3 className={styles["footer-nav-section-title"]}>{value.title}</h3>
+                                <ul className={styles["footer-nav-list"]}>
+                                    {
+                                        value.links
+                                            .map((link) => (
+                                                <li key={link} className={styles["footer-nav-item"]}>{link}</li>
+                                            ))
+                                    }
+                                </ul>
+                            </div>
+                        ))}
             </div>
             <div className={styles["footer-contacts"]}>
                 <div className={styles["footer-contacts-section"]}>
                     <h3 className={styles["footer-contacts-section-title"]}>{contacts.addresses.title}</h3>
                     <ul className={styles["footer-contacts-list"]}>
                         {
-                            objectWithoutTitle(contacts.addresses)
-                                .map(([key, value]) => (
-                                    <li key={key} className={styles["footer-contacts-item"]}>{value}</li>
+                            contacts.addresses.links
+                                .map((value) => (
+                                    <li key={value} className={styles["footer-contacts-item"]}>{value}</li>
                                 ))
                         }
                     </ul>
@@ -77,9 +75,9 @@ const Footer = () => {
                     <h3 className={styles["footer-contacts-section-title"]}>{contacts.opening_hours.title}</h3>
                     <dl className={styles["footer-schedule"]}>
                         {
-                            objectWithoutTitle(contacts.opening_hours)
-                                .map(([key, value]) => (
-                                    <div key={key} className={styles["footer-schedule-row"]}>
+                            contacts.opening_hours.links
+                                .map(value => (
+                                    <div key={value.title} className={styles["footer-schedule-row"]}>
                                         <dt className={styles["footer-schedule-date"]}>{value.title}</dt>
                                         <dd className={styles["footer-schedule-time"]}>{value.hours}</dd>
                                     </div>

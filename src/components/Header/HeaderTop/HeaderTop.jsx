@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 const HeaderTop = () => {
     const { t } = useTranslation();
-    // const { t } = useTranslation("header");
+    const menuList = t("header.menu", { returnObjects: true });
 
     return (
         <div className={styles["header-top"]}>
@@ -23,10 +23,12 @@ const HeaderTop = () => {
                 </div>
                 <div className={styles.menu}>
                     <ul className={styles["menu-list"]}>
-                        <li className={styles["menu-list-item"]}>{t("header.menu.contacts")}</li>
-                        <li className={styles["menu-list-item"]}>{t("header.menu.reviews")}</li>
-                        <li className={styles["menu-list-item"]}>{t("header.menu.delivery")}</li>
-                        <li className={styles["menu-list-item"]}>{t("header.menu.about_us")}</li>
+                        {
+                            menuList
+                                .map(item => (
+                                    <li key={item.toLowerCase()} className={styles["menu-list-item"]}>{item}</li>
+                                ))
+                        }
                     </ul>
                 </div>
                 <div className={styles.phones}>
