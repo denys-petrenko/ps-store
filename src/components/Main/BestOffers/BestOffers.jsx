@@ -4,7 +4,8 @@ import news from "../../../assets/best-offers/new.svg";
 import discount from "../../../assets/best-offers/discount.svg";
 import dualshock from "../../../assets/best-offers/cards/dualshock4.svg";
 import favIcon from "../../../assets/best-offers/cards/fav-icon.svg";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"
+
 
 const BestOffers = () => {
     const { t } = useTranslation();
