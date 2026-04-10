@@ -1,6 +1,7 @@
 import styles from "./Benefits.module.scss";
-import newLevel from "../../assets/benefits/benefits-new-level.png";
-import products from "../../assets/benefits/benefits-products.png";
+import newLevel from "../../../../assets/benefits/benefits-new-level.png";
+import products from "../../../../assets/benefits/benefits-products.png";
+
 import { useTranslation } from "react-i18next";
 
 const Benefits = () => {

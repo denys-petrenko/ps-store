@@ -1,14 +1,17 @@
 import styles from "./Favourites.module.scss";
-import ps from "../../../assets/favourites/play-station.png";
-import psDesktop from "../../../assets/favourites/ps5-desktop.png";
-import xbox from "../../../assets/favourites/xbox-x.png";
-import xboxDesktop from "../../../assets/favourites/xbox-x-desktop.png";
-import nintendo from "../../../assets/favourites/nintendo-switch.png";
-import psp from "../../../assets/favourites/ps-portable.png";
+import ps from "../../../../../assets/favourites/play-station.png";
+import psDesktop from "../../../../../assets/favourites/ps5-desktop.png";
+import xbox from "../../../../../assets/favourites/xbox-x.png";
+import xboxDesktop from "../../../../../assets/favourites/xbox-x-desktop.png";
+import nintendo from "../../../../../assets/favourites/nintendo-switch.png";
+import psp from "../../../../../assets/favourites/ps-portable.png";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+
 
 const Favourites = () => {
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     return (
         <section className={styles.favourites}>
@@ -23,7 +26,7 @@ const Favourites = () => {
                         <img className={styles["category-cover"]} src={psDesktop} alt="Play Station 5" />
                     </picture>
                     <div className={styles.shade}>
-                        <button className={styles["category-button"]}>Перейти</button>
+                        <button className={styles["category-button"]} onClick={() => navigate("/ps-store/products")}>Перейти</button>
                     </div>
                 </div>
                 <div className={styles.category}>

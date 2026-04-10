@@ -7,6 +7,7 @@ import vodafone from "../../../assets/header/vodafone-call.svg";
 import styles from "./HeaderTop.module.scss";
 
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 
 const HeaderTop = () => {
@@ -17,9 +18,9 @@ const HeaderTop = () => {
         <div className={styles["header-top"]}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <a className={styles["logo-link"]} href="">
+                    <NavLink to={"/ps-store"} className={styles["logo-link"]} >
                         <img className={styles["logo-link-img"]} src={logo} title="Ваш магазин" alt="Ваш магазин" />
-                    </a>
+                    </NavLink>
                 </div>
                 <div className={styles.menu}>
                     <ul className={styles["menu-list"]}>

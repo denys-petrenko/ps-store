@@ -1,21 +1,18 @@
-import Header from "./components/Header/Header";
-import Slider from "./components/Slider/Slider";
-import Main from "./components/Main/Main";
-import SubscriptionForm from "./components/SubscriptionForm/SubscriptionForm";
-import Benefits from "./components/Benefits/Benefits";
-import Footer from "./components/Footer/Footer";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./layouts/Layouts";
+import Home from "./pages/Home/Home";
+import Products from "./pages/Products/Products";
 
 function App() {
 
   return (
-    <>
-      <Header />
-      <Slider />
-      <Main />
-      <SubscriptionForm />
-      <Benefits />
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/ps-store" element={<Home />} />
+        <Route path="/ps-store/products" element={<Products />} />
+      </Route>
+    </Routes>
+
   )
 }
 
