@@ -1,10 +1,22 @@
 {
     "header": {
         "menu": [
-            "Contacts",
-            "Game Reviews",
-            "Delivery & Payment",
-            "About Us"
+            {
+                "label": "Contacts",
+                "path": "ps-store/contacts"
+            },
+            {
+                "label": "Game Reviews",
+                "path": "ps-store/game-reviews"
+            },
+            {
+                "label": "Delivery & Payment",
+                "path": "ps-store/delivery-payment"
+            },
+            {
+                "label": "About Us",
+                "path": "ps-store/about-us"
+            }
         ],
         "placeholder": "Search",
         "dropdown": {
@@ -18,6 +30,49 @@
                 "Mobile",
                 "Watches",
                 "Sports & Outdoors"
+            ]
+        }
+    },
+    "contacts": {
+        "title": "Contact us",
+        "customer_support": {
+            "title": "Customer Support",
+            "numbers": [
+                {
+                    "ref": "+380443337007",
+                    "number": "(044) 333 70 07"
+                },
+                {
+                    "ref": "+380730013050",
+                    "number": "(073) 001 30 50"
+                },
+                {
+                    "ref": "+380672902060",
+                    "number": "(067) 290 20 60"
+                },
+                {
+                    "ref": "+380990013050",
+                    "number": "(099) 001 30 50"
+                }
+            ],
+            "schedule": [
+                {
+                    "date": "Wekdays:",
+                    "time": "9:00 AM to 9:00 PM"
+                },
+                {
+                    "date": "Weekend:",
+                    "time": "10:00 AM to 8:00 PM"
+                }
+            ]
+        },
+        "pickup_points": {
+            "title": "Pickup points",
+            "description": "Pickup points only store the items you ordered.",
+            "links": [
+                "Kyiv",
+                "13 Zdolbunivska St.",
+                "25 P. Sahaidachnoho St."
             ]
         }
     },

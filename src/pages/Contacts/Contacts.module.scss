@@ -1,0 +1,136 @@
+.contacts {
+    display: grid;
+    place-items: center;
+    width: 100%;
+
+    .title {
+        margin-bottom: 12px;
+        font-size: 22px;
+    }
+
+    .accordion {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        max-width: 864px;
+        gap: 15px;
+
+
+        .accordeon-item {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+
+            .accordion-button {
+                display: flex;
+                width: 100%;
+                height: 65px;
+                background-color: #f3f3f3;
+                border-radius: 12px;
+                align-items: center;
+                padding: 5px 30px;
+                cursor: pointer;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    width: 2px;
+                    height: 10px;
+                    background: #358CF7;
+                    position: absolute;
+                    right: 30px;
+                    display: block;
+                }
+
+                &::before {
+                    content: "";
+                    width: 10px;
+                    height: 2px;
+                    background: #358CF7;
+                    position: absolute;
+                    right: 26px;
+                }
+            }
+
+            .accordion-button.active {
+                &::after {
+                    display: none;
+                }
+            }
+
+            .accordeon-content {
+                display: none;
+                margin-top: 10px;
+                justify-content: space-around;
+
+                .phones-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                    padding-left: 10px;
+
+                    .phones-list-item {
+                        list-style: none;
+
+                        .phone-link {
+                            text-decoration: none;
+                            list-style: none;
+                            color: #212229;
+                        }
+                    }
+                }
+
+                .schedule {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 7px;
+
+                    .schedule-date {
+                        color: #212229;
+                        font-size: 14px;
+                    }
+
+                    .schedule-time {
+                        color: #212229;
+                    }
+                }
+
+                .address-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    margin-top: 10px;
+                    font-size: 15px;
+
+                    .address-item {
+                        list-style: none;
+                        color: #212229;
+                    }
+                }
+            }
+
+            .accordeon-content.active {
+                display: flex;
+            }
+        }
+
+        .accordeon-item:nth-child(2) {
+            .accordeon-content {
+                flex-direction: column;
+                padding: 0 20px;
+
+                .description {
+                    color: #787D88;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .contacts{
+        .title{
+            font-size: 32px;
+        }
+    }
+}

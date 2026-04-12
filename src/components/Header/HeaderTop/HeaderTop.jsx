@@ -27,8 +27,16 @@ const HeaderTop = () => {
                         {
                             menuList
                                 .map(item => (
-                                    <li key={item.toLowerCase()} className={styles["menu-list-item"]}>{item}</li>
+                                    <NavLink
+                                        to={item.path}
+                                        key={item.label.toLowerCase()}
+                                        className={({ isActive }) =>
+                                            isActive ? `${styles["menu-list-item"]} ${styles.active}` : styles["menu-list-item"]
+                                        } >
+                                        {item.label}
+                                    </NavLink>
                                 ))
+
                         }
                     </ul>
                 </div>
