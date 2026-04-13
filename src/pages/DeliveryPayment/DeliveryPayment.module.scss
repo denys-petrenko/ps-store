@@ -1,7 +1,8 @@
-.contacts {
+.delivery {
     display: grid;
     place-items: center;
     width: 100%;
+    margin-top: 50px;
 
     .title {
         margin-bottom: 12px;
@@ -29,7 +30,7 @@
                 background-color: #f3f3f3;
                 border-radius: 12px;
                 align-items: center;
-                padding: 5px 30px;
+                padding: 5px 10px;
                 cursor: pointer;
                 position: relative;
 
@@ -64,73 +65,38 @@
                 margin-top: 10px;
                 justify-content: space-around;
 
-                .phones-list {
+                .card {
                     display: flex;
                     flex-direction: column;
-                    gap: 6px;
-                    padding-left: 10px;
+                    padding: 0 10px;
+                    margin: 10px 0;
 
-                    .phones-list-item {
-                        list-style: none;
-
-                        .phone-link {
-                            text-decoration: none;
-                            list-style: none;
-                            color: #212229;
-                        }
-                    }
-                }
-
-                .schedule {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 7px;
-
-                    .schedule-date {
-                        color: #212229;
-                        font-size: 14px;
+                    .card-title {
+                        font-size: 15px;
+                        font-weight: 600;
+                        line-height: 2;
+                        margin: 2px 0 5px;
                     }
 
-                    .schedule-time {
-                        color: #212229;
-                    }
-                }
-
-                .address-list {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
-                    margin-top: 10px;
-                    font-size: 15px;
-
-                    .address-item {
-                        list-style: none;
-                        color: #212229;
+                    .card-description {
+                        font-size: 15px;
+                        line-height: 2;
                     }
                 }
             }
 
             .accordeon-content.active {
                 display: flex;
-            }
-        }
-
-        .accordeon-item:nth-child(2) {
-            .accordeon-content {
                 flex-direction: column;
-                padding: 0 20px;
-
-                .description {
-                    color: #787D88;
-                }
             }
         }
+
     }
 }
 
 @media(min-width: 768px) {
-    .contacts{
-        .title{
+    .contacts {
+        .title {
             font-size: 32px;
         }
     }

@@ -76,6 +76,51 @@
             ]
         }
     },
+    "delivery_payment": {
+        "title": "Delivery and Payment",
+        "payment": {
+            "title": "Ways to pay",
+            "list": [
+                {
+                    "title": "Cash on delivery",
+                    "description": "The goods are paid in cash directly to the courier, who delivers the order in Kyiv and nearby settlements: Brovary, Boryspil, Bucha, Vyshneve, Vyshgorod, Irpin, Chabany, Chayka and others."
+                },
+                {
+                    "title": "Cash on delivery via Nova Poshta",
+                    "description": "Payment in cash upon receipt of the goods at a Nova Poshta branch (the cash on delivery fee will be included in the order price)."
+                },
+                {
+                    "title": "Bank transfer for individuals",
+                    "description": "We can accept payment to a current account – in this case there is no commission."
+                },
+                {
+                    "title": "Credit / Debit card (Visa, MasterCard)",
+                    "description": "You can pay cashlessly using IBAN details or a bank card (key card), cards via a payment terminal (2% commission) or using Visa and Mastercard bank cards, Apple Pay, Google Pay when paying online on the website; with this payment method, the payment system commission is 1.3%."
+                }
+            ]
+        },
+        "delivery": {
+            "title": "Shipping methods",
+            "list": [
+                {
+                    "title": "Store pickup",
+                    "description": "You can pick up your order in one of our stores."
+                },
+                {
+                    "title": "Pickup from Nova Poshta",
+                    "description": "The delivery cost is paid by the recipient, according to the tariffs of «Nova Poshta». Please note that on the 4th day of storage of the parcel at the branch, it will be returned to us. We also want to note that when choosing such delivery, a commission of 2% of the total order value will be taken into account."
+                },
+                {
+                    "title": "Nova Poshta parcel locker pickup",
+                    "description": "The delivery cost is paid by the recipient according to Nova Poshta tariffs. Please note that on the 4th day of storage of the parcel at the branch, it will be returned."
+                },
+                {
+                    "title": "Home delivery via Nova Poshta",
+                    "description": "Delivery is carried out by Nova Poshta throughout Ukraine. The delivery cost is paid by the recipient according to Nova Poshta tariffs."
+                }
+            ]
+        }
+    },
     "main": {
         "advantage": {
             "delivery": {
