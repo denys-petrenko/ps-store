@@ -1,0 +1,58 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+
+    .title {
+        font-size: 22px;
+        color: #212229;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .sub-title{
+        font-size: 18px;
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 16px;
+        line-height: 25px;
+        margin: 10px 0;
+    }
+
+    .list{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        padding-top: 10px;
+        margin-left: 20px;
+    }
+
+    .list > li{
+        font-size: 16px;
+    }
+}
+
+@media(min-width: 768px) {
+    .about {
+        .title {
+            font-size: 32px;
+        }
+
+        .sub-title{
+            font-size: 26px;
+        }
+
+        .description {
+            font-size: 18px;
+        }
+
+        .list > li {
+            font-size: 18px;
+        }
+    }
+}

@@ -121,6 +121,44 @@
             ]
         }
     },
+    "about": {
+        "title": "About us",
+        "list": [
+            {
+                "title": "«Up2date» - the next level in electronics and digital technology!",
+                "description": [
+                    "Among the many online platforms selling electronics, “Up2date” has long been known as a reliable online store where customers can purchase high-quality gadgets and electronics. Since starting our journey back in 2005, our company has continued to grow and expand year after year, offering products from trusted manufacturers. Today, 21 years later, we are proud to offer both our loyal and new customers one of the largest selections of gadgets and electronics in the country.",
+                    "We work to bring modern and cutting-edge technology and accessories from leading global manufacturers to the Ukrainian market. If you want to be the first among your friends to get the latest smartphone, gaming console, or tablet, be sure to check out our online store!"
+                ]
+            },
+            {
+                "title": "Up2date store features",
+                "description": [
+                    "The website features a wide range of product categories where you can find accessories for iPad and iPhone, as well as e-readers, watches, headphones, audio equipment, photography gear, and much more. We also offer a large section dedicated to gaming consoles that passionate gamers will truly appreciate.",
+                    "All categories are regularly updated with new models, so you can always purchase the latest gadgets. Registered customers receive special bonuses, making shopping in our store even more rewarding.",
+                    {
+                       "sub_title": "Key advantages of the Up2date store that make customers choose us:",
+                       "sub_list": [
+                            "Competitive prices, additional bonuses, and special promotional offers",
+                            "Warranty on all products (from 6 to 36 months)",
+                            "High-quality service that makes shopping with us fast and convenient",
+                            "A wide product range that satisfies even the most demanding customers",
+                            "Convenient payment methods, including both cash and cashless payments"
+                        ]
+                    },
+                    "For your convenience, you can search for products not only by categories but also by manufacturers listed in alphabetical order. If needed, our managers are always ready to provide professional консультации by phone and help you choose the best option based on your needs."
+                ]
+            },
+            {
+                "title": "Our motto: Not a day without new arrivals!",
+                "description": [
+                    "We are pleased that our customers include not only residents of Ukraine but also customers from neighboring countries. Over 21 years of operation, it is difficult to count the total number of customers we have served, but one thing we can say with confidence: 9 out of 10 new buyers become our regular customers.",
+                    "Our online store is updated with new products every day, allowing our customers to be among the first to get the latest gadgets and accessories. We value speed and efficiency, so we deliver orders as quickly as possible across the country and even to neighboring countries.",
+                    "Shop high-quality products at affordable prices on our website! Make your life more comfortable and convenient with electronics from Up2date!"
+                ]
+            }
+        ]
+    },
     "main": {
         "advantage": {
             "delivery": {
