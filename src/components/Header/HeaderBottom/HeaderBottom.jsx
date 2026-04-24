@@ -32,9 +32,25 @@ const HeaderBottom = () => {
         return () => document.removeEventListener("click", handleContentBtn);
     }, [])
 
+
+
+
+
+
+    const [activeCategory, setActiveCategory] = useState(null);
+
+
+
     return (
         <div className={styles["header-bottom"]}>
-            <nav ref={menuRef} className={styles["dropdown-menu"]}>
+            <nav
+                ref={menuRef}
+                className={styles["dropdown-menu"]}
+                onMouseLeave={() => {
+                    setShowContent(false)
+                    setActiveCategory(null)
+                }}
+            >
                 <button className={
                     showContent
                         ? styles["dropdown-btn-active"]
@@ -47,19 +63,33 @@ const HeaderBottom = () => {
                     />
                     {t("header.dropdown.button")}
                 </button>
-                <ul className={`${styles["content-menu"]} ${showContent ? styles.active : ""}`}>
-                    {
-                        dropdownMenu
-                            .map(item => (
-                                <li key={item.toLowerCase()} className={styles["content-menu-item"]}>
-                                    <a href="#" className={styles["content-menu-item-link"]}>
-                                        {item}
-                                    </a>
-                                </li>
-                            ))
-                    }
-                </ul>
+                <div className={styles.content}>
+                    <ul className={`${styles["content-menu"]} ${showContent ? styles.active : ""}`}>
+                        {
+                            dropdownMenu
+                                .map(item => (
+                                    <li
+                                        key={item.toLowerCase()}
+                                        className={styles["content-menu-item"]}
+                                        onMouseEnter={() => setActiveCategory(item)}
+                                    >
+                                        <a href="#" className={styles["content-menu-item-link"]}>
+                                            {item}
+                                        </a>
+                                    </li>
+                                ))
+                        }
+                    </ul>
+
+                    <div className={`${styles["content-list"]} ${activeCategory ? styles.active : ""}`}>
+                        <h1>{activeCategory}</h1>
+                    </div>
+                </div>
+
             </nav>
+
+
+
             <div className={styles["header-searcher"]}>
                 <input type="text" name="search" placeholder={t("header.placeholder")} className={styles["search-input"]} />
                 <button className={styles["header-searcher-btn"]}>
