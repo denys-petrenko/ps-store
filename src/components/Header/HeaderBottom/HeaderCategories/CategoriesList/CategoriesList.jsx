@@ -1,0 +1,57 @@
+import styles from "./CategoriesList.module.scss";
+import { useTranslation } from "react-i18next";
+import Loader from "../../../../ui/Loader";
+
+const CategoriesList = ({ data, loading, trigger }) => {
+    const { i18n } = useTranslation();
+    const lang = i18n.language;
+    const { categories, selectCategory } = data;
+    const { isLoading, error } = loading;
+
+
+    if (error) {
+        return (
+            <ul className={styles.list}>
+                <li className={styles.error}>Failed to load categories</li>
+            </ul>
+        );
+    }
+
+    if (isLoading) {
+        return (
+            <ul className={styles.list}>
+                <li><Loader /></li>
+            </ul>
+        );
+    }
+
+    return (
+        <ul className={styles.list}>
+            {
+                categories
+                    .map(item => (
+                        <li
+                            key={item.id}
+                            className={styles["list-item"]}
+                            onMouseEnter={
+                                trigger === "hover"
+                                    ? () => selectCategory(item.id)
+                                    : undefined
+                            }
+                            onClick={
+                                trigger === "click"
+                                    ? (e) => {
+                                        selectCategory(item.id)
+                                    }
+                                    : undefined
+                            }
+                        >
+                            <p className={styles["list-item-link"]}>{item.title[lang]}</p>
+                        </li>
+                    ))
+            }
+        </ul>
+    )
+}
+
+export default CategoriesList;

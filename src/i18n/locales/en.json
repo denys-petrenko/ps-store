@@ -20,17 +20,7 @@
         ],
         "placeholder": "Search",
         "dropdown": {
-            "button": "Product Catalog",
-            "menu": [
-                "Apple",
-                "Game Consoles",
-                "Gadgets & Accessories",
-                "E-Books",
-                "LEGO",
-                "Mobile",
-                "Watches",
-                "Sports & Outdoors"
-            ]
+            "button": "Product Catalog"
         }
     },
     "contacts": {
@@ -292,4 +282,4 @@
             }
         }
     }
-}
+} 
