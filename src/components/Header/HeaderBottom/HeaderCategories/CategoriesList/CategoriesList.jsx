@@ -1,6 +1,7 @@
 import styles from "./CategoriesList.module.scss";
 import { useTranslation } from "react-i18next";
 import Loader from "../../../../ui/Loader";
+import { NavLink } from "react-router-dom";
 
 const CategoriesList = ({ data, loading, trigger }) => {
     const { i18n } = useTranslation();
@@ -40,13 +41,16 @@ const CategoriesList = ({ data, loading, trigger }) => {
                             }
                             onClick={
                                 trigger === "click"
-                                    ? (e) => {
-                                        selectCategory(item.id)
-                                    }
+                                    ? () => selectCategory(item.id)
                                     : undefined
                             }
                         >
-                            <p className={styles["list-item-link"]}>{item.title[lang]}</p>
+                            <NavLink
+                                className={styles["list-item-link"]}
+                                to={`ps-store/category/${item.slug}`}
+                            >
+                                {item.title[lang]}
+                            </NavLink>
                         </li>
                     ))
             }

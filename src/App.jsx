@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layouts";
 import Home from "./pages/Home/Home";
-import Products from "./pages/Products/Products";
+import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import Contacts from "./pages/Contacts/Contacts";
 import GameReviews from "./pages/GameReviews/GameReviews";
 import DeliveryPayment from "./pages/DeliveryPayment/DeliveryPayment";
@@ -17,11 +17,11 @@ function App() {
         <Route path="ps-store/delivery-payment" element={<DeliveryPayment />} />
         <Route path="ps-store/about-us" element={<About />} />
         <Route path="/ps-store" element={<Home />} />
-        <Route path="/ps-store/products" element={<Products />} />
+        <Route path="/ps-store/category/:categoryId" element={<CategoryPage />} />
       </Route>
     </Routes>
 
   )
 }
 
-export default App
+export default App;
