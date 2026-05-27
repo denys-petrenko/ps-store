@@ -3,17 +3,21 @@ import { useParams } from "react-router-dom";
 import { useCategories } from "../../hooks/useCategories";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/ui/Loader";
+import { useMemo } from "react";
 
 const CategoryPage = () => {
     const { categoryId } = useParams();
     const { i18n } = useTranslation();
     const lang = i18n.language;
     const { categories, error } = useCategories();
-    const activeCategory = categories.find(cat => cat.id === categoryId);
+    const activeCategory = useMemo(() =>
+        categories.find(cat => cat.id === categoryId),
+        [categories, categoryId]
+    );
 
     if (!activeCategory) {
         return (
-            <section className={styles["category-page"]}>
+            <section className={styles.category}>
                 <Loader />
             </section>
         )
@@ -21,7 +25,7 @@ const CategoryPage = () => {
 
     if (error) {
         return (
-            <section className={styles["category-page"]}>
+            <section className={styles.category}>
                 <p>Failed to load category</p>
             </section>
         )
@@ -34,7 +38,15 @@ const CategoryPage = () => {
                 {
                     activeCategory?.children?.map(cat => (
                         <div key={cat.id} className={styles.card}>
-                            <h3 className={styles["card-title"]}>{cat.title[lang]}</h3>
+                            {cat.image && (
+                                <div className={styles.imageContainer}>
+                                    <img src={cat.image}
+                                        alt={cat.title}
+                                        className={styles.img}
+                                    />
+                                </div>
+                            )}
+                            <h3 className={styles.cardTitle}>{cat.title[lang]}</h3>
                             <ul className={styles.list}>
                                 {cat.children?.map(child => (
                                     <li key={child.slug} className={styles.child}>{child.title[lang]}</li>

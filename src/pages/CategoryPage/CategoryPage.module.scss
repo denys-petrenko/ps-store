@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: 50px;
 
     .title {
         font-size: 22px;
@@ -22,7 +23,18 @@
             align-items: center;
             gap: 5px;
 
-            .card-title {
+            .imageContainer {
+                display: flex;
+                width: 30%;
+                height: 50%;
+
+                .img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .cardTitle {
                 color: #358CF7;
             }
 
@@ -43,6 +55,10 @@
 
 @media (min-width: 1024px) {
     .category {
+        .title {
+            font-size: 32px;
+        }
+
         .cards {
             display: grid;
             grid-template-columns: repeat(3, auto);
