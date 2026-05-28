@@ -1,0 +1,41 @@
+.breadcrumbs {
+    display: flex;
+    width: 100%;
+    padding-left: 5%;
+    gap: 5px;
+
+    li{
+        list-style: none;
+    }
+
+    .path {
+        display: flex;
+        color: #787D88;
+        cursor: pointer;
+        text-decoration: none;
+
+        &.active{
+            cursor: auto;
+        }
+
+        &::after{
+            content: ">";
+            margin-left: 5px;
+        }
+    }
+
+    .disabled{
+        display: flex;
+        color: #999;
+    }
+}
+
+@media (min-width: 1024px) {
+    .breadcrumbs{
+
+        .path:hover{
+            color: #358CF7;
+            transition: 0.5s;
+        }
+    }
+}

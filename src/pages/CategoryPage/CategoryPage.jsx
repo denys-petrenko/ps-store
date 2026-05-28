@@ -4,6 +4,7 @@ import { useCategories } from "../../hooks/useCategories";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/ui/Loader";
 import { useMemo } from "react";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 const CategoryPage = () => {
     const { categoryId } = useParams();
@@ -31,8 +32,11 @@ const CategoryPage = () => {
         )
     }
 
+
     return (
         <section className={styles.category}>
+            <Breadcrumbs />
+
             <h1 className={styles.title}>{activeCategory?.title[lang]}</h1>
             <div className={styles.cards}>
                 {

@@ -47,7 +47,7 @@ const CategoriesList = ({ data, loading, trigger }) => {
                         >
                             <NavLink
                                 className={styles["list-item-link"]}
-                                to={`ps-store/category/${item.slug}`}
+                                to={`ps-store/${item.slug}`}
                             >
                                 {item.title[lang]}
                             </NavLink>

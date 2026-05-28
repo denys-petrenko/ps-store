@@ -12,12 +12,12 @@ function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/ps-store/contacts" element={<Contacts />} />
-        <Route path="/ps-store/game-reviews" element={<GameReviews />} />
+        <Route path="ps-store/contacts" element={<Contacts />} />
+        <Route path="ps-store/game-reviews" element={<GameReviews />} />
         <Route path="ps-store/delivery-payment" element={<DeliveryPayment />} />
         <Route path="ps-store/about-us" element={<About />} />
-        <Route path="/ps-store" element={<Home />} />
-        <Route path="/ps-store/category/:categoryId" element={<CategoryPage />} />
+        <Route path="/ps-store/" element={<Home />} />
+        <Route path="ps-store/:categoryId" element={<CategoryPage />} />
       </Route>
     </Routes>
 

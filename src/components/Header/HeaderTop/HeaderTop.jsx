@@ -18,7 +18,7 @@ const HeaderTop = () => {
         <div className={styles["header-top"]}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <NavLink to={"/ps-store"} className={styles["logo-link"]} >
+                    <NavLink to={"/ps-store/"} className={styles["logo-link"]} >
                         <img className={styles["logo-link-img"]} src={logo} title="Ваш магазин" alt="Ваш магазин" />
                     </NavLink>
                 </div>
@@ -27,6 +27,7 @@ const HeaderTop = () => {
                         {
                             menuList
                                 .map(item => (
+                                   
                                     <NavLink
                                         to={item.path}
                                         key={item.label.toLowerCase()}
