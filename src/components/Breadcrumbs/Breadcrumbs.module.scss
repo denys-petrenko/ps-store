@@ -1,11 +1,12 @@
 .breadcrumbs {
     display: flex;
-    width: 100%;
-    padding-left: 5%;
+    width: 90%;
     gap: 5px;
+    overflow-x: scroll;
 
     li{
         list-style: none;
+        white-space: nowrap;
     }
 
     .path {

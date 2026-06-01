@@ -1,5 +1,5 @@
 import styles from "./CategoryPage.module.scss";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { useCategories } from "../../hooks/useCategories";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/ui/Loader";
@@ -50,7 +50,13 @@ const CategoryPage = () => {
                                     />
                                 </div>
                             )}
-                            <h3 className={styles.cardTitle}>{cat.title[lang]}</h3>
+                            <h3 className={styles.cardTitle}>
+                                <NavLink
+                                    to={`/ps-store/${activeCategory.id}/${cat.id}`}
+                                >
+                                    {cat.title[lang]}
+                                </NavLink>
+                            </h3>
                             <ul className={styles.list}>
                                 {cat.children?.map(child => (
                                     <li key={child.slug} className={styles.child}>{child.title[lang]}</li>
