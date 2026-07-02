@@ -2,10 +2,15 @@ import styles from "./Slider.module.scss";
 import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from 'embla-carousel-autoplay';
-import slide from "./slide.png"
+import Loader from "../../../../components/ui/Loader";
 
-const Slider = () => {
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000 })]);
+const Slider = ({ variant, autoplay, onSlideClick, data }) => {
+    const play = autoplay
+        ? [Autoplay({ delay: 3000 })]
+        : []
+
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, play);
+
 
     const goToPrev = () => emblaApi?.scrollPrev();
     const goToNext = () => emblaApi?.scrollNext();
@@ -15,19 +20,19 @@ const Slider = () => {
         emblaApi.plugins().autoplay?.play()
     }, [emblaApi])
 
+    if (!data?.length) {
+        return <Loader />;
+    }
+
     return (
-        <div className={styles.slider}>
+        <div className={styles[`slider-${variant}`]}>
             <div className={styles["slider-viewport"]} ref={emblaRef}>
                 <div className={styles["slider-container"]}>
-                    <div className={styles["slider-slide"]}>
-                        <img src={slide} alt="slide" />
-                    </div>
-                    <div className={styles["slider-slide"]}>
-                        <img src={slide} alt="slide" />
-                    </div>
-                    <div className={styles["slider-slide"]}>
-                        <img src={slide} alt="slide" />
-                    </div>
+                    {data.map((image, i) => (
+                        <div key={i} className={styles["slider-slide"]}>
+                            <img src={image} alt="slide" />
+                        </div>
+                    ))}
                 </div>
             </div>
             <button className={styles["slider-prev"]} aria-label="Previous slide" onClick={goToPrev}>

@@ -127,8 +127,8 @@
                     "The website features a wide range of product categories where you can find accessories for iPad and iPhone, as well as e-readers, watches, headphones, audio equipment, photography gear, and much more. We also offer a large section dedicated to gaming consoles that passionate gamers will truly appreciate.",
                     "All categories are regularly updated with new models, so you can always purchase the latest gadgets. Registered customers receive special bonuses, making shopping in our store even more rewarding.",
                     {
-                       "sub_title": "Key advantages of the Up2date store that make customers choose us:",
-                       "sub_list": [
+                        "sub_title": "Key advantages of the Up2date store that make customers choose us:",
+                        "sub_list": [
                             "Competitive prices, additional bonuses, and special promotional offers",
                             "Warranty on all products (from 6 to 36 months)",
                             "High-quality service that makes shopping with us fast and convenient",
@@ -218,6 +218,21 @@
             ]
         }
     },
+    "product_card": {
+        "navigation": {
+            "about": "About",
+            "specs": "Parameters",
+            "description": "Description"
+        },
+        "product_code": "Code",
+        "stock": {
+            "true": "In Stock",
+            "false": "Out of Stock"
+        },
+        "parameters": "Parameters",
+        "description": "Description",
+        "buy-button": "Buy"
+    },
     "footer": {
         "nav": [
             {
@@ -282,4 +297,4 @@
             }
         }
     }
-} 
+}

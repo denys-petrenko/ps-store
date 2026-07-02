@@ -59,7 +59,13 @@ const CategoryPage = () => {
                             </h3>
                             <ul className={styles.list}>
                                 {cat.children?.map(child => (
-                                    <li key={child.slug} className={styles.child}>{child.title[lang]}</li>
+                                    <NavLink
+                                        key={child.slug}
+                                        className={styles.child}
+                                        to={`/ps-store/${activeCategory.id}/${child.id}`}
+                                    >
+                                        {child.title[lang]}
+                                    </NavLink>
                                 ))}
                             </ul>
                         </div>

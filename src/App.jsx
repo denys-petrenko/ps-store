@@ -7,6 +7,7 @@ import Contacts from "./pages/Contacts/Contacts";
 import GameReviews from "./pages/GameReviews/GameReviews";
 import DeliveryPayment from "./pages/DeliveryPayment/DeliveryPayment";
 import About from "./pages/About/About";
+import ProductPage from "./pages/ProductPage/ProductPage";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/ps-store/" element={<Home />} />
         <Route path="ps-store/:categoryId" element={<CategoryPage />} />
         <Route path="ps-store/:categoryId/:subCategoryId" element={<SubCategoryPage />} />
+        <Route path="ps-store/:categoryId/:subCategoryId/:productSlug" element={<ProductPage/>}/>
       </Route>
     </Routes>
 

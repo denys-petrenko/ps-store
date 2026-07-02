@@ -218,6 +218,21 @@
             ]
         }
     },
+    "product_card": {
+        "navigation": {
+            "about": "Про товар",
+            "specs": "Характеристики",
+            "description": "Опис"
+        },
+        "product_code": "Код",
+        "stock": {
+            "true": "В наявності",
+            "false": "Немає в наявності"
+        },
+        "parameters": "Характеристики",
+        "description": "Опис",
+        "buy-button": "Купити"
+    },
     "footer": {
         "nav": [
             {
@@ -282,4 +297,4 @@
             }
         }
     }
-} 
+}
