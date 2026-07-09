@@ -1,29 +1,29 @@
 import styles from "./ProductPage.module.scss";
 import { useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import BestOffers from "../Home/sections/Main/BestOffers/BestOffers";
+import SubscriptionForm from "../Home/sections/SubscriptionForm/SubscriptionForm";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect, Fragment } from "react";
-
+import { useState, useEffect, Fragment, useRef } from "react";
 import { getProduct } from "../../api/productApi";
 
 import { getDocs } from "firebase/firestore";
 import { productTemplateCol } from "../../api/productsApi";
 
 import Slider from "../Home/sections/Slider/Slider";
-import basket from "../../assets/card/shopping-cart.svg";
 
-import {BadgeCheck, BadgeX } from "lucide-react";
+import { BadgeCheck, BadgeX, HeartPlus, HeartX } from "lucide-react";
 
-import SubscriptionForm from "../Home/sections/SubscriptionForm/SubscriptionForm";
+import PurchaseCard from "./components/PurchaseCard/PurchaseCard";
+import FloatingPurchaseCard from "./components/FloatingPurchaseCard/FloatingPurchaseCard";
 
 const ProductPage = () => {
     const { productSlug } = useParams();
     const [product, setProduct] = useState(null);
     const [activeTab, setActiveTab] = useState("about");
-
-    const { i18n } = useTranslation();
+    const { i18n, t } = useTranslation();
     const lang = i18n.language;
-    const { t } = useTranslation();
+
 
 
 
@@ -44,27 +44,6 @@ const ProductPage = () => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
     }
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setActiveTab(entry.target.id)
-                    }
-                })
-            },
-            {
-                threshold: 0.6
-            }
-        );
-
-        document.querySelectorAll(`.${styles.observeSection}`).forEach(section => observer.observe(section))
-
-        return () => observer.disconnect();
-    })
-
-
-
 
 
 
@@ -82,8 +61,6 @@ const ProductPage = () => {
     }, [])
 
 
-
-
     const [productData, setProductData] = useState(null);
     const mergeProductWithTemplate = (product, templates) => {
         const temp = templates.find(item => item.id === product?.templateId);
@@ -91,6 +68,7 @@ const ProductPage = () => {
         if (!temp) return null;
 
         const result = structuredClone(temp);
+        result.id = product.id;
 
         for (const key in result?.specs) {
             const group = result.specs[key]
@@ -111,10 +89,54 @@ const ProductPage = () => {
     useEffect(() => {
         setProductData(mergeProductWithTemplate(product, templates))
     }, [product, templates])
-    console.log(productData);
+    // console.log(productData);
 
-    const hasDiscount = productData?.discount > 0;
-    const finalPrice = productData?.price - productData?.discount;
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveTab(entry.target.id);
+                }
+            });
+        }, {
+            rootMargin: "-80px 0px -60% 0px",
+            threshold: 0
+        });
+
+        const sections = document.querySelectorAll(`.${styles.observeSection}`);
+        sections.forEach(section => observer.observe(section));
+
+        return () => observer.disconnect();
+
+    }, [productData]);
+
+
+
+    const purchaseRef = useRef(null);
+    const titleRef = useRef(null);
+    const [titleVisible, setTitleVisible] = useState(false);
+    const [purchaseVisible, setPurchaseVisible] = useState(false);
+
+    const showFloatingCard = !titleVisible && !purchaseVisible;
+    useEffect(() => {
+        if (!purchaseRef.current || !titleRef.current) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.target === titleRef.current) setTitleVisible(entry.isIntersecting);
+                if (entry.target === purchaseRef.current) setPurchaseVisible(entry.isIntersecting);
+            })
+
+        });
+
+        observer.observe(purchaseRef.current);
+        observer.observe(titleRef.current);
+
+        return () => observer.disconnect();
+    }, [productData]);
+
+
     const isAvailable = productData?.stock > 0;
 
     if (!productData) {
@@ -125,104 +147,104 @@ const ProductPage = () => {
         <section className={styles.productPage}>
             <Breadcrumbs />
             <div className={styles.navigation}>
-                <button
-                    className={`${styles.navigationBtn} ${activeTab === "about" ? styles.active : ""}`}
-                    onClick={() => scrollToSection("about")}
-                >
-                    {t("product_card.navigation.about")}
-                </button>
-                <button
-                    className={`${styles.navigationBtn} ${activeTab === "specs" ? styles.active : ""}`}
-                    onClick={() => scrollToSection("specs")}
-                >
-                    {t("product_card.navigation.specs")}
-                </button>
-                <button
-                    className={`${styles.navigationBtn} ${activeTab === "description" ? styles.active : ""}`}
-                    onClick={() => scrollToSection("description")}
-                >
-                    {t("product_card.navigation.description")}
-                </button>
+                <div className={styles.navigationWrapper}>
+                    <button
+                        className={`${styles.navigationBtn} ${activeTab === "about" ? styles.active : ""}`}
+                        onClick={() => scrollToSection("about")}
+                    >
+                        {t("product_card.navigation.about")}
+                    </button>
+                    <button
+                        className={`${styles.navigationBtn} ${activeTab === "specs" ? styles.active : ""}`}
+                        onClick={() => scrollToSection("specs")}
+                    >
+                        {t("product_card.navigation.specs")}
+                    </button>
+                    <button
+                        className={`${styles.navigationBtn} ${activeTab === "description" ? styles.active : ""}`}
+                        onClick={() => scrollToSection("description")}
+                    >
+                        {t("product_card.navigation.description")}
+                    </button>
+                </div>
+
             </div>
 
-            <section id="about" className={styles.observeSection}>
-                <h1 className={styles.title}>{productData.name}</h1>
-                <div className={styles.productMeta}>
-                    <span className={styles.productCode}>{t("product_card.product_code")}: {productData.code}</span>
-                    <span className={styles.inStock}>
-                        {isAvailable
-                        ? <>
-                        <BadgeCheck className={styles.badgeCheck} size={20}/>
-                        {t("product_card.stock.true")}
-                        </>
-                        : <>
-                        <BadgeX className={styles.badgeX} size={20}/>
-                        {t("product_card.stock.false")}
-                        </>
-                        }
-                    </span>
-                </div>
-                <Slider variant={"product"} autoplay={false} data={productData?.images} />
-            </section>
 
 
+            <section className={styles.topLayout}>
+                <h1 ref={titleRef} id="about" className={`${styles.observeSection} ${styles.title}`}>{productData.name}</h1>
 
-
-            <section className={styles.purchaseSection}>
-                <div className={styles.priceBox}>
-                    {hasDiscount && (
-                        <div className={styles.discountBox}>
-                            <del className={styles.oldPrice}>
-                                {productData.price} ₴
-                            </del>
-                            <span className={styles.discount}>
-                                -{productData.discount} ₴
-                            </span>
-                        </div>
-                    )}
-
-                    <span className={styles.price}>
-                        {hasDiscount ? finalPrice : productData.price} ₴
-                    </span>
+                <div className={styles.slider}>
+                    <div className={styles.sliderWrapper}>
+                        <Slider variant={"product"} autoplay={false} data={productData?.images} />
+                    </div>
                 </div>
 
-                <button className={styles.buyButton}>
-                    <img src={basket} alt="Basket" />
-                    {t("product_card.buy-button")}
-                </button>
+
+                <div className={styles.rightColumn}>
+                    <div className={styles.productMeta}>
+                        <span className={styles.productCode}>{t("product_card.product_code")}: {productData.code}</span>
+                        <span className={styles.inStock}>
+                            {isAvailable
+                                ? <>
+                                    <BadgeCheck className={styles.badgeCheck} size={20} />
+                                    {t("product_card.stock.true")}
+                                </>
+                                : <>
+                                    <BadgeX className={styles.badgeX} size={20} />
+                                    {t("product_card.stock.false")}
+                                </>
+                            }
+                        </span>
+                    </div>
+
+                    <PurchaseCard ref={purchaseRef} product={productData} />
+
+                    <section id="specs" className={`${styles.observeSection} ${styles.specsSection}`}>
+                        <h2 className={styles.titleDescription}>{t("product_card.parameters")}</h2>
+                        <div className={styles.sectionsBox}>
+                            {Object.entries(productData.specs).map(([key, section]) => (
+                                <div key={key} className={styles.section}>
+                                    <h3 className={styles.sectionTitle}>{section.title[lang]}</h3>
+                                    <dl className={styles.sectionAttributes}>
+                                        {section.attributes.map(attr => (
+                                            <Fragment key={attr.key}>
+                                                <dt className={styles.attributeTitle}>{typeof attr.title === "object" ? attr.title[lang] : attr.title}</dt>
+                                                <dd className={styles.attributeValue}>{typeof attr.value === "object" ? attr.value[lang] : attr.value}</dd>
+                                            </Fragment>
+                                        ))}
+                                    </dl>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* <button className={styles.showMoreBtn}>Більше характеристик</button> */}
+                    </section>
+                </div>
             </section>
 
+            <BestOffers />
 
+            <section id="description" className={`${styles.observeSection} ${styles.descriptionSection}`}>
+                <h2 className={styles.titleDescription}>{t("product_card.description")} {productData.name}</h2>
+                <div>
+                    {productData.description.map((el, i) => (
+                        el.type === "paragraph"
+                            ? <p key={`${productData.id}-${i}p`} className={styles.description}>{el.text[lang]}</p>
+                            : el.type === "image"
+                                ? <img key={`${productData.id}-${i}img`} src={el.src} alt="image" className={styles.descriptionImg} />
+                                : null
 
-            <section id="specs" className={styles.observeSection}>
-            <h2 className={styles.titleDescription}>{t("product_card.parameters")}</h2>
-                <div className={styles.sectionsBox}>
-                    {Object.entries(productData.specs).map(([key, section]) => (
-                        <div key={key} className={styles.section}>
-                            <h3 className={styles.sectionTitle}>{section.title[lang]}</h3>
-                            <dl className={styles.sectionAttributes}>
-                                {section.attributes.map(attr => (
-                                    <Fragment key={attr.key}>
-                                        <dt className={styles.attributeTitle}>{typeof attr.title === "object" ? attr.title[lang] : attr.title}</dt>
-                                        <dd className={styles.attributeValue}>{typeof attr.value === "object" ? attr.value[lang] : attr.value}</dd>
-                                    </Fragment>
-                                ))}
-                            </dl>
-                        </div>
                     ))}
                 </div>
-
-                {/* <button className={styles.showMoreBtn}>Більше характеристик</button> */}
-            </section>
-
-
-
-            <section id="description" className={styles.observeSection}>
-                <h2 className={styles.titleDescription}>{t("product_card.description")} {productData.name}</h2>
-                <p className={styles.description}>{productData.description[lang]}</p>
             </section>
 
             <SubscriptionForm />
+            {/* <div className={`${styles.floatPurchaseCard} ${showFloatingCard ? styles.active : ""}`}>
+                <PurchaseCard product={productData} />
+            </div> */}
+            <FloatingPurchaseCard product={productData} showFloatingCard={showFloatingCard}/>
         </section >
     )
 }

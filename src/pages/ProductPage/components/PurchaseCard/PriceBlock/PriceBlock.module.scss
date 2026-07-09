@@ -1,0 +1,59 @@
+.priceBox {
+    display: flex;
+    flex-direction: column;
+
+    .discountBox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .oldPrice {
+            color: #787D88;
+            letter-spacing: .3px;
+            position: relative;
+
+            &.float{
+                font-size: 14px;
+            }
+
+            &::after {
+                content: "";
+                background-color: #fd795d;
+                position: absolute;
+                height: 1px;
+                width: 100%;
+                top: 50%;
+                left: 0;
+            }
+        }
+
+        .discount {
+            opacity: 0;
+
+            &.float{
+                opacity: 1;
+                background: #fd795d;
+                border-radius: 14px;
+                color: #fff;
+                font-size: 13px;
+                letter-spacing: .3px;
+                padding: 3px 6px;
+            }
+        }
+    }
+
+    .price {
+        font-size: 26px;
+        letter-spacing: .3px;
+
+        &.float{
+            font-size: 18px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .priceBox {
+        flex: 1;
+    }
+}

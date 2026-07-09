@@ -1,0 +1,45 @@
+.purchaseSection {
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    flex-direction: column;
+    border-radius: 14px;
+    background-color: #F6F9FF;
+    padding: 30px;
+    position: relative;
+
+    .heartPlus {
+        position: absolute;
+        top: 35px;
+        right: 35px;
+        color: #787D88;
+    }
+}
+
+@media (min-width: 768px) {
+    .purchaseSection {
+        margin-top: 20px;
+
+        &::after {
+            content: "";
+            height: 1px;
+            background-color: #eee;
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            left: -20px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .purchaseSection {
+        flex-direction: row;
+        align-items: center;
+        padding: 40px 30px;
+
+        .heartPlus {
+            top: 10px;
+        }
+    }
+}
