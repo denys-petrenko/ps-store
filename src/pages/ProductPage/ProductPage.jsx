@@ -17,6 +17,10 @@ import { BadgeCheck, BadgeX, HeartPlus, HeartX } from "lucide-react";
 import PurchaseCard from "./components/PurchaseCard/PurchaseCard";
 import FloatingPurchaseCard from "./components/FloatingPurchaseCard/FloatingPurchaseCard";
 
+
+
+import StickyPurchaseCard from "./components/StickyPurchaseCard/StickyPurchaseCard";
+
 const ProductPage = () => {
     const { productSlug } = useParams();
     const [product, setProduct] = useState(null);
@@ -167,7 +171,6 @@ const ProductPage = () => {
                         {t("product_card.navigation.description")}
                     </button>
                 </div>
-
             </div>
 
 
@@ -210,8 +213,12 @@ const ProductPage = () => {
                                     <dl className={styles.sectionAttributes}>
                                         {section.attributes.map(attr => (
                                             <Fragment key={attr.key}>
-                                                <dt className={styles.attributeTitle}>{typeof attr.title === "object" ? attr.title[lang] : attr.title}</dt>
-                                                <dd className={styles.attributeValue}>{typeof attr.value === "object" ? attr.value[lang] : attr.value}</dd>
+                                                <dt className={styles.attributeTitle}>
+                                                    {typeof attr.title === "object" ? attr.title[lang] : attr.title}
+                                                </dt>
+                                                <dd className={styles.attributeValue}>
+                                                    {typeof attr.value === "object" ? attr.value[lang] : attr.value}
+                                                </dd>
                                             </Fragment>
                                         ))}
                                     </dl>
@@ -227,24 +234,34 @@ const ProductPage = () => {
             <BestOffers />
 
             <section id="description" className={`${styles.observeSection} ${styles.descriptionSection}`}>
-                <h2 className={styles.titleDescription}>{t("product_card.description")} {productData.name}</h2>
-                <div>
-                    {productData.description.map((el, i) => (
-                        el.type === "paragraph"
-                            ? <p key={`${productData.id}-${i}p`} className={styles.description}>{el.text[lang]}</p>
-                            : el.type === "image"
-                                ? <img key={`${productData.id}-${i}img`} src={el.src} alt="image" className={styles.descriptionImg} />
-                                : null
+                <div className={styles.descriptionContent}>
+                    <h2 className={styles.titleDescription}>{t("product_card.description")} {productData.name}</h2>
+                    <div>
+                        {productData.description.map((el, i) => (
+                            el.type === "paragraph"
+                                ? <p key={`${productData.id}-${i}p`} className={styles.description}>{el.text[lang]}</p>
+                                : el.type === "image"
+                                    ? <img key={`${productData.id}-${i}img`} src={el.src} alt="image" className={styles.descriptionImg} />
+                                    : null
 
-                    ))}
+                        ))}
+                    </div>
                 </div>
+
+                {/* <aside className={styles.productScroll}>
+                    <div className={styles.productScrollCard}>
+                        <img src={productData.images[0]} alt={productData.name} className={styles.productScrollCardImg} />
+                        <p className={styles.productScrollCardCode}>{t("product_card.product_code")}: {productData.code}</p>
+                        <h3 className={styles.productScrollCardTitle}>{productData.name}</h3>
+                        <PriceBlock product={productData} showFloatingCard={showFloatingCard} />
+                        <BuyButton />
+                    </div>
+                </aside> */}
+                <StickyPurchaseCard product={productData} showFloatingCard={showFloatingCard} />
             </section>
 
             <SubscriptionForm />
-            {/* <div className={`${styles.floatPurchaseCard} ${showFloatingCard ? styles.active : ""}`}>
-                <PurchaseCard product={productData} />
-            </div> */}
-            <FloatingPurchaseCard product={productData} showFloatingCard={showFloatingCard}/>
+            <FloatingPurchaseCard product={productData} showFloatingCard={showFloatingCard} />
         </section >
     )
 }
