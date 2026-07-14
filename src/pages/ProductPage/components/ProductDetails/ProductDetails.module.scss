@@ -1,0 +1,132 @@
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+    .title {
+        width: 100%;
+        font-size: 22px;
+        margin: 50px 0 20px 0;
+    }
+
+    .rightColumn {
+
+        .productMeta {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 25px 0;
+            width: 100%;
+
+
+            .productCode {
+                font-size: 12px;
+                color: #999;
+            }
+
+            .inStock {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 15px;
+                letter-spacing: .3px;
+                font-weight: 600;
+
+                .badgeCheck {
+                    fill: rgb(115, 214, 115);
+                    color: #F6F9FF;
+                }
+
+                .badgeX {
+                    fill: rgb(213, 56, 56);
+                    color: #F6F9FF;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .productDetails {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "slider title"
+            "slider meta"
+            "slider price"
+            "slider specs";
+        width: 100%;
+        padding: 0 5% 20px 5%;
+        background-color: #F6F9FF;
+
+        .title {
+            margin: 0;
+            grid-area: title;
+            padding: 20px 20px 0 20px;
+            background-color: #fff;
+
+        }
+
+        .slider {
+            grid-area: slider;
+            border-right: 1px solid #eee;
+            background-color: #fff;
+
+            .sliderWrapper {
+                position: sticky;
+                top: 100px;
+                padding: 20px;
+            }
+        }
+
+        .rightColumn {
+            padding: 20px;
+            background-color: #fff;
+
+
+            .productMeta {
+                flex-direction: row;
+                padding-bottom: 20px;
+                width: 100%;
+                margin: 0;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    height: 1px;
+                    background-color: #eee;
+                    position: absolute;
+                    bottom: 0;
+                    right: -20px;
+                    left: -20px;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .productDetails {
+        .title {
+            font-size: 25px;
+            letter-spacing: .5px;
+        }
+
+        .rightColumn {
+            .productMeta {
+
+                .productCode {
+                    font-size: 14px;
+                }
+
+                .inStock {
+                    font-size: 16px;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    }
+}

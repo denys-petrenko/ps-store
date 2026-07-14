@@ -1,16 +1,17 @@
 import styles from "./PurchaseCard.module.scss";
 import { HeartPlus, HeartX } from "lucide-react";
-import Slider from "../../../Home/sections/Slider/Slider";
+import Loader from "../../../../components/ui/Loader";
 import BuyButton from "./BuyButton/BuyButton";
 import PriceBlock from "./PriceBlock/PriceBlock";
 
-const PurchaseCard = ({ product, ref }) => {
+const PurchaseCard = ({ purchaseRef, product }) => {
+
     if (!product) {
-        return <Slider />
+        return <Loader />
     }
 
     return (
-        <div ref={ref} className={styles.purchaseSection}>
+        <div ref={purchaseRef} className={styles.purchaseSection}>
             <PriceBlock product={product} />
             <HeartPlus className={styles.heartPlus} size={24} />
             <BuyButton />

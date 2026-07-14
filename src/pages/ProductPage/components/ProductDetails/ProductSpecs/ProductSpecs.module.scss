@@ -1,0 +1,83 @@
+.specsSection {
+    width: 100%;
+
+    .sectionsBox {
+        // max-height: 290px;
+        // overflow: hidden;
+        // position: relative;
+        // transition: all .5s;
+
+        // &::after {
+        //     background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0), #fff);
+        //     bottom: 0;
+        //     content: "";
+        //     height: 140px;
+        //     left: 0;
+        //     pointer-events: none;
+        //     position: absolute;
+        //     transition: all .3s;
+        //     width: 100%;
+        // }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+
+            .sectionTitle {
+                font-size: 16px;
+                padding: 24px 0 15px 0;
+            }
+
+            .sectionAttributes {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                row-gap: 8px;
+
+                .attributeTitle,
+                .attributeValue {
+                    background-color: #f3f3f3;
+                    line-height: 22px;
+                    font-size: 13px;
+                    padding: 10px;
+                }
+
+                .attributeTitle:nth-of-type(2n),
+                .attributeValue:nth-of-type(2n) {
+                    background-color: white;
+                }
+            }
+
+        }
+    }
+
+    .showMoreBtn {
+        color: #358CF7;
+        border: none;
+        background: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .specsSection {
+        .title {
+            font-size: 23px;
+            letter-spacing: .5px;
+        }
+
+        .sectionsBox {
+            .section {
+                .sectionTitle {
+                    font-size: 17px;
+                }
+
+                .sectionAttributes {
+
+                    .attributeTitle,
+                    .attributeValue {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
