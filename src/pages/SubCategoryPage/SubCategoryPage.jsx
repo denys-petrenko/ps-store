@@ -5,31 +5,23 @@ import Loader from "../../components/ui/Loader";
 import { Link } from "react-router-dom";
 import favIcon from "../../assets/best-offers/cards/fav-icon.svg";
 import basket from "../../assets/card/shopping-cart.svg";
-import { useEffect, useState } from "react";
-import { getCategory } from "../../api/categoryApi";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../../store/slices/productsSlice";
+
+
 
 const SubCategoryPage = () => {
     const { subCategoryId } = useParams();
     const { categoryId } = useParams();
-    const [category, setCategory] = useState([]);
-    const [error, setError] = useState(false);
+    const dispatch = useDispatch();
+    const { items, isLoading, isError } = useSelector(state => state.products);
 
     useEffect(() => {
-        const loadCategory = async () => {
-            try {
-                const data = await getCategory(subCategoryId);
-                setCategory(data);
-            } catch (error) {
-                console.error(error);
-                setError(true)
-            }
-            finally { }
-        }
+        dispatch(fetchProducts(subCategoryId));
+    }, [dispatch, subCategoryId])
 
-        loadCategory();
-    }, [])
-
-    if (!category) {
+    if (isLoading) {
         return (
             <section className={styles.subCategoryPage}>
                 <Loader />
@@ -37,12 +29,16 @@ const SubCategoryPage = () => {
         )
     }
 
+    if (isError) {
+        return <h2>{isError}</h2>;
+    }
+
 
     return (
         <section className={styles.subCategoryPage}>
             <Breadcrumbs />
             <div className={styles.subCategoryCards}>
-                {category?.map(item => (
+                {items.map(item => (
                     < div className={styles.categoryCard} key={item.id}>
                         <div className={styles.categoryCardMedia}>
                             <button className={styles.categoryCardFavourite}>
@@ -59,7 +55,13 @@ const SubCategoryPage = () => {
                                 <span className={styles.categoryCardStars}>★★★★☆</span>
                                 <span className={styles.categoryCardReviews}>12 відгуків</span>
                             </div>
-                            <h3 className={styles.categoryCardTitle}>{item?.name}</h3>
+                            <Link
+                                to={`/ps-store/${categoryId}/${subCategoryId}/${item.slug}`}
+                                className={styles.link}
+                            >
+                                <h3 className={styles.categoryCardTitle}>{item?.name}</h3>
+                            </Link>
+
                             {/* <div className={styles.categoryCardColor}>green camouflage</div> */}
                             <div className={styles.categoryCardPrice}>{item?.price} ₴</div>
                         </div>

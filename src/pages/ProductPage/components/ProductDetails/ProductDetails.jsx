@@ -39,6 +39,10 @@ const ProductDetails = ({ product }) => {
         return () => observer.disconnect();
     }, [product]);
 
+    const slides = product.images.map(image => (
+        { id: product.id, image: image, name: product.name }
+    ))
+
 
     return (
         <section className={styles.productDetails}>
@@ -52,7 +56,7 @@ const ProductDetails = ({ product }) => {
 
             <div className={styles.slider}>
                 <div className={styles.sliderWrapper}>
-                    <Slider variant={"product"} autoplay={false} data={product.images} />
+                    <Slider variant={"product"} autoplay={false} data={slides} />
                 </div>
             </div>
 
@@ -76,7 +80,7 @@ const ProductDetails = ({ product }) => {
                 <PurchaseCard purchaseRef={purchaseRef} product={product} />
                 <ProductSpecs product={product} />
             </div>
-            <FloatingPurchaseCard product={product} isStickyMode={isStickyMode}/>
+            <FloatingPurchaseCard product={product} isStickyMode={isStickyMode} />
         </section>
     )
 }

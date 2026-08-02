@@ -42,12 +42,16 @@ const Slider = ({ variant, autoplay, onSlideClick, data }) => {
     }
 
     return (
-        <div className={styles[`slider-${variant}`]}>
+        <div className={`${styles.slider} ${styles[variant]}`}>
             <div className={styles["slider-viewport"]} ref={emblaRef}>
                 <div className={styles["slider-container"]}>
-                    {data.map((image, i) => (
-                        <div key={i} className={styles["slider-slide"]}>
-                            <img src={image} alt="slide" />
+                    {data.map((el, i) => (
+                        <div key={`${el.id}-${i}`} className={styles["slider-slide"]}>
+                            <img 
+                            src={el.image} 
+                            alt={el.name} 
+                            onClick={() => onSlideClick?.(el)}
+                            />
                         </div>
                     ))}
                 </div>
@@ -57,16 +61,15 @@ const Slider = ({ variant, autoplay, onSlideClick, data }) => {
             <button className={styles["slider-next"]} aria-label="Next slide" onClick={goToNext}>
             </button>
             <div className={styles.thumbnails}>
-                {data.map((image, i) => (
-                    <div key={i}
+                {data.map((el, i) => (
+                    < div key={`thumbnails-${el.name}-${i}`}
                         className={`${styles.thumbnail} ${selectedIndex === i ? styles.active : ""}`}
                         onClick={() => handleSelectIndex(i)}>
-                        <img src={image} alt="thumbnail" className={styles.thumbnailImg} />
+                        <img src={el.image} alt={el.name} className={styles.thumbnailImg} />
                     </div>
-
                 ))}
             </div>
-        </div>
+        </div >
     )
 }
 

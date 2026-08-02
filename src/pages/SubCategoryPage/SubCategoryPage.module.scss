@@ -70,15 +70,22 @@
                     }
                 }
 
-                .categoryCardTitle {
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    color: #212229;
-                    font-size: 14px;
-                    font-weight: 400;
+                .link{
+                    text-decoration: none;
+
+                    .categoryCardTitle {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        color: #212229;
+                        font-size: 14px;
+                        font-weight: 400;
+                        letter-spacing: .5px;
+                    }
                 }
+
+
 
                 .categoryCardColor {
                     color: #787D88;

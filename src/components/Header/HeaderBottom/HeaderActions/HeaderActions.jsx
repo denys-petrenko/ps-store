@@ -1,12 +1,15 @@
 import styles from "./HeaderActions.module.scss";
-import profile from "../../../../assets/header/profile.svg";
-import favorites from "../../../../assets/header/favorites.svg";
-import cart from "../../../../assets/header/cart.svg";
-
+import iconProfile from "../../../../assets/header/profile.svg";
+import iconFavorites from "../../../../assets/header/favorites.svg";
+import iconCart from "../../../../assets/header/cart.svg";
 import i18next from "i18next";
 import { LOCALS } from "../../../../i18n/constants";
+import { useSelector } from "react-redux";
+
 
 const HeaderActions = () => {
+    const cart = useSelector(state => state.cart);
+    const favoritesCart = useSelector(state => state.favorites);
     const changeLang = (lang) => {
         i18next.changeLanguage(lang);
         localStorage.setItem("i18nextLng", lang);
@@ -14,15 +17,21 @@ const HeaderActions = () => {
 
     return (
         <div className={styles["header-actions"]}>
-            <div className={styles["header-icons"]}>
-                <a href="" className={styles["header-icon"]}>
-                    <img src={profile} alt="Profile" />
+            <div className={styles.headerIcons}>
+                <a href="" className={styles.headerIcon}>
+                    <img src={iconProfile} alt="Profile" />
                 </a>
-                <a href="" className={styles["header-icon"]}>
-                    <img src={favorites} alt="Favorites" />
+                <a href="" className={styles.headerIcon}>
+                    <img src={iconFavorites} alt="Favorites" />
+                    <span className={`${styles.iconCounter} ${favoritesCart.items.length > 0 ? styles.active : ""}`} >
+                        {favoritesCart.items.length}
+                    </span>
                 </a>
-                <a href="" className={styles["header-icon"]}>
-                    <img src={cart} alt="Cart" />
+                <a href="" className={styles.headerIcon}>
+                    <img src={iconCart} alt="Cart" />
+                    <span className={`${styles.iconCounter} ${cart.items.length > 0 ? styles.active : ""}`} >
+                        {cart.items.length}
+                    </span>
                 </a>
             </div>
             <div className={styles["language-switcher"]}>

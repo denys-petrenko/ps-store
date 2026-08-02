@@ -231,7 +231,10 @@
         },
         "parameters": "Характеристики",
         "description": "Опис",
-        "buy-button": "Купити"
+        "buy_button": {
+            "add": "Купити",
+            "added": "В кошику"
+        }
     },
     "footer": {
         "nav": [

@@ -3,12 +3,11 @@ import BuyButton from "../PurchaseCard/BuyButton/BuyButton";
 import PriceBlock from "../PurchaseCard/PriceBlock/PriceBlock";
 
 const FloatingPurchaseCard = ({ product, isStickyMode }) => {
-    
 
     return (
         <div className={`${styles.floatPurchaseCard} ${isStickyMode ? styles.active : ""}`}>
-            <PriceBlock product={product} isStickyMode={isStickyMode}/>
-            <BuyButton isStickyMode={isStickyMode}/>
+            <PriceBlock product={product} isStickyMode={isStickyMode} />
+            <BuyButton product={product} isStickyMode={isStickyMode} />
         </div>
     )
 }

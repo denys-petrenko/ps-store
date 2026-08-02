@@ -231,7 +231,10 @@
         },
         "parameters": "Parameters",
         "description": "Description",
-        "buy-button": "Buy"
+        "buy_button": {
+            "add": "Buy",
+            "added": "In Cart"
+        }
     },
     "footer": {
         "nav": [

@@ -8,11 +8,17 @@
     padding: 30px;
     position: relative;
 
-    .heartPlus {
+    .heartPlus,
+    .heartX {
         position: absolute;
         top: 35px;
         right: 35px;
         color: #787D88;
+        cursor: pointer;
+    }
+
+    .heartX {
+        color: #fc7a5d;
     }
 }
 
@@ -38,7 +44,8 @@
         align-items: center;
         padding: 40px 30px;
 
-        .heartPlus {
+        .heartPlus,
+        .heartX {
             top: 10px;
         }
     }

@@ -3,14 +3,13 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 
 const productsCol = collection(db, "products");
 
-export const getCategory = async (category) => {
+export const getProducts = async (category) => {
     const q = query(
         productsCol,
         where("category", "==", category)
     )
 
     const categoryCol = await getDocs(q);
-    
 
     return categoryCol.docs.map(doc => ({
         id: doc.id,

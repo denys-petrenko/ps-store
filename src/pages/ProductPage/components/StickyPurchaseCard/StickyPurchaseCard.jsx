@@ -13,7 +13,7 @@ const StickyPurchaseCard = ({product, isStickyMode}) => {
                 <p className={styles.code}>{t("product_card.product_code")}: {product.code}</p>
                 <h3 className={styles.title}>{product.name}</h3>
                 <PriceBlock product={product} isStickyMode={isStickyMode} />
-                <BuyButton />
+                <BuyButton product={product} isStickyMode={isStickyMode} />
             </div>
         </aside>
     )
