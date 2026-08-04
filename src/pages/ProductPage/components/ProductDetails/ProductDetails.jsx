@@ -2,15 +2,12 @@ import styles from "./ProductDetails.module.scss";
 import { useTranslation } from "react-i18next";
 import { BadgeCheck, BadgeX } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
-
 import Slider from "../../../Home/sections/Slider/Slider";
 import PurchaseCard from "../PurchaseCard/PurchaseCard";
 import ProductSpecs from "./ProductSpecs/ProductSpecs";
 
-import FloatingPurchaseCard from "../FloatingPurchaseCard/FloatingPurchaseCard";
 
-
-const ProductDetails = ({ product }) => {
+const ProductDetails = ({ product, setShowFloatingCard }) => {
     const { t } = useTranslation();
     const isAvailable = product?.stock > 0;
 
@@ -20,6 +17,11 @@ const ProductDetails = ({ product }) => {
     const [titleVisible, setTitleVisible] = useState(false);
     const [purchaseVisible, setPurchaseVisible] = useState(false);
     const isStickyMode = !titleVisible && !purchaseVisible;
+
+    useEffect(() => {
+        setShowFloatingCard(isStickyMode);
+    }, [isStickyMode])
+
 
 
     useEffect(() => {
@@ -80,7 +82,6 @@ const ProductDetails = ({ product }) => {
                 <PurchaseCard purchaseRef={purchaseRef} product={product} />
                 <ProductSpecs product={product} />
             </div>
-            <FloatingPurchaseCard product={product} isStickyMode={isStickyMode} />
         </section>
     )
 }
