@@ -7,19 +7,6 @@
     background-color: #F6F9FF;
     padding: 30px;
     position: relative;
-
-    .heartPlus,
-    .heartX {
-        position: absolute;
-        top: 35px;
-        right: 35px;
-        color: #787D88;
-        cursor: pointer;
-    }
-
-    .heartX {
-        color: #fc7a5d;
-    }
 }
 
 @media (min-width: 768px) {
@@ -43,10 +30,5 @@
         flex-direction: row;
         align-items: center;
         padding: 40px 30px;
-
-        .heartPlus,
-        .heartX {
-            top: 10px;
-        }
     }
 }

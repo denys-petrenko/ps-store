@@ -47,7 +47,6 @@ const SubCategoryPage = () => {
                             <Link to={`/ps-store/${categoryId}/${subCategoryId}/${item.slug}`}>
                                 <img className={styles.categoryCardImage} src={item.images?.[0]} alt={item.name} />
                             </Link>
-
                         </div>
 
                         <div className={styles.categoryCardContent}>

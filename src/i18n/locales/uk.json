@@ -236,6 +236,13 @@
             "added": "В кошику"
         }
     },
+    "cart": {
+        "cart_modal": {
+            "order_title": "У вашому кошику",
+            "total_title": "Разом:",
+            "order_btn": "Оформити замовлення"
+        }
+    },
     "footer": {
         "nav": [
             {

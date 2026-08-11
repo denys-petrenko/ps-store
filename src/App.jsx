@@ -9,6 +9,7 @@ import DeliveryPayment from "./pages/DeliveryPayment/DeliveryPayment";
 import About from "./pages/About/About";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import PersistStore from "./components/PersistStore/PersistStore";
+import CartPage from "./pages/CartPage/CartPage";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="ps-store/:categoryId" element={<CategoryPage />} />
           <Route path="ps-store/:categoryId/:subCategoryId" element={<SubCategoryPage />} />
           <Route path="ps-store/:categoryId/:subCategoryId/:productSlug" element={<ProductPage />} />
+          <Route path="ps-store/cart" element={<CartPage />} />
         </Route>
       </Routes>
     </>

@@ -1,0 +1,66 @@
+.order {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+
+    .orderImage {
+        display: flex;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex: 1;
+
+        .title {
+            color: #555;
+            font-size: 13px;
+            letter-spacing: .5px;
+        }
+
+        .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .counter {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                .counterBtn {
+                    display: flex;
+                    align-items: center;
+                    border: none;
+                    background: none;
+                    width: 20px;
+                    cursor: pointer;
+                    color: #358CF7;
+                }
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+
+        .cartFavoriteBtn {
+            position: static;
+        }
+
+        .trash {
+            color: #787D88;
+        }
+    }
+}

@@ -12,7 +12,7 @@
             letter-spacing: .3px;
             position: relative;
 
-            &.float{
+            &.float {
                 font-size: 14px;
             }
 
@@ -30,7 +30,7 @@
         .discount {
             opacity: 0;
 
-            &.float{
+            &.float {
                 opacity: 1;
                 background: #fd795d;
                 border-radius: 14px;
@@ -46,14 +46,43 @@
         font-size: 26px;
         letter-spacing: .3px;
 
-        &.float{
+        &.float {
             font-size: 18px;
         }
     }
+
+
+}
+
+.cart {
+    width: 90px;
+
+    .discountBox {
+
+        .oldPrice,
+        .discount {
+            font-size: 11px;
+
+            &.float {
+                font-size: 11px;
+                padding: 1px 3px;
+            }
+        }
+    }
+
+
+    .price {
+        font-size: 18px;
+    }
+
 }
 
 @media (min-width: 1024px) {
     .priceBox {
         flex: 1;
+    }
+
+    .cart {
+        flex: none;
     }
 }

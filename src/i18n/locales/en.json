@@ -236,6 +236,13 @@
             "added": "In Cart"
         }
     },
+    "cart": {
+        "cart_modal": {
+            "order_title": "In your cart",
+            "total_title": "Total:",
+            "order_btn": "Proceed to Checkout"
+        }
+    },
     "footer": {
         "nav": [
             {

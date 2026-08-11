@@ -1,0 +1,28 @@
+.favoriteBtn {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+
+    .heartPlus {
+        color: #787D88;
+
+    }
+
+    .heartX {
+        color: #fc7a5d;
+    }
+}
+
+@media (min-width: 1024px) {
+    .favoriteBtn {
+        top: 10px;
+    }
+}
