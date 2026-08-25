@@ -50,7 +50,7 @@ const CartModalOrder = ({ item }) => {
                 </div>
             </div>
             <div className={styles.actions}>
-                <FavoriteBtn product={item} className={styles.cartFavoriteBtn} />
+                <FavoriteBtn product={item} variant="cart" />
                 <Trash
                     className={styles.trash}
                     onClick={() => handleRemoveFromCart(item)}

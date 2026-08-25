@@ -7,7 +7,7 @@ import { HeartPlus, HeartX } from "lucide-react";
 
 
 
-const FavoriteBtn = ({ product, className = "" }) => {
+const FavoriteBtn = ({ product, variant = "" }) => {
     const favorites = useSelector(state => state.favorites);
     const isFavorite = favorites.items.some(item => item.id === product.id);
     const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const FavoriteBtn = ({ product, className = "" }) => {
     }
 
     return (
-        <button className={`${styles.favoriteBtn} ${className}`}>
+        <button className={`${styles.favoriteBtn} ${styles[variant]}`}>
             {
                 isFavorite
                     ? <HeartX

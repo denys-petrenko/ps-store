@@ -3,23 +3,31 @@ import { useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Loader from "../../components/ui/Loader";
 import { Link } from "react-router-dom";
-import favIcon from "../../assets/best-offers/cards/fav-icon.svg";
-import basket from "../../assets/card/shopping-cart.svg";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../store/slices/productsSlice";
+import BuyButton from "../ProductPage/components/PurchaseCard/BuyButton/BuyButton";
+import FavoriteBtn from "../ProductPage/components/PurchaseCard/FavoriteBtn/FavoriteBtn";
+import PriceBlock from "../ProductPage/components/PurchaseCard/PriceBlock/PriceBlock";
 
+import Slider from "../Home/sections/Slider/Slider";
 
 
 const SubCategoryPage = () => {
-    const { subCategoryId } = useParams();
-    const { categoryId } = useParams();
+    const { categoryId, subCategoryId } = useParams();
     const dispatch = useDispatch();
     const { items, isLoading, isError } = useSelector(state => state.products);
 
     useEffect(() => {
         dispatch(fetchProducts(subCategoryId));
-    }, [dispatch, subCategoryId])
+    }, [dispatch, subCategoryId]);
+
+    const createSlides = (product) =>
+        product.images?.map((image, ind) => ({
+            id: `${product.id}-${ind}`,
+            image: image,
+            name: product.name
+        })) ?? [];
 
     if (isLoading) {
         return (
@@ -37,19 +45,22 @@ const SubCategoryPage = () => {
     return (
         <section className={styles.subCategoryPage}>
             <Breadcrumbs />
+
             <div className={styles.subCategoryCards}>
                 {items.map(item => (
-                    < div className={styles.categoryCard} key={item.id}>
+                    <div className={styles.categoryCard} key={item.id}>
                         <div className={styles.categoryCardMedia}>
-                            <button className={styles.categoryCardFavourite}>
-                                <img src={favIcon} alt="" />
-                            </button>
-                            <Link to={`/ps-store/${categoryId}/${subCategoryId}/${item.slug}`}>
-                                <img className={styles.categoryCardImage} src={item.images?.[0]} alt={item.name} />
-                            </Link>
+                            <FavoriteBtn product={item} variant="category" />
+                            <Slider
+                                variant="category"
+                                autoplay={false}
+                                data={createSlides(item)}
+                                to={`/ps-store/${categoryId}/${subCategoryId}/${item.slug}`}
+                            />
                         </div>
 
                         <div className={styles.categoryCardContent}>
+                            <span className={styles.categoryCardCode}>Code: {item.code}</span>
                             <div className={styles.categoryCardRating}>
                                 <span className={styles.categoryCardStars}>★★★★☆</span>
                                 <span className={styles.categoryCardReviews}>12 відгуків</span>
@@ -58,16 +69,13 @@ const SubCategoryPage = () => {
                                 to={`/ps-store/${categoryId}/${subCategoryId}/${item.slug}`}
                                 className={styles.link}
                             >
-                                <h3 className={styles.categoryCardTitle}>{item?.name}</h3>
+                                <h3 className={styles.categoryCardTitle}>{item.name}</h3>
                             </Link>
-
                             {/* <div className={styles.categoryCardColor}>green camouflage</div> */}
-                            <div className={styles.categoryCardPrice}>{item?.price} ₴</div>
+
+                            <PriceBlock product={item} isStickyMode={true} variant="category" />
                         </div>
-                        <button className={styles.buyBtn}>
-                            <img src={basket} alt="Basket" className={styles.basket} />
-                            Купити
-                        </button>
+                        <BuyButton product={item} variant="category" />
                     </div>
                 ))}
             </div>

@@ -23,7 +23,6 @@ const ProductDetails = ({ product, setShowFloatingCard }) => {
     }, [isStickyMode])
 
 
-
     useEffect(() => {
         if (!purchaseRef.current || !titleRef.current) return;
 
@@ -42,7 +41,11 @@ const ProductDetails = ({ product, setShowFloatingCard }) => {
     }, [product]);
 
     const slides = product.images.map(image => (
-        { id: product.id, image: image, name: product.name }
+        {
+            id: product.id,
+            image: image,
+            name: product.name
+        }
     ))
 
 
@@ -58,7 +61,7 @@ const ProductDetails = ({ product, setShowFloatingCard }) => {
 
             <div className={styles.slider}>
                 <div className={styles.sliderWrapper}>
-                    <Slider variant={"product"} autoplay={false} data={slides} />
+                    <Slider variant="product" autoplay={false} data={slides} />
                 </div>
             </div>
 

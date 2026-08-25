@@ -5,7 +5,7 @@ import { addToCart, openCartModal } from "../../../../../store/slices/cartSlice"
 import { useDispatch, useSelector } from "react-redux";
 import { Check } from "lucide-react";
 
-const BuyButton = ({ product, isStickyMode }) => {
+const BuyButton = ({ product, isStickyMode, variant = "default" }) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
@@ -18,7 +18,7 @@ const BuyButton = ({ product, isStickyMode }) => {
 
     return (
         <button
-            className={`${styles.buyButton} ${isStickyMode ? styles.float : ""}`}
+            className={`${styles.buyButton} ${isStickyMode ? styles.float : ""} ${styles[variant]}`}
             onClick={() => {
                 addProductToCart(product);
             }}
@@ -30,7 +30,7 @@ const BuyButton = ({ product, isStickyMode }) => {
                         {t("product_card.buy_button.added")}
                     </>
                     : <>
-                        <img src={basket} alt="Basket" />
+                        <img src={basket} alt="Basket" className={styles.basket}/>
                         {t("product_card.buy_button.add")}
                     </>
             }

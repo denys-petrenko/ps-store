@@ -13,11 +13,27 @@
     text-align: center;
     font-size: 18px;
 
-    &.float{
-        width: 150px;
+    &.float {
+        width: 100%;
         margin: 0;
         font-size: 16px;
         height: 40px;
+    }
+}
+
+.category {
+    width: 90%;
+    min-height: auto;
+    height: 40px;
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin: 5px;
+    gap: 5px;
+
+    .basket {
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -31,5 +47,10 @@
         &:hover {
             background-color: #0771c8;
         }
+    }
+
+    .category {
+        flex: none;
+        margin-bottom: 25px;
     }
 }

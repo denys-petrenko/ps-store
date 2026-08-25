@@ -55,12 +55,9 @@
         flex-direction: column;
         gap: 13px;
 
-        .cartFavoriteBtn {
-            position: static;
-        }
-
         .trash {
             color: #787D88;
+            cursor: pointer;
         }
     }
 }

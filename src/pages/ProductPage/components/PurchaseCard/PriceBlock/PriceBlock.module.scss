@@ -50,8 +50,6 @@
             font-size: 18px;
         }
     }
-
-
 }
 
 .cart {
@@ -77,12 +75,21 @@
 
 }
 
+.category {
+    flex: none;
+    margin-top: auto;
+}
+
 @media (min-width: 1024px) {
     .priceBox {
         flex: 1;
     }
 
     .cart {
+        flex: none;
+    }
+
+    .category {
         flex: none;
     }
 }
