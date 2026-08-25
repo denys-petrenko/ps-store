@@ -52,12 +52,16 @@ const Slider = ({ variant, autoplay, onSlideClick, data, to }) => {
                         <div key={`${el.id}-${i}`} className={styles.slide}>
                             {to ? (
                                 <Link to={to}>
-                                    <img src={el.image} alt={el.name} className={styles.sliderImage} />
+                                    <img src={el.image}
+                                        alt={el.name}
+                                        className={styles.sliderImage}
+                                    />
                                 </Link>
                             ) : (
                                 <img
                                     src={el.image}
                                     alt={el.name}
+                                    className={styles.sliderImage}
                                     onClick={() => onSlideClick?.(el)}
                                 />
                             )}
