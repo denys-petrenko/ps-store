@@ -5,6 +5,7 @@ import iconCart from "../../../../assets/header/cart.svg";
 import i18next from "i18next";
 import { LOCALS } from "../../../../i18n/constants";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 const HeaderActions = () => {
@@ -27,12 +28,12 @@ const HeaderActions = () => {
                         {favoritesCart.items.length}
                     </span>
                 </a>
-                <a href="" className={styles.headerIcon}>
+                <Link to="/ps-store/cart" className={styles.headerIcon}>
                     <img src={iconCart} alt="Cart" />
                     <span className={`${styles.iconCounter} ${cart.items.length > 0 ? styles.active : ""}`} >
                         {cart.items.length}
                     </span>
-                </a>
+                </Link>
             </div>
             <div className={styles["language-switcher"]}>
                 <button

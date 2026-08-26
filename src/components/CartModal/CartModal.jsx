@@ -69,7 +69,8 @@ const CartModal = () => {
                             {totalPrice} ₴
                         </span>
                     </div>
-                    <Link to="/ps-store/cart"
+                    <Link
+                        to="/ps-store/cart"
                         className={styles.orderSummaryBtn}
                         onClick={handleClose}
                     >

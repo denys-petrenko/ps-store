@@ -18,12 +18,16 @@
 
 .categoryCard {
     --dots-opacity: 0;
+    --dots-pointer-events: none;
     --arrows-opacity: 0;
+    --arrows-pointer-events: none;
     --slide-scale: 0.8;
 
     &:hover {
         --dots-opacity: 1;
+        --dots-pointer-events: auto;
         --arrows-opacity: 1;
+        --arrows-pointer-events: auto;
         --slide-scale: 1;
     }
 

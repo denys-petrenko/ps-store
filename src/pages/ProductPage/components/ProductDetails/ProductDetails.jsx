@@ -2,6 +2,7 @@ import styles from "./ProductDetails.module.scss";
 import { useTranslation } from "react-i18next";
 import { BadgeCheck, BadgeX } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
+import { productToSlides } from "../../../../utils/product/productToSlides";
 import Slider from "../../../Home/sections/Slider/Slider";
 import PurchaseCard from "../PurchaseCard/PurchaseCard";
 import ProductSpecs from "./ProductSpecs/ProductSpecs";
@@ -40,14 +41,6 @@ const ProductDetails = ({ product, setShowFloatingCard }) => {
         return () => observer.disconnect();
     }, [product]);
 
-    const slides = product.images.map(image => (
-        {
-            id: product.id,
-            image: image,
-            name: product.name
-        }
-    ))
-
 
     return (
         <section className={styles.productDetails}>
@@ -61,7 +54,7 @@ const ProductDetails = ({ product, setShowFloatingCard }) => {
 
             <div className={styles.slider}>
                 <div className={styles.sliderWrapper}>
-                    <Slider variant="product" autoplay={false} data={slides} />
+                    <Slider variant="product" autoplay={false} data={productToSlides(product)} />
                 </div>
             </div>
 
