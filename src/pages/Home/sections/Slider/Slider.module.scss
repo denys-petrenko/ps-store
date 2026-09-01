@@ -204,7 +204,7 @@
         .sliderPrev,
         .sliderNext {
             opacity: var(--arrows-opacity, 0);
-            pointer-events: var(--arrows-pointer-events, none);
+            pointer-events: var(--arrows-pointer-events, auto);
             transition: opacity .2s ease;
             display: block;
             width: 20px;
@@ -245,7 +245,7 @@
             gap: 5px;
             height: 25px;
             opacity: var(--dots-opacity, 0);
-            pointer-events: var(--dots-pointer-events, none);
+            pointer-events: var(--dots-pointer-events, auto);
             transition: opacity .2s ease;
 
             .dot {

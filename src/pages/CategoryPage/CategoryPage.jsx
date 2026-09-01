@@ -1,5 +1,5 @@
 import styles from "./CategoryPage.module.scss";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, Link } from "react-router-dom";
 import { useCategories } from "../../hooks/useCategories";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/ui/Loader";
@@ -36,41 +36,39 @@ const CategoryPage = () => {
     return (
         <section className={styles.category}>
             <Breadcrumbs />
-
             <h1 className={styles.title}>{activeCategory?.title[lang]}</h1>
             <div className={styles.cards}>
-                {
-                    activeCategory?.children?.map(cat => (
-                        <div key={cat.id} className={styles.card}>
-                            {cat.image && (
-                                <div className={styles.imageContainer}>
-                                    <img src={cat.image}
-                                        alt={cat.title}
-                                        className={styles.img}
-                                    />
-                                </div>
-                            )}
-                            <h3 className={styles.cardTitle}>
-                                <NavLink
-                                    to={`/ps-store/${activeCategory.id}/${cat.id}`}
+                {activeCategory?.children?.map(cat => (
+                    <div key={cat.id} className={styles.card}>
+                        {cat.image && (
+                            <div className={styles.imageContainer}>
+                                <img src={cat.image}
+                                    alt={cat.title}
+                                    className={styles.img}
+                                />
+                            </div>
+                        )}
+                        <h3 className={styles.cardTitle}>
+                            <Link
+                                className={styles.cardTitleLink}
+                                to={`/ps-store/${activeCategory.id}/${cat.id}`}
+                            >
+                                {cat.title[lang]}
+                            </Link>
+                        </h3>
+                        <ul className={styles.list}>
+                            {cat.children?.map(child => (
+                                <Link
+                                    key={child.slug}
+                                    className={styles.child}
+                                    to={`/ps-store/${activeCategory.id}/${child.id}`}
                                 >
-                                    {cat.title[lang]}
-                                </NavLink>
-                            </h3>
-                            <ul className={styles.list}>
-                                {cat.children?.map(child => (
-                                    <NavLink
-                                        key={child.slug}
-                                        className={styles.child}
-                                        to={`/ps-store/${activeCategory.id}/${child.id}`}
-                                    >
-                                        {child.title[lang]}
-                                    </NavLink>
-                                ))}
-                            </ul>
-                        </div>
-                    ))
-                }
+                                    {child.title[lang]}
+                                </Link>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
             </div>
         </section>
     )

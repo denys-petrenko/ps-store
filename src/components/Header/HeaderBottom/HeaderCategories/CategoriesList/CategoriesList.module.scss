@@ -8,7 +8,7 @@
     z-index: 10;
     width: 100%;
 
-    .list-item {
+    .listItem {
         display: flex;
         justify-content: left;
         align-items: center;
@@ -16,7 +16,7 @@
         cursor: pointer;
         position: relative;
 
-        .list-item-link {
+        .listItemLink {
             all: unset;
             display: flex;
             padding: 8px 0;
@@ -28,7 +28,7 @@
         }
     }
 
-    .list-item::after {
+    .listItem::after {
         content: "";
         display: inline-block;
         width: 6px;

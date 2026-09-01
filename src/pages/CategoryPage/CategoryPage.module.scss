@@ -36,7 +36,12 @@
             }
 
             .cardTitle {
-                color: #358CF7;
+
+                .cardTitleLink {
+                    text-decoration: none;
+                    color: #358CF7;
+
+                }
             }
 
             .list {
@@ -48,6 +53,7 @@
                     list-style: none;
                     text-align: center;
                     color: #787D88;
+                    text-decoration: none;
                 }
             }
         }

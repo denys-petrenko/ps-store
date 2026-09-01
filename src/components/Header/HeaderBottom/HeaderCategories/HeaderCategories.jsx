@@ -69,12 +69,10 @@ const HeaderCategories = () => {
                     <MobileMenu
                         menu={menu}
                         loading={{ isLoading, error }}
-                        trigger="click"
                     />
                     : <DesktopMenu
                         menu={menu}
                         loading={{ isLoading, error }}
-                        trigger="hover"
                     />
                 }
             </div>

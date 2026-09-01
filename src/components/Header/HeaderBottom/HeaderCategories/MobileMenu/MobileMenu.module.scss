@@ -7,15 +7,16 @@
     height: 100%;
     background-color: #fff;
     padding: 25px 0;
+    position: fixed;
 
-    .menu-header {
+    .menuHeader {
         display: flex;
         align-items: center;
         position: relative;
         width: 90%;
         height: 40px;
 
-        .back-btn {
+        .backBtn {
             display: none;
 
             &.active {
@@ -30,7 +31,7 @@
             }
         }
 
-        .close-btn {
+        .closeBtn {
             position: absolute;
             right: 0;
             background: none;

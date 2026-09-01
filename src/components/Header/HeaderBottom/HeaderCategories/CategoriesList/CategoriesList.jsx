@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import Loader from "../../../../ui/Loader";
 import { NavLink } from "react-router-dom";
 
-const CategoriesList = ({ data, loading, trigger }) => {
+const CategoriesList = ({ data, loading }) => {
     const { i18n } = useTranslation();
     const lang = i18n.language;
     const { categories, selectCategory } = data;
@@ -28,32 +28,22 @@ const CategoriesList = ({ data, loading, trigger }) => {
 
     return (
         <ul className={styles.list}>
-            {
-                categories
-                    .map(item => (
-                        <li
-                            key={item.id}
-                            className={styles["list-item"]}
-                            onMouseEnter={
-                                trigger === "hover"
-                                    ? () => selectCategory(item.id)
-                                    : undefined
-                            }
-                            onClick={
-                                trigger === "click"
-                                    ? () => selectCategory(item.id)
-                                    : undefined
-                            }
+            {categories
+                .map(item => (
+                    <li
+                        key={item.id}
+                        className={styles.listItem}
+                        onMouseEnter={() => selectCategory(item.id)}
+                        onClick={() => selectCategory(item.id)}
+                    >
+                        <NavLink
+                            className={styles.listItemLink}
+                            to={`/ps-store/${item.slug}`}
                         >
-                            <NavLink
-                                className={styles["list-item-link"]}
-                                to={`ps-store/${item.slug}`}
-                            >
-                                {item.title[lang]}
-                            </NavLink>
-                        </li>
-                    ))
-            }
+                            {item.title[lang]}
+                        </NavLink>
+                    </li>
+                ))}
         </ul>
     )
 }
