@@ -1,0 +1,80 @@
+.favoritePage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .title {
+        font-size: 22px;
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    .favoriteCards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 5%;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgba(119, 122, 129, 0.2);
+        width: 100%;
+        padding: 10px 5%;
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            border: none;
+            text-align: center;
+            width: 30%;
+            min-height: auto;
+            height: 40px;
+            font-size: 14px;
+            padding: 12px 20px;
+            border-radius: 6px;
+            margin: 5px;
+            gap: 5px;
+        }
+
+        .buyBtn {
+            background: #358CF7;
+        }
+
+        .clearBtn {
+            background: #787D88;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .favoritePage{
+        .favoriteCards{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .actions{
+            .btn{
+                width: 23%;
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .favoritePage{
+        .favoriteCards{
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .actions{
+            .btn{
+                width: 18%;
+            }
+        }
+    }
+}

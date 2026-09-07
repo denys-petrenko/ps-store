@@ -243,6 +243,11 @@
             "order_btn": "Proceed to Checkout"
         }
     },
+    "favorites": {
+        "title": "Favorites",
+        "buy_btn": "Buy All",
+        "clear_btn": "Clear Favorites"
+    },
     "footer": {
         "nav": [
             {

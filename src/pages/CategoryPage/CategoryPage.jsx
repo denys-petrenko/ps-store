@@ -1,5 +1,5 @@
 import styles from "./CategoryPage.module.scss";
-import { useParams, NavLink, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useCategories } from "../../hooks/useCategories";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/ui/Loader";

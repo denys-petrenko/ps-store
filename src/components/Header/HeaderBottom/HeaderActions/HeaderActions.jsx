@@ -22,12 +22,12 @@ const HeaderActions = () => {
                 <a href="" className={styles.headerIcon}>
                     <img src={iconProfile} alt="Profile" />
                 </a>
-                <a href="" className={styles.headerIcon}>
+                <Link to="/ps-store/favorites" className={styles.headerIcon}>
                     <img src={iconFavorites} alt="Favorites" />
                     <span className={`${styles.iconCounter} ${favoritesCart.items.length > 0 ? styles.active : ""}`} >
                         {favoritesCart.items.length}
                     </span>
-                </a>
+                </Link>
                 <Link to="/ps-store/cart" className={styles.headerIcon}>
                     <img src={iconCart} alt="Cart" />
                     <span className={`${styles.iconCounter} ${cart.items.length > 0 ? styles.active : ""}`} >
