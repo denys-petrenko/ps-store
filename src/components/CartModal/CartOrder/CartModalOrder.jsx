@@ -6,7 +6,7 @@ import PriceBlock from "../../../pages/ProductPage/components/PurchaseCard/Price
 import FavoriteBtn from "../../../pages/ProductPage/components/PurchaseCard/FavoriteBtn/FavoriteBtn";
 
 
-const CartModalOrder = ({ item }) => {
+const CartModalOrder = ({ item, isCartPage }) => {
     const dispatch = useDispatch();
 
     const handleIncrease = (item) => {
@@ -31,25 +31,29 @@ const CartModalOrder = ({ item }) => {
                     {item.name}
                 </h3>
                 <div className={styles.price}>
-                    <div className={styles.counter}>
-                        <button
-                            className={styles.counterBtn}
-                            onClick={() => handleDecrease(item)}
-                        >
-                            <Minus size={18} />
-                        </button>
-                        <span >{item.quantity}</span>
-                        <button
-                            className={styles.counterBtn}
-                            onClick={() => handleIncrease(item)}
-                        >
-                            <Plus size={18} />
-                        </button>
-                    </div>
-                    <PriceBlock product={item} isStickyMode={false} variant="cart" />
+                    {
+                        isCartPage
+                            ? <span>Quantity: {item.quantity}</span>
+                            : <div className={styles.counter}>
+                                <button
+                                    className={styles.counterBtn}
+                                    onClick={() => handleDecrease(item)}
+                                >
+                                    <Minus size={18} />
+                                </button>
+                                <span >{item.quantity}</span>
+                                <button
+                                    className={styles.counterBtn}
+                                    onClick={() => handleIncrease(item)}
+                                >
+                                    <Plus size={18} />
+                                </button>
+                            </div>
+                    }
+                    <PriceBlock product={item} isStickyMode={true} variant="cart" />
                 </div>
             </div>
-            <div className={styles.actions}>
+            <div className={`${styles.actions} ${isCartPage ? "" : styles.active}`}>
                 <FavoriteBtn product={item} variant="cart" />
                 <Trash
                     className={styles.trash}

@@ -241,6 +241,32 @@
             "order_title": "In your cart",
             "total_title": "Total:",
             "order_btn": "Proceed to Checkout"
+        },
+        "cart_page": {
+            "delivery_title": "Order",
+            "edit_btn": "Edit",
+            "delivery_form": {
+                "title": "Delivery",
+                "pickup": "Pickup from store",
+                "nova_post":"Pickup from Nova Poshta branch",
+                "nova_post_address":"Nova Poshta home delivery"
+            },
+            "summary_title": "Your order",
+            "total_order": {
+                "details_list": {
+                    "products": "Products",
+                    "quantity": "pcs.",
+                    "products_total": "Products total",
+                    "delivery": {
+                        "title": "Delivery",
+                        "cost": "Free"
+                    }
+                }
+            },
+            "total_price": {
+                "title": "Total",
+                "total_btn": "Place order"
+            }
         }
     },
     "favorites": {

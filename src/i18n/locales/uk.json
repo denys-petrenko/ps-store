@@ -241,6 +241,32 @@
             "order_title": "У вашому кошику",
             "total_title": "Разом:",
             "order_btn": "Оформити замовлення"
+        },
+        "cart_page": {
+            "delivery_title": "Замовлення",
+            "edit_btn": "Редагувати",
+            "delivery_form": {
+                "title": "Доставка",
+                "pickup": "Самовивіз з магазину",
+                "nova_post":"Самовивіз з Нової пошти",
+                "nova_post_address":"Адресна доставка Нова пошта"
+            },
+            "summary_title": "Ваше замовлення",
+            "total_order": {
+                "details_list": {
+                    "products": "Товари",
+                    "quantity": "шт.",
+                    "products_total": "Сума товарів",
+                    "delivery": {
+                        "title": "Доставка",
+                        "cost": "Безкоштовно"
+                    }
+                }
+            },
+            "total_price": {
+                "title": "Разом",
+                "total_btn": "Оформити замовлення"
+            }
         }
     },
     "favorites": {

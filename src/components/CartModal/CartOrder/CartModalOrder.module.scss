@@ -51,13 +51,17 @@
     }
 
     .actions {
-        display: flex;
-        flex-direction: column;
-        gap: 13px;
+        display: none;
 
         .trash {
             color: #787D88;
             cursor: pointer;
+        }
+
+        &.active {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
         }
     }
 }

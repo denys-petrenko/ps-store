@@ -5,11 +5,15 @@ import youtube from "../../assets/footer/youtube.svg";
 import twitter from "../../assets/footer/twitter.svg";
 import google from "../../assets/footer/google.svg";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 
 const Footer = () => {
     const { t } = useTranslation();
     const { nav, contacts } = t("footer", { returnObjects: true });
+    const { pathname } = useLocation();
+    const hideFooter = pathname === "/ps-store/cart";
+    if (hideFooter) return null;
 
     return (
         <footer className={styles.footer}>
