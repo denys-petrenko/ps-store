@@ -2,7 +2,7 @@ import styles from "./MobileMenu.module.scss";
 import CategoriesList from "../CategoriesList/CategoriesList";
 import CategoryDetails from "../CategoryDetails/CategoryDetails";
 import HeaderActions from "../../HeaderActions/HeaderActions";
-import HeaderSearch from "../../HeaderSearch/HeaderSearch";
+import Searcher from "../../Searcher/Searcher";
 import { useTranslation } from "react-i18next";
 
 
@@ -34,7 +34,7 @@ const MobileMenu = ({ menu, loading }) => {
                     </svg>
                 </button>
             </div>
-            <HeaderSearch />
+            <Searcher />
             {!activeCategoryId
                 ? (
                     <CategoriesList

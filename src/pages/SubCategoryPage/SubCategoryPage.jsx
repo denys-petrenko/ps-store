@@ -2,7 +2,7 @@ import styles from "./SubCategoryPage.module.scss";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../store/slices/productsSlice";
+import { fetchProductsByCategory } from "../../store/slices/productsSlice";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Loader from "../../components/ui/Loader";
 import CategoryCard from "./categoryCard/categoryCard";
@@ -10,13 +10,13 @@ import CategoryCard from "./categoryCard/categoryCard";
 const SubCategoryPage = () => {
     const { subCategoryId } = useParams();
     const dispatch = useDispatch();
-    const { items, isLoading, isError } = useSelector(state => state.products);
+    const { items, categoryItems, isCategoryLoading, isCategoryError } = useSelector(state => state.products);
 
     useEffect(() => {
-        dispatch(fetchProducts(subCategoryId));
+        dispatch(fetchProductsByCategory(subCategoryId));
     }, [dispatch, subCategoryId]);
 
-    if (isLoading) {
+    if (isCategoryLoading) {
         return (
             <section className={styles.subCategoryPage}>
                 <Loader />
@@ -24,8 +24,8 @@ const SubCategoryPage = () => {
         )
     }
 
-    if (isError) {
-        return <h2>{isError}</h2>;
+    if (isCategoryError) {
+        return <h2>{isCategoryError}</h2>;
     }
 
 
@@ -33,7 +33,7 @@ const SubCategoryPage = () => {
         <section className={styles.subCategoryPage}>
             <Breadcrumbs />
             <div className={styles.subCategoryCards}>
-                {items.map(item => (
+                {categoryItems.map(item => (
                     <CategoryCard item={item} key={item.id} />
                 ))}
             </div>

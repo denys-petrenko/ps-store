@@ -3,7 +3,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 
 const productsCol = collection(db, "products");
 
-export const getProducts = async (category) => {
+export const getProductsByCategory = async (category) => {
     const q = query(
         productsCol,
         where("category", "==", category)
@@ -26,9 +26,3 @@ export const getProducts = async (category) => {
 
 //     return products;
 // }
-
-
-
-
-
-

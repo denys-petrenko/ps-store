@@ -1,4 +1,4 @@
-.header-bottom {
+.headerBottom {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -9,7 +9,7 @@
 
 
 @media (min-width: 1024px) {
-    .header-bottom {
+    .headerBottom {
         flex-direction: row;
         height: auto;
         width: 90%;

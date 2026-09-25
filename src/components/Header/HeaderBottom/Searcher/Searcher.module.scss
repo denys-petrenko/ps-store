@@ -1,4 +1,4 @@
-.header-searcher {
+.searcher {
     display: flex;
     align-items: center;
     width: 90%;
@@ -6,7 +6,7 @@
     position: relative;
     min-height: 1px;
 
-    .search-input {
+    .searchInput {
         display: flex;
         box-sizing: border-box;
         width: 100%;
@@ -26,7 +26,7 @@
         }
     }
 
-    .header-searcher-btn {
+    .searchBtn {
         all: unset;
         display: flex;
         justify-content: center;
@@ -41,7 +41,7 @@
         right: 0;
         cursor: pointer;
 
-        .search-logo {
+        .searchLogo {
             width: 18px;
             height: 18px;
         }
@@ -49,11 +49,11 @@
 }
 
 @media (min-width: 1024px) {
-    .header-searcher {
+    .searcher {
         width: auto;
         flex: 2;
 
-        .header-searcher-btn:hover {
+        .searchBtn:hover {
             background-color: #0771c8;
             transition: 0.3s;
         }

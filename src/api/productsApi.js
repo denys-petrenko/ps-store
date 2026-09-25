@@ -1,10 +1,17 @@
-import { collection, doc, getDoc, setDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
 import { db } from "./firebase";
 
 export const productsCol = collection(db, "products");
-
 export const productTemplateCol = collection(db, "product_templates");
 
+export const getAllProducts = async () => {
+    const snapshot = await getDocs(productsCol);
+
+    return snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+    }))
+}
 
 
 
