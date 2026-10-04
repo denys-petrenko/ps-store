@@ -10,7 +10,7 @@ import CategoryCard from "./categoryCard/categoryCard";
 const SubCategoryPage = () => {
     const { subCategoryId } = useParams();
     const dispatch = useDispatch();
-    const { items, categoryItems, isCategoryLoading, isCategoryError } = useSelector(state => state.products);
+    const { categoryItems, isCategoryLoading, isCategoryError } = useSelector(state => state.products);
 
     useEffect(() => {
         dispatch(fetchProductsByCategory(subCategoryId));

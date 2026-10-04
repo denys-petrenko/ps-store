@@ -15,6 +15,7 @@ const CategoryPage = () => {
         categories.find(cat => cat.id === categoryId),
         [categories, categoryId]
     );
+    
 
     if (!activeCategory) {
         return (
