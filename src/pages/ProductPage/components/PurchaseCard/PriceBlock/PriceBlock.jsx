@@ -25,15 +25,15 @@ const PriceBlock = ({ product, isStickyMode, variant = "default" }) => {
             {hasDiscount && (
                 <div className={styles.discountBox}>
                     <del className={`${styles.oldPrice} ${isStickyMode ? styles.float : ""}`}>
-                        {product.price} ₴
+                        {product.price.toLocaleString("uk-UA")} ₴
                     </del>
                     <span className={`${styles.discount} ${!isStickyMode ? styles.float : ""}`}>
-                        {discountLabel}
+                        {discountLabel.toLocaleString("uk-UA")}
                     </span>
                 </div>
             )}
             <span className={`${styles.price} ${isStickyMode ? styles.float : ""}`}>
-                {finalPrice} ₴
+                {finalPrice.toLocaleString("uk-UA")} ₴
             </span>
         </div>
     )

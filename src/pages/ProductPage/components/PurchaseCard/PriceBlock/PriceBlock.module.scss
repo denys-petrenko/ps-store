@@ -28,10 +28,10 @@
         }
 
         .discount {
-            opacity: 0;
+            display: none;
 
             &.float {
-                opacity: 1;
+                display: block;
                 background: #fd795d;
                 border-radius: 14px;
                 color: #fff;

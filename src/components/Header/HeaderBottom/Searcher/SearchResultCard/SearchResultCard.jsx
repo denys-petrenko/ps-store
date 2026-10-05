@@ -24,11 +24,11 @@ const SearchResultCard = ({ item, onClick, parentCategoryMap }) => {
                     <div className={styles.price}>
                         {item.discount
                             ? <>
-                                <span className={styles.oldPrice}>{item.price} ₴</span>
-                                <span className={styles.currentPrice}>{item.price - item.discount} ₴</span>
+                                <span className={styles.oldPrice}>{item.price.toLocaleString("uk-UA")} ₴</span>
+                                <span className={styles.currentPrice}>{(item.price - item.discount).toLocaleString("uk-UA")} ₴</span>
                             </>
                             : <span className={styles.currentPrice}>
-                                {item.price} ₴
+                                {item.price.toLocaleString("uk-UA")} ₴
                             </span>
                         }
                     </div>
