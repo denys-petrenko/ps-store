@@ -50,21 +50,20 @@ const Slider = ({ variant, autoplay, onSlideClick, data, to }) => {
                 <div className={styles.sliderContainer}>
                     {data.map((el, i) => (
                         <div key={`${el.id}-${i}`} className={styles.slide}>
-                            {to ? (
-                                <Link to={to}>
+                            {to
+                                ? (<Link to={to}>
                                     <img src={el.image}
                                         alt={el.name}
                                         className={styles.sliderImage}
                                     />
-                                </Link>
-                            ) : (
-                                <img
+                                </Link>)
+                                : (<img
                                     src={el.image}
                                     alt={el.name}
                                     className={styles.sliderImage}
                                     onClick={() => onSlideClick?.(el)}
-                                />
-                            )}
+                                />)
+                            }
                         </div>
                     ))}
                 </div>
