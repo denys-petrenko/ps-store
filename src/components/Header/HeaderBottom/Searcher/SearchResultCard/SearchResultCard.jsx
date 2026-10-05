@@ -4,7 +4,7 @@ import Logo from "../../../../../assets/ps-store-logo.png";
 
 
 
-const SearchResultCard = ({ item, onClick,parentCategoryMap }) => {
+const SearchResultCard = ({ item, onClick, parentCategoryMap }) => {
 
 
     return (

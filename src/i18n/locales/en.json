@@ -274,6 +274,10 @@
         "buy_btn": "Buy All",
         "clear_btn": "Clear Favorites"
     },
+    "search": {
+        "title": "Search",
+        "products": "products"
+    },
     "footer": {
         "nav": [
             {

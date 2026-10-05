@@ -11,6 +11,7 @@ import ProductPage from "./pages/ProductPage/ProductPage";
 import PersistStore from "./components/PersistStore/PersistStore";
 import CartPage from "./pages/CartPage/CartPage";
 import FavoritePage from "./pages/FavoritePage/FavoritePage";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="ps-store/:categoryId/:subCategoryId/:productSlug" element={<ProductPage />} />
           <Route path="/ps-store/cart" element={<CartPage />} />
           <Route path="/ps-store/favorites" element={<FavoritePage />} />
+          <Route path="/ps-store/search" element={<SearchPage />} />
         </Route>
       </Routes>
     </>

@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchAllProducts } from "../../../../store/slices/productsSlice";
 import { getCategories } from "../../../../api/categoriesApi";
 import SearchResultCard from "./SearchResultCard/SearchResultCard";
+import { useNavigate } from "react-router-dom";
+
 
 
 const Searcher = () => {
@@ -16,11 +18,13 @@ const Searcher = () => {
     const { items } = useSelector(state => state.products);
     const dispatch = useDispatch();
     const searchRef = useRef(null);
+    const navigate = useNavigate();
+    const [showResult, setShowResult] = useState(false);
 
     useEffect(() => {
         const handleCloseSearch = (e) => {
             if (searchRef.current && !searchRef.current.contains(e.target)) {
-                setSearch("");
+                setShowResult(false);
             }
         }
 
@@ -73,7 +77,12 @@ const Searcher = () => {
             ref={searchRef}
         >
             <form
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    if (!search.trim()) return;
+                    navigate(`/ps-store/search?q=${encodeURIComponent(search)}`);
+                    setShowResult(false);
+                }}
                 className={styles.searchForm}
             >
                 <input
@@ -81,16 +90,21 @@ const Searcher = () => {
                     name="search"
                     placeholder={t("header.placeholder")}
                     value={search}
-                    onChange={(e) => setSearch(e.target.value)}
+                    onChange={(e) => {
+                        const value = e.target.value;
+
+                        setSearch(value);
+                        setShowResult(value.trim().length > 0);
+                    }}
                     className={styles.searchInput}
                 />
-                <button className={styles.searchBtn}>
+                <button
+                    className={styles.searchBtn}
+                >
                     <img src={searchBtn} alt="Search" className={styles.searchLogo} />
                 </button>
             </form>
-
-
-            <div className={`${styles.result} ${query ? styles.active : ""}`}>
+            <div className={`${styles.result} ${showResult ? styles.active : ""}`}>
                 {query && !filteredItems.length
                     ? "No result"
                     : filteredItems.map(item => (
@@ -98,7 +112,10 @@ const Searcher = () => {
                             key={item.id}
                             item={item}
                             parentCategoryMap={parentCategoryMap}
-                            onClick={() => setSearch("")}
+                            onClick={() => {
+                                setSearch("");
+                                setShowResult(false);
+                            }}
                         />
                     ))
                 }
