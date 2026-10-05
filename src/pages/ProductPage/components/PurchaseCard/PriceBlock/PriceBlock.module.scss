@@ -68,16 +68,18 @@
         }
     }
 
-
     .price {
         font-size: 18px;
     }
-
 }
 
 .category {
     flex: none;
     margin-top: auto;
+}
+
+.product {
+    flex: 1;
 }
 
 @media (min-width: 1024px) {

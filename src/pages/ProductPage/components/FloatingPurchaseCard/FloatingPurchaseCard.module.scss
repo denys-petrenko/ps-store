@@ -5,13 +5,16 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 100%;
+        width: 90%;
+        border-radius: 4px;
         height: 80px;
         background-color: #fff;
         position: fixed;
         bottom: 0;
         box-shadow: 0 -2px 13px 0 hsla(0, 0%, 56%, .5);
         z-index: 20;
+        padding: 10px 20px;
+        bottom: 10px;
     }
 }
 
