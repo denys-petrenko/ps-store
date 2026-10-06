@@ -1,6 +1,6 @@
 import styles from "./CategoryPage.module.scss";
 import { useParams, Link } from "react-router-dom";
-import { useCategories } from "../../hooks/useCategories";
+import { useCategoriesTree } from "../../hooks/useCategoriesTree";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/ui/Loader";
 import { useMemo } from "react";
@@ -10,7 +10,7 @@ const CategoryPage = () => {
     const { categoryId } = useParams();
     const { i18n } = useTranslation();
     const lang = i18n.language;
-    const { categories, error } = useCategories();
+    const { categories, error } = useCategoriesTree();
     const activeCategory = useMemo(() =>
         categories.find(cat => cat.id === categoryId),
         [categories, categoryId]

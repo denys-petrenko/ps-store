@@ -1,4 +1,7 @@
 import { Routes, Route } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchAllCategories } from "./store/slices/categoriesSlice";
 import Layout from "./layouts/Layouts";
 import Home from "./pages/Home/Home";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
@@ -14,6 +17,11 @@ import FavoritePage from "./pages/FavoritePage/FavoritePage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllCategories());
+  }, [dispatch])
 
   return (
     <>

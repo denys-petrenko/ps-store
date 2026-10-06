@@ -2,7 +2,7 @@ import styles from "./HeaderCategories.module.scss";
 import catalogBtn from "../../../../assets/header/header-catalog-btn.svg";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useCategories } from "../../../../hooks/useCategories";
+import { useCategoriesTree } from "../../../../hooks/useCategoriesTree";
 import { useCategoriesMenu } from "../../../../hooks/useCategoriesMenu";
 import { useMediaQuery } from "../../../../hooks/useMediaQueries";
 import DesktopMenu from "./DesktopMenu/DesktopMenu";
@@ -15,7 +15,7 @@ const HeaderCategories = () => {
     const menuRef = useRef(null);
     const isMobile = useMediaQuery("(max-width: 1024px)");
 
-    const { categories, isLoading, error } = useCategories();
+    const { categories, isLoading, error } = useCategoriesTree();
     const menu = useCategoriesMenu(categories);
     const { state, actions } = menu;
     const { showCategories } = state;

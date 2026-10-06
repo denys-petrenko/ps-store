@@ -1,15 +1,16 @@
 import styles from "./SearchResultCard.module.scss";
 import { Link } from "react-router-dom";
 import Logo from "../../../../../assets/ps-store-logo.png";
+import { useProductPath } from "../../../../../hooks/useProductPath";
 
+const SearchResultCard = ({ item, onClick }) => {
+    const path = useProductPath(item);
 
-
-const SearchResultCard = ({ item, onClick, parentCategoryMap }) => {
-
+    if (!path) return null;
 
     return (
         <Link
-            to={`/ps-store/${parentCategoryMap.get(item.category)}/${item.category}/${item.slug}`}
+            to={path}
             className={styles.link}
             onClick={onClick}
         >
