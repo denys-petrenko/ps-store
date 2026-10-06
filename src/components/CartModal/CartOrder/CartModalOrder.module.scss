@@ -25,6 +25,11 @@
             color: #555;
             font-size: 13px;
             letter-spacing: .5px;
+
+            & a{
+                text-decoration: none;
+                color: #555;
+            }
         }
 
         .price {
