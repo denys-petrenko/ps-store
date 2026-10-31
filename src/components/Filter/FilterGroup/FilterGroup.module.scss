@@ -1,0 +1,20 @@
+.filterBox {
+    padding: 17px 0 5px 0;
+
+    .filterTitle {
+        display: block;
+        font-size: 13px;
+        text-transform: uppercase;
+        padding: 10px 0;
+        letter-spacing: .5px;
+    }
+
+    .filterOption {
+        display: flex;
+        gap: 7px;
+
+        .filterCheckbox {
+            accent-color: #358CF7;
+        }
+    }
+}

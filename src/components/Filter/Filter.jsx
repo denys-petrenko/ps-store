@@ -1,8 +1,9 @@
 import styles from "./Filter.module.scss";
 import { CircleX } from "lucide-react";
 import { useEffect, useState } from "react";
-import * as Slider from "@radix-ui/react-slider";
 import { useTranslation } from "react-i18next";
+import FilterGroup from "./FilterGroup/FilterGroup";
+import PriceFilter from "./PriceFilter/PriceFilter";
 
 const Filter = ({
     isActive,
@@ -35,7 +36,7 @@ const Filter = ({
             Object.values(selectedFilters)
                 .reduce((acc, cur) => acc + cur.length, 0)
         )
-    }, [selectedFilters])
+    }, [selectedFilters, setFiltersCounter])
 
 
 
@@ -47,11 +48,11 @@ const Filter = ({
                 .entries(selectedFilters)
                 .every(([key, value]) => {
                     if (value.length === 0) return true;
-
-                    const spec = typeof item.specs[key] === "object"
-                        && item.specs[key] !== null
-                        ? item.specs[key].value
-                        : item.specs[key];
+                    const rawSpec = item.specs?.[key];
+                    const spec = typeof rawSpec === "object"
+                        && rawSpec !== null
+                        ? rawSpec.value
+                        : rawSpec;
 
                     return value.includes(spec);
                 })
@@ -59,6 +60,14 @@ const Filter = ({
 
         setFilteredProducts(filtered);
     }, [items, appliedPrice, selectedFilters, setFilteredProducts])
+
+    useEffect(() => {
+        document.body.style.overflow = isActive ? "hidden" : "";
+
+        return () => {
+            document.body.style.overflow = "";
+        }
+    }, [isActive]);
 
 
     return (
@@ -75,67 +84,20 @@ const Filter = ({
                 </div>
 
                 <div className={styles.filters}>
-                    <div className={styles.filterBox}>
-                        <h3 className={styles.filterTitle}>{t("filter.price")}</h3>
-                        <Slider.Root
-                            className={styles.sliderRoot}
-                            value={value}
-                            step={100}
-                            min={minPrice}
-                            max={maxPrice}
-                            onValueChange={(value) => setValue(value)}
-                        >
-                            <Slider.Track className={styles.sliderTrack}>
-                                <Slider.Range className={styles.sliderRange} />
-                            </Slider.Track>
-                            <Slider.Thumb className={styles.sliderThumb} aria-label="Price" />
-                            <Slider.Thumb className={styles.sliderThumb} aria-label="Price" />
-                        </Slider.Root>
-
-                        <div className={styles.filterParameters}>
-                            <input type="number"
-                                className={styles.filterPrice}
-                                value={value[0]}
-                                onChange={(e) => setValue(prev => [Number(e.target.value), prev[1]])}
-                            />
-                            <input
-                                type="number"
-                                className={styles.filterPrice}
-                                value={value[1]}
-                                onChange={(e) => setValue(prev => [prev[0], Number(e.target.value)])}
-                            />
-                        </div>
-
-                        <button
-                            className={styles.rangeBtn}
-                            onClick={() => setAppliedPrice(value)}>
-                            {t("filter.price_btn")}
-                        </button>
-                    </div>
-
-                    {filters?.map(filter => (
-                        <div className={styles.filterBox} key={filter.key}>
-                            <h3 className={styles.filterTitle}>{filter.label[lang]}</h3>
-                            {filter.options.map(option => {
-                                const optionValue = typeof option === "object" ? option.value : option;
-                                const optionLabel = typeof option === "object" ? option.label[lang] : option;
-
-                                return (
-                                    <label className={styles.filterOption} key={optionValue}>
-                                        <input
-                                            type="checkbox"
-                                            className={styles.filterCheckbox}
-                                            checked={selectedFilters[filter.key]?.includes(optionValue) ?? false}
-                                            onChange={() => handleCheckboxChange(optionValue, filter)}
-                                        />
-                                        <span className={styles.filterOptionLabel}>
-                                            {optionLabel}
-                                        </span>
-                                    </label>
-                                );
-                            })}
-                        </div>
-                    ))}
+                    <PriceFilter
+                        minPrice={minPrice}
+                        maxPrice={maxPrice}
+                        value={value}
+                        setValue={setValue}
+                        setAppliedPrice={setAppliedPrice}
+                        t={t}
+                    />
+                    <FilterGroup
+                        filters={filters}
+                        lang={lang}
+                        selectedFilters={selectedFilters}
+                        handleCheckboxChange={handleCheckboxChange}
+                    />
                 </div>
             </div>
         </div>
