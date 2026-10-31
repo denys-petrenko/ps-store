@@ -218,6 +218,9 @@
             ]
         }
     },
+    "sub_category_page":{
+        "filters_btn":"Filters"
+    },
     "product_card": {
         "navigation": {
             "about": "About",
@@ -277,6 +280,11 @@
     "search": {
         "title": "Search",
         "products": "products"
+    },
+    "filter":{
+        "title": "Filters",
+        "price": "Price",
+        "price_btn":"Apply"
     },
     "footer": {
         "nav": [

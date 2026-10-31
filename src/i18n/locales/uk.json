@@ -218,6 +218,9 @@
             ]
         }
     },
+    "sub_category_page":{
+        "filters_btn":"Фільтри"
+    },
     "product_card": {
         "navigation": {
             "about": "Про товар",
@@ -248,8 +251,8 @@
             "delivery_form": {
                 "title": "Доставка",
                 "pickup": "Самовивіз з магазину",
-                "nova_post":"Самовивіз з Нової пошти",
-                "nova_post_address":"Адресна доставка Нова пошта"
+                "nova_post": "Самовивіз з Нової пошти",
+                "nova_post_address": "Адресна доставка Нова пошта"
             },
             "summary_title": "Ваше замовлення",
             "total_order": {
@@ -277,6 +280,11 @@
     "search": {
         "title": "Пошук",
         "products": "товарів"
+    },
+    "filter": {
+        "title": "Фільтри",
+        "price": "Ціна",
+        "price_btn":"Застосувати"
     },
     "footer": {
         "nav": [
